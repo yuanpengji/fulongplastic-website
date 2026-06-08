@@ -17,6 +17,7 @@ import {
   getKnowledgeCategory,
   getProduct,
   getSpecGroupsByCategory,
+  homepage,
   knowledgeCategories,
   Locale,
   localizePath,
@@ -107,16 +108,7 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
 
 export function HomePage({ locale }: { locale: Locale }) {
   const t = text[locale];
-  const hero =
-    locale === "zh"
-      ? {
-          title: "组织培养容器源头生产厂家",
-          subtitle: "富龙塑业拥有20余年制造经验，专注于组织培养容器及相关配套产品，服务高校、科研院所、商业化繁育客户及国际客户。"
-        }
-      : {
-          title: "Tissue Culture Container Manufacturer & Supplier",
-          subtitle: "Fulong Plastic has over 20 years of manufacturing experience, specializing in tissue culture containers and related accessories for universities, research institutes, commercial propagation customers, and international customers."
-        };
+  const hero = homepage[locale];
 
   return (
     <Shell locale={locale} path="/">
@@ -131,13 +123,13 @@ export function HomePage({ locale }: { locale: Locale }) {
         }}
       />
       <section className="relative min-h-[680px] overflow-hidden border-b border-line bg-black">
-        <Image src="/products/pc-tissue-culture-bottles.jpg" alt={hero.title} fill priority className="object-contain object-right-bottom opacity-65" />
+        <Image src="/products/pc-tissue-culture-bottles.jpg" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom opacity-65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#08090b_0%,rgba(8,9,11,.92)_34%,rgba(8,9,11,.35)_100%)]" />
         <div className="container relative flex min-h-[680px] items-center">
           <div className="max-w-2xl py-20">
             <span className="eyebrow">{company[locale].positioning}</span>
-            <h1 className="mt-5 text-5xl font-bold leading-tight md:text-7xl">{hero.title}</h1>
-            <p className="mt-6 text-lg leading-8 text-slate-300">{hero.subtitle}</p>
+            <h1 className="mt-5 text-5xl font-bold leading-tight md:text-7xl">{hero.heroTitle}</h1>
+            <p className="mt-6 text-lg leading-8 text-slate-300">{hero.heroSubtitle}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href={localizePath("/products/", locale)} className="btn btn-primary">
                 {t.actions.viewProducts}

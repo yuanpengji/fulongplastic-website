@@ -87,6 +87,18 @@ export const text = {
   }
 } as const;
 
+export const homepage = {
+  zh: {
+    heroTitle: "组织培养容器源头生产厂家",
+    heroSubtitle: "富龙塑业拥有20余年制造经验，专注于组织培养容器及相关配套产品，服务高校、科研院所、商业化繁育客户及国际客户。"
+  },
+  en: {
+    heroTitle: "Tissue Culture Container Manufacturer & Supplier",
+    heroSubtitle:
+      "Fulong Plastic has over 20 years of manufacturing experience, specializing in tissue culture containers and related accessories for universities, research institutes, commercial propagation customers, and international customers."
+  }
+};
+
 export const company = {
   email: "sales@fulongplastic.com",
   whatsapp: "To be confirmed",
