@@ -1,10 +1,9 @@
 import { CategoryPage } from "@/lib/page-components";
 import { getCategory, productCategories } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
-import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return productCategories.filter((category) => category.slug !== "featured").map((category) => ({ locale: "en", category: category.slug }));
+  return productCategories.map((category) => ({ locale: "en", category: category.slug }));
 }
 
 export function generateMetadata({ params }: { params: { category: string } }) {
@@ -20,6 +19,5 @@ export function generateMetadata({ params }: { params: { category: string } }) {
 }
 
 export default function Page({ params }: { params: { category: string } }) {
-  if (params.category === "featured") notFound();
   return <CategoryPage locale="en" categorySlug={params.category} />;
 }

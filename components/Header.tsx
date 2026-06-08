@@ -23,9 +23,14 @@ export function Header({ locale, path }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-ink/92 backdrop-blur">
       <div className="container flex min-h-16 items-center justify-between gap-5">
-        <Link href={localizePath("/", locale)} className="flex flex-col leading-tight">
-          <span className="text-base font-bold">{t.brand}</span>
-          <span className="text-xs text-steel">Tissue Culture Containers</span>
+        <Link href={localizePath("/", locale)} className="flex items-center gap-3 leading-tight">
+          <span className="flex h-9 w-9 items-center justify-center rounded border border-line bg-black text-[10px] font-bold text-steel">
+            LOGO
+          </span>
+          <span className="flex flex-col">
+            <span className="text-base font-bold">{t.brand}</span>
+            <span className="text-xs text-steel">Tissue Culture Containers</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm text-slate-200 lg:flex">

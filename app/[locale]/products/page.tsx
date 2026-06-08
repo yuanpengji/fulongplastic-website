@@ -5,7 +5,7 @@ export const metadata = buildMetadata({
   locale: "en",
   path: "/products/",
   title: "Products | Fulong Plastic Tissue Culture Containers",
-  description: "Fulong Plastic product center includes PC Series, PP Series, Accessories, and Sugar-Free Ventilated Culture Box organized by capacity, dimensions, material, and compatible lid."
+  description: "Fulong Plastic product center is organized for specification-based sourcing across PC tissue culture products, PP culture containers, accessories, and featured products."
 });
 
 export default function Page() {

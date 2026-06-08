@@ -117,7 +117,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {productCategories.map((category) => (
-              <Link key={category.slug} href={localizePath(category.slug === "featured" ? "/products/featured/sugar-free-ventilated-culture-box/" : `/products/${category.slug}/`, locale)} className="panel overflow-hidden">
+              <Link key={category.slug} href={localizePath(`/products/${category.slug}/`, locale)} className="panel overflow-hidden">
                 <div className="aspect-[4/3] bg-black">
                   <Image src={category.image} alt={category[locale].title} width={520} height={390} className="h-full w-full object-contain p-5" />
                 </div>
@@ -195,12 +195,12 @@ export function ProductsPage({ locale }: { locale: Locale }) {
       <PageHero
         eyebrow={t.nav.products}
         title={locale === "zh" ? "产品中心" : "Products"}
-        description={locale === "zh" ? "按PC系列、PP系列、配套产品和重点产品组织，便于按规格查找和询价。" : "Organized by PC Series, PP Series, Accessories, and Featured Product for specification lookup and inquiries."}
+        description={locale === "zh" ? "按PC组培系列、PP培养系列、配套产品和特色产品组织，便于按容量、尺寸、材质和适配盖查找。" : "Organized for B2B buyers by PC tissue culture products, PP culture containers, accessories, and featured products for specification-based sourcing."}
       />
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {productCategories.map((category) => (
-            <Link key={category.slug} href={localizePath(category.slug === "featured" ? "/products/featured/sugar-free-ventilated-culture-box/" : `/products/${category.slug}/`, locale)} className="panel overflow-hidden">
+            <Link key={category.slug} href={localizePath(`/products/${category.slug}/`, locale)} className="panel overflow-hidden">
               <Image src={category.image} alt={category[locale].title} width={600} height={450} className="aspect-[4/3] bg-black object-contain p-5" />
               <div className="p-5">
                 <h2 className="text-xl font-bold">{category[locale].name}</h2>
@@ -216,8 +216,11 @@ export function ProductsPage({ locale }: { locale: Locale }) {
 
 export function CategoryPage({ locale, categorySlug }: { locale: Locale; categorySlug: string }) {
   const category = getCategory(categorySlug);
-  if (!category || category.slug === "featured") notFound();
+  if (!category) notFound();
   const categoryProducts = getProductsByCategory(categorySlug);
+  const relatedProducts = products
+    .filter((product) => product.category !== categorySlug)
+    .slice(0, 3);
 
   return (
     <Shell locale={locale} path={`/products/${categorySlug}/`}>
@@ -232,12 +235,47 @@ export function CategoryPage({ locale, categorySlug }: { locale: Locale; categor
       />
       <PageHero eyebrow={category[locale].name} title={category[locale].title} description={category[locale].description} />
       <section className="section">
-        <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="container space-y-8">
           {categoryProducts.map((product) => (
-            <ProductCard key={product.slug} product={product} locale={locale} />
+            <article key={product.slug} className="grid gap-6 rounded-lg border border-line bg-panel p-4 lg:grid-cols-[320px_1fr]">
+              <div className="rounded-lg bg-black">
+                <Image
+                  src={product.image}
+                  alt={product[locale].name}
+                  width={640}
+                  height={480}
+                  className="aspect-[4/3] h-full w-full object-contain p-4"
+                />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold">{product[locale].name}</h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-steel">{product[locale].description}</p>
+                <div className="mt-5">
+                  <SpecTable product={product} locale={locale} />
+                </div>
+                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  {product[locale].features.slice(0, 4).map((feature) => (
+                    <div key={feature} className="rounded border border-line bg-ink px-3 py-2 text-sm text-slate-200">
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>
+      <section className="section-tight border-y border-line bg-[#0b0d10]">
+        <div className="container">
+          <h2 className="text-3xl font-bold">{text[locale].actions.relatedProducts}</h2>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {relatedProducts.map((product) => (
+              <ProductCard key={product.slug} product={product} locale={locale} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <ContactBlock locale={locale} productName={category[locale].title} />
     </Shell>
   );
 }
@@ -268,7 +306,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
       />
       <section className="section-tight">
         <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-lg border border-line bg-black">
+          <div className="rounded-lg bg-black">
             <Image src={product.image} alt={content.name} width={900} height={720} priority className="aspect-[4/3] h-full w-full object-contain p-6" />
           </div>
           <div>

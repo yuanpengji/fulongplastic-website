@@ -91,19 +91,19 @@ export const company = {
     ]
   },
   en: {
-    positioning: "Source manufacturer of tissue culture containers and related accessories",
+    positioning: "Original manufacturer of tissue culture containers and related accessories",
     about:
-      "Fulong Plastic is a source manufacturer specializing in tissue culture containers and related accessories, with more than 20 years of manufacturing experience. Our product range includes PC tissue culture bottles, PC culture tubes, PC wide mouth culture cups, PP culture containers, PP culture boxes, culture bags, culture lids, vent filter patches, sealing film, culture baskets, and related supplies.",
+      "Fulong Plastic is an original manufacturer specializing in tissue culture containers and related accessories, with more than 20 years of manufacturing experience. Our product range includes PC tissue culture bottles, PC culture tubes, PC wide mouth culture cups, PP culture containers, PP culture boxes, culture bags, culture lids, vent filter patches, sealing film, culture baskets, and related supplies.",
     aboutMore:
       "Fulong Plastic serves universities, research institutes, commercial propagation customers, agricultural research customers, and international customers. We focus on stable specifications, reliable long-term supply, practical usage requirements, and custom development for different research and cultivation applications.",
     proofPoints: [
       "20+ years manufacturing experience",
-      "Source manufacturer",
-      "University and research institute customers",
+      "Direct factory supply",
+      "Universities and research institutes customers",
       "Commercial propagation customers",
       "International customers",
-      "Custom development capability",
-      "Stable long-term supply"
+      "Custom product development",
+      "Reliable long-term supply"
     ]
   }
 };
@@ -146,35 +146,35 @@ export const productCategories = [
     slug: "pc-series",
     image: "/products/pc-tissue-culture-bottles.jpg",
     zh: {
-      name: "PC Series",
-      title: "PC系列",
-      description: "PC组培瓶、PC组培试管与PC广口培养杯，按容量、尺寸和适配盖进行规格化展示。"
+      name: "PC组培系列",
+      title: "PC组培系列",
+      description: "包含PC组培瓶、PC组培试管与PC广口培养杯，集中展示容量、高度、底部直径、材质和适配盖。"
     },
     en: {
-      name: "PC Series",
-      title: "PC Series",
-      description: "PC tissue culture bottles, PC culture tubes, and PC wide mouth culture cups organized by capacity, dimensions, and compatible lids."
+      name: "PC Tissue Culture Series",
+      title: "PC Tissue Culture Series",
+      description: "PC tissue culture bottles, culture tubes, and wide mouth culture cups organized by capacity, height, bottom diameter, material, and compatible lids."
     }
   },
   {
     slug: "pp-series",
     image: "/products/pp-culture-containers.jpg",
     zh: {
-      name: "PP Series",
-      title: "PP系列",
-      description: "PP培养容器、PP培养盒、热封组培袋与自封站立组培袋，适合规格对比和批量询价。"
+      name: "PP培养系列",
+      title: "PP培养系列",
+      description: "包含PP培养容器、PP培养盒、热封组培袋与自封站立组培袋，便于按规格对比和批量询价。"
     },
     en: {
-      name: "PP Series",
-      title: "PP Series",
-      description: "PP culture containers, PP culture boxes, heat seal culture bags, and self-seal stand-up culture bags for specification comparison and B2B inquiries."
+      name: "PP Culture Container Series",
+      title: "PP Culture Container Series",
+      description: "PP culture containers, culture boxes, heat seal culture bags, and self-seal stand-up culture bags for specification comparison and B2B sourcing."
     }
   },
   {
     slug: "accessories",
     image: "/products/culture-lids.jpg",
     zh: {
-      name: "Accessories",
+      name: "配套产品",
       title: "配套产品",
       description: "组培盖、透气膜、封口膜与培养篮，围绕容器适配和培养流程配套供应。"
     },
@@ -188,13 +188,13 @@ export const productCategories = [
     slug: "featured",
     image: "/products/sugar-free-ventilated-culture-box.jpg",
     zh: {
-      name: "Featured Product",
-      title: "Featured Product",
+      name: "特色产品",
+      title: "特色产品",
       description: "无糖透气培养盒，作为重点产品独立展示规格与询价入口。"
     },
     en: {
-      name: "Featured Product",
-      title: "Featured Product",
+      name: "Featured Products",
+      title: "Featured Products",
       description: "Sugar-Free Ventilated Culture Box with a dedicated specification and inquiry page."
     }
   }
@@ -476,7 +476,7 @@ export const products: Product[] = [
     en: {
       name: "Vent Filter Patches",
       description: "Vent filter patches listed by diameter and compatibility with lids or culture bags.",
-      features: ["1.8cm, 2.0cm, and 3.0cm sizes", "For lids or bags", "Used for ventilation options", "Accessory supply available"],
+      features: ["1.8cm, 2.0cm, and 3.0cm sizes", "For lids or bags", "Accessory material for compatible products", "Accessory supply available"],
       seoTitle: "Vent Filter Patches | Fulong Plastic",
       metaDescription: "Fulong Plastic supplies 1.8cm, 2.0cm, and 3.0cm vent filter patches for culture lids, culture bags, and related containers."
     }

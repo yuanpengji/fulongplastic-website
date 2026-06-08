@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { company, Locale, localizePath, text } from "@/lib/content";
+import { company, Locale, localizePath, productCategories, text } from "@/lib/content";
 
 export function Footer({ locale }: { locale: Locale }) {
   const t = text[locale];
@@ -18,9 +18,11 @@ export function Footer({ locale }: { locale: Locale }) {
         <div>
           <h3 className="font-semibold">{t.nav.products}</h3>
           <div className="mt-3 grid gap-2 text-sm text-steel">
-            <Link href={localizePath("/products/pc-series/", locale)}>PC Series</Link>
-            <Link href={localizePath("/products/pp-series/", locale)}>PP Series</Link>
-            <Link href={localizePath("/products/accessories/", locale)}>Accessories</Link>
+            {productCategories.slice(0, 3).map((category) => (
+              <Link key={category.slug} href={localizePath(`/products/${category.slug}/`, locale)}>
+                {category[locale].name}
+              </Link>
+            ))}
           </div>
         </div>
         <div>

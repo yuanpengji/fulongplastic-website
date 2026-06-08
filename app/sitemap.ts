@@ -3,9 +3,7 @@ import { articles, localizePath, productCategories, productPath, products, siteU
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = ["/", "/products/", "/applications/", "/knowledge-base/", "/about/", "/contact/"];
-  const categoryPaths = productCategories
-    .filter((category) => category.slug !== "featured")
-    .map((category) => `/products/${category.slug}/`);
+  const categoryPaths = productCategories.map((category) => `/products/${category.slug}/`);
   const knowledgePaths = ["product-encyclopedia", "tissue-culture-knowledge", "faq", "industry-news-insights"].map(
     (category) => `/knowledge-base/${category}/`
   );

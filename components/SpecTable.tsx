@@ -19,12 +19,6 @@ export function SpecTable({ product, locale }: { product: Product; locale: Local
             <td>{value}</td>
           </tr>
         ))}
-        {product.variants?.length ? (
-          <tr>
-            <th>{locale === "zh" ? "可选规格" : "Available Variants"}</th>
-            <td>{product.variants.join(" / ")}</td>
-          </tr>
-        ) : null}
       </tbody>
     </table>
   );
