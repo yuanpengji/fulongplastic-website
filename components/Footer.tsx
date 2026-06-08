@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { company, Locale, localizePath, productCategories, text } from "@/lib/content";
+import { company, knowledgeCategories, Locale, localizePath, productCategories, text } from "@/lib/content";
 
 export function Footer({ locale }: { locale: Locale }) {
   const t = text[locale];
@@ -11,6 +11,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <h2 className="text-lg font-bold">{t.brand}</h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-steel">{company[locale].positioning}</p>
           <div className="mt-4 text-sm text-slate-300">
+            <p>{locale === "zh" ? "电话" : "Phone"}: {company.phone}</p>
             <p>Email: {company.email}</p>
             <p>WhatsApp: {company.whatsapp}</p>
           </div>
@@ -28,10 +29,11 @@ export function Footer({ locale }: { locale: Locale }) {
         <div>
           <h3 className="font-semibold">{t.nav.knowledge}</h3>
           <div className="mt-3 grid gap-2 text-sm text-steel">
-            <Link href={localizePath("/knowledge-base/product-encyclopedia/", locale)}>Product Encyclopedia</Link>
-            <Link href={localizePath("/knowledge-base/tissue-culture-knowledge/", locale)}>Tissue Culture Knowledge</Link>
-            <Link href={localizePath("/knowledge-base/faq/", locale)}>FAQ</Link>
-            <Link href={localizePath("/knowledge-base/industry-news-insights/", locale)}>Industry News & Insights</Link>
+            {knowledgeCategories.map((category) => (
+              <Link key={category.slug} href={localizePath(`/knowledge-base/${category.slug}/`, locale)}>
+                {category[locale]}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

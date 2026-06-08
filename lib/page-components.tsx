@@ -16,7 +16,7 @@ import {
   getCategory,
   getKnowledgeCategory,
   getProduct,
-  getProductsByCategory,
+  getSpecGroupsByCategory,
   knowledgeCategories,
   Locale,
   localizePath,
@@ -44,6 +44,62 @@ function PageHero({ eyebrow, title, description }: { eyebrow?: string; title: st
         {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
         <h1 className="mt-3 text-4xl font-bold md:text-5xl">{title}</h1>
         <p className="mt-5 text-lg leading-8 text-steel">{description}</p>
+      </div>
+    </section>
+  );
+}
+
+function formatSpecValue(value: string, locale: Locale) {
+  if (locale === "zh") {
+    return value;
+  }
+
+  const replacements: Record<string, string> = {
+    按规格匹配: "By size",
+    按袋型: "By bag style",
+    按型号匹配: "By model",
+    按型号: "By model",
+    PP膜: "PP film",
+    透明塑料: "Transparent plastic",
+    支持透气膜配置: "Filter patch option available",
+    密封盖: "Sealed lid",
+    透气盖: "Vented lid",
+    可配透气膜盖: "Compatible with vented membrane lid",
+    透气盒盖: "Ventilated box lid"
+  };
+
+  if (replacements[value]) {
+    return replacements[value];
+  }
+
+  return value.replace(/(\d+mm)配套盖/g, "$1 matched lid");
+}
+
+function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroupsByCategory>[number]; locale: Locale }) {
+  const t = text[locale];
+
+  return (
+    <section className="space-y-5">
+      <div className="flex flex-col gap-2">
+        <h2 className="text-3xl font-bold">{group[locale].name}</h2>
+        {group[locale].description ? <p className="max-w-3xl text-sm leading-6 text-steel">{group[locale].description}</p> : null}
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+        {group.cards.map((card) => (
+          <article key={card.id} className="overflow-hidden rounded-lg border border-line bg-panel">
+            <div className="aspect-[4/3] bg-black">
+              <Image src={card.image} alt={group[locale].name} width={420} height={315} className="h-full w-full object-contain p-4" />
+            </div>
+            <dl className="grid gap-2 p-4 text-sm">
+              {Object.entries(card.fields).map(([field, value]) => (
+                <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
+                  <dt className="text-steel">{t.fields[field as keyof typeof t.fields]}</dt>
+                  <dd className="text-right font-semibold text-slate-100">{formatSpecValue(value, locale)}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -131,35 +187,30 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="section border-y border-line bg-[#0b0d10]">
-        <div className="container">
-          <span className="eyebrow">{locale === "zh" ? "规格驱动" : "Specification Driven"}</span>
-          <h2 className="mt-3 text-4xl font-bold">{locale === "zh" ? "核心规格字段" : "Core Specification Fields"}</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-5">
-            {Object.values(t.fields)
-              .slice(0, 5)
-              .map((field) => (
-                <div key={field} className="panel p-5 text-center font-bold">
-                  {field}
-                </div>
-              ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section">
         <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <span className="eyebrow">{t.nav.applications}</span>
             <h2 className="mt-3 text-4xl font-bold">{locale === "zh" ? "宽泛应用场景" : "Broad Application Areas"}</h2>
-            <p className="mt-4 text-steel">
-              {locale === "zh" ? "应用说明保持中性，不对具体行业效果作强声明。" : "Application language stays broad and neutral without strong claims about exact industries."}
-            </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {applications.map((application) => (
               <div key={application.slug} className="panel p-5 font-semibold">
                 {application[locale]}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-y border-line bg-[#0b0d10]">
+        <div className="container">
+          <span className="eyebrow">{locale === "zh" ? "应用" : "Applications"}</span>
+          <h2 className="mt-3 text-4xl font-bold">{locale === "zh" ? "应用场景展示" : "Application Scenarios"}</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {[0, 1, 2].map((item) => (
+              <div key={item} className="flex aspect-[4/3] items-center justify-center rounded-lg border border-line bg-black text-sm font-semibold text-steel">
+                {locale === "zh" ? "图片占位" : "Image Placeholder"}
               </div>
             ))}
           </div>
@@ -195,7 +246,7 @@ export function ProductsPage({ locale }: { locale: Locale }) {
       <PageHero
         eyebrow={t.nav.products}
         title={locale === "zh" ? "产品中心" : "Products"}
-        description={locale === "zh" ? "按PC组培系列、PP培养系列、配套产品和特色产品组织，便于按容量、尺寸、材质和适配盖查找。" : "Organized for B2B buyers by PC tissue culture products, PP culture containers, accessories, and featured products for specification-based sourcing."}
+        description={locale === "zh" ? "按PC组培系列、PP组培系列、组培配套产品和特色产品组织，便于按规格卡片直接查找。" : "Organized for B2B buyers by PC tissue culture products, PP culture containers, accessories, and featured products for specification-based sourcing."}
       />
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -217,7 +268,7 @@ export function ProductsPage({ locale }: { locale: Locale }) {
 export function CategoryPage({ locale, categorySlug }: { locale: Locale; categorySlug: string }) {
   const category = getCategory(categorySlug);
   if (!category) notFound();
-  const categoryProducts = getProductsByCategory(categorySlug);
+  const specGroups = getSpecGroupsByCategory(categorySlug);
   const relatedProducts = products
     .filter((product) => product.category !== categorySlug)
     .slice(0, 3);
@@ -235,33 +286,9 @@ export function CategoryPage({ locale, categorySlug }: { locale: Locale; categor
       />
       <PageHero eyebrow={category[locale].name} title={category[locale].title} description={category[locale].description} />
       <section className="section">
-        <div className="container space-y-8">
-          {categoryProducts.map((product) => (
-            <article key={product.slug} className="grid gap-6 rounded-lg border border-line bg-panel p-4 lg:grid-cols-[320px_1fr]">
-              <div className="rounded-lg bg-black">
-                <Image
-                  src={product.image}
-                  alt={product[locale].name}
-                  width={640}
-                  height={480}
-                  className="aspect-[4/3] h-full w-full object-contain p-4"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold">{product[locale].name}</h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-steel">{product[locale].description}</p>
-                <div className="mt-5">
-                  <SpecTable product={product} locale={locale} />
-                </div>
-                <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-                  {product[locale].features.slice(0, 4).map((feature) => (
-                    <div key={feature} className="rounded border border-line bg-ink px-3 py-2 text-sm text-slate-200">
-                      {feature}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
+        <div className="container space-y-14">
+          {specGroups.map((group) => (
+            <SpecCardGrid key={group.slug} group={group} locale={locale} />
           ))}
         </div>
       </section>
@@ -374,9 +401,6 @@ export function ApplicationsPage({ locale }: { locale: Locale }) {
           {applications.map((application) => (
             <div key={application.slug} className="panel p-6">
               <h2 className="text-xl font-bold">{application[locale]}</h2>
-              <p className="mt-3 text-sm leading-6 text-steel">
-                {locale === "zh" ? "可根据容器容量、尺寸、材质和适配盖进行进一步选型。" : "Further selection can be based on container capacity, dimensions, material, and compatible lids."}
-              </p>
             </div>
           ))}
         </div>
@@ -393,7 +417,7 @@ export function KnowledgeBasePage({ locale }: { locale: Locale }) {
       <PageHero
         eyebrow={t.nav.knowledge}
         title={locale === "zh" ? "知识库" : "Knowledge Base"}
-        description={locale === "zh" ? "围绕产品百科、组培知识、FAQ和行业资讯建立可持续扩展的内容结构。" : "A scalable content structure for Product Encyclopedia, Tissue Culture Knowledge, FAQ, and Industry News & Insights."}
+        description={locale === "zh" ? "围绕产品资料库、组织培养知识库、常见问题和行业资讯建立可持续扩展的内容结构。" : "A scalable content structure for Product Library, Tissue Culture Resources, FAQ, and Industry Updates."}
       />
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-4">

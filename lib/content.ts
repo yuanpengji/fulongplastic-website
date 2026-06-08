@@ -29,6 +29,14 @@ export const text = {
       capacity: "容量",
       height: "高度",
       bottomDiameter: "底部直径",
+      openingDiameter: "口径",
+      length: "长度",
+      width: "宽度",
+      weight: "重量",
+      modelNumber: "型号",
+      filmSize: "膜片尺寸",
+      ventHoleDiameter: "透气孔径",
+      filterPatchInfo: "透气膜信息",
       material: "材质",
       compatibleLid: "适配盖",
       name: "姓名",
@@ -60,6 +68,14 @@ export const text = {
       capacity: "Capacity",
       height: "Height",
       bottomDiameter: "Bottom Diameter",
+      openingDiameter: "Opening Diameter",
+      length: "Length",
+      width: "Width",
+      weight: "Weight",
+      modelNumber: "Model Number",
+      filmSize: "Film Size",
+      ventHoleDiameter: "Vent Hole Diameter",
+      filterPatchInfo: "Filter Patch Information",
       material: "Material",
       compatibleLid: "Compatible Lid",
       name: "Name",
@@ -74,6 +90,7 @@ export const text = {
 export const company = {
   email: "sales@fulongplastic.com",
   whatsapp: "To be confirmed",
+  phone: "+86 18358715006",
   zh: {
     positioning: "组织培养容器及相关配套产品源头生产厂家",
     about:
@@ -81,13 +98,13 @@ export const company = {
     aboutMore:
       "多年来，富龙塑业服务于高校、科研院所、商业化繁育客户、农业科研客户及国际客户。公司重视产品规格稳定性、长期供货能力和实际使用需求，并支持根据不同培养场景进行产品定制开发。",
     proofPoints: [
-      "20+年制造经验",
-      "源头生产厂家",
-      "高校及科研院所客户",
-      "商业化繁育客户",
-      "国际客户",
-      "支持定制开发",
-      "长期稳定供货"
+      "20余年制造经验",
+      "源头工厂供货",
+      "服务高校与科研院所",
+      "服务商业化繁育客户",
+      "面向国际客户供货",
+      "支持产品定制开发",
+      "长期稳定供应能力"
     ]
   },
   en: {
@@ -115,14 +132,14 @@ export const applications = [
     en: "Plant Tissue Culture"
   },
   {
-    slug: "micropropagation",
-    zh: "微繁殖",
-    en: "Micropropagation"
-  },
-  {
     slug: "seedling-propagation",
     zh: "种苗繁育",
     en: "Seedling Propagation"
+  },
+  {
+    slug: "micropropagation",
+    zh: "微繁殖培养",
+    en: "Micropropagation"
   },
   {
     slug: "agricultural-research",
@@ -131,12 +148,12 @@ export const applications = [
   },
   {
     slug: "university-laboratory-research",
-    zh: "高校及实验室研究",
+    zh: "高校与科研实验",
     en: "University & Laboratory Research"
   },
   {
     slug: "other-research-cultivation-applications",
-    zh: "其他科研与培养应用",
+    zh: "其他培养应用",
     en: "Other Research & Cultivation Applications"
   }
 ];
@@ -160,9 +177,9 @@ export const productCategories = [
     slug: "pp-series",
     image: "/products/pp-culture-containers.jpg",
     zh: {
-      name: "PP培养系列",
-      title: "PP培养系列",
-      description: "包含PP培养容器、PP培养盒、热封组培袋与自封站立组培袋，便于按规格对比和批量询价。"
+      name: "PP组培系列",
+      title: "PP组培系列",
+      description: "包含PP组培容器、PP培养盒、热封组培袋与自封自立组培袋，便于按规格对比和批量询价。"
     },
     en: {
       name: "PP Culture Container Series",
@@ -174,14 +191,14 @@ export const productCategories = [
     slug: "accessories",
     image: "/products/culture-lids.jpg",
     zh: {
-      name: "配套产品",
-      title: "配套产品",
-      description: "组培盖、透气膜、封口膜与培养篮，围绕容器适配和培养流程配套供应。"
+      name: "组培配套产品",
+      title: "组培配套产品",
+      description: "组培盖、封口膜与组培筐，围绕容器适配和培养流程配套供应。"
     },
     en: {
       name: "Accessories",
       title: "Accessories",
-      description: "Culture lids, vent filter patches, sealing film, and culture baskets supplied for container compatibility and cultivation workflows."
+      description: "Culture lids, sealing film, and culture baskets supplied for container compatibility and cultivation workflows."
     }
   },
   {
@@ -565,26 +582,249 @@ export const products: Product[] = [
   }
 ];
 
+type FieldKey = keyof (typeof text)["zh"]["fields"];
+
+export type SpecCard = {
+  id: string;
+  image: string;
+  fields: Partial<Record<FieldKey, string>>;
+};
+
+export type ProductSpecGroup = {
+  category: "pc-series" | "pp-series" | "accessories" | "featured";
+  slug: string;
+  image: string;
+  zh: {
+    name: string;
+    description?: string;
+  };
+  en: {
+    name: string;
+    description?: string;
+  };
+  cards: SpecCard[];
+};
+
+const pcBottleImage = "/products/pc-tissue-culture-bottles.jpg";
+const pcTubeImage = "/products/pc-culture-tubes.jpg";
+const pcCupImage = "/products/pc-wide-mouth-culture-cups.jpg";
+const ppContainerImage = "/products/pp-culture-containers.jpg";
+const ppBoxImage = "/products/pp-culture-boxes.jpg";
+const bagImage = "/products/heat-seal-culture-bags.jpg";
+const lidImage = "/products/culture-lids.jpg";
+const filmImage = "/products/vent-filter-patches.jpg";
+const basketImage = "/products/culture-baskets.jpg";
+const sugarFreeImage = "/products/sugar-free-ventilated-culture-box.jpg";
+
+export const productSpecGroups: ProductSpecGroup[] = [
+  {
+    category: "pc-series",
+    slug: "pc-tissue-culture-bottles",
+    image: pcBottleImage,
+    zh: { name: "PC组培瓶", description: "按容量和瓶体尺寸直接展示常用规格，便于采购前快速比对。" },
+    en: { name: "PC Tissue Culture Bottles", description: "Common bottle specifications listed directly for quick B2B comparison." },
+    cards: [
+      ["145ml", "96mm", "60mm", "60mm", "PC", "60#"].map(String),
+      ["160ml", "80mm", "60mm", "60mm", "PC", "60#"].map(String),
+      ["250ml", "72mm", "77mm", "77mm", "PC", "77#"].map(String),
+      ["250ml", "98mm", "67mm", "67mm", "PC", "67#"].map(String),
+      ["260ml", "90mm", "70mm", "70mm", "PC", "70#"].map(String),
+      ["270ml", "108mm", "68mm", "68mm", "PC", "68#"].map(String),
+      ["300ml", "96mm", "77mm", "77mm", "PC", "77#"].map(String),
+      ["340ml", "90mm", "82mm", "65mm", "PC", "65#"].map(String),
+      ["350ml", "96mm", "77mm", "77mm", "PC", "77#"].map(String),
+      ["430ml", "90mm", "81mm", "85mm", "PC", "85#"].map(String),
+      ["520ml", "108mm", "91mm", "91mm", "PC", "90#"].map(String),
+      ["600ml", "100mm", "95mm", "95mm", "PC", "95#"].map(String),
+      ["650ml", "110mm", "95mm", "95mm", "PC", "95#"].map(String),
+      ["700ml", "105mm", "100mm", "100mm", "PC", "95#"].map(String),
+      ["800ml", "145mm", "96mm", "96mm", "PC", "95#"].map(String),
+      ["1000ml", "185mm", "96mm", "96mm", "PC", "95#"].map(String)
+    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
+      id: `pc-bottle-${index + 1}`,
+      image: pcBottleImage,
+      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
+    }))
+  },
+  {
+    category: "pc-series",
+    slug: "pc-culture-tubes",
+    image: pcTubeImage,
+    zh: { name: "PC组培试管", description: "适用于小容量培养和实验室培养的常用试管规格。" },
+    en: { name: "PC Culture Tubes", description: "Common tube sizes for small-volume culture and laboratory use." },
+    cards: [
+      ["按规格匹配", "91mm", "47mm", "47mm", "PC", "47mm配套盖"],
+      ["按规格匹配", "100mm", "30mm", "30mm", "PC", "30mm配套盖"],
+      ["按规格匹配", "150mm", "30mm", "30mm", "PC", "30mm配套盖"],
+      ["按规格匹配", "200mm", "30mm", "30mm", "PC", "30mm配套盖"]
+    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
+      id: `pc-tube-${index + 1}`,
+      image: pcTubeImage,
+      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
+    }))
+  },
+  {
+    category: "pc-series",
+    slug: "pc-wide-mouth-culture-cups",
+    image: pcCupImage,
+    zh: { name: "PC广口培养杯", description: "广口结构便于培养操作，按容量、高度和盖型直接区分。" },
+    en: { name: "PC Wide Mouth Culture Cups", description: "Wide-mouth cups listed by capacity, height, and lid option." },
+    cards: [
+      ["340ml", "95mm", "83mm", "90mm", "PC", "密封盖"],
+      ["340ml", "95mm", "83mm", "90mm", "PC", "透气盖"],
+      ["430ml", "125mm", "83mm", "90mm", "PC", "密封盖"],
+      ["430ml", "125mm", "83mm", "90mm", "PC", "透气盖"],
+      ["340ml", "95mm", "83mm", "90mm", "PC", "可配透气膜盖"],
+      ["430ml", "125mm", "83mm", "90mm", "PC", "可配透气膜盖"]
+    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
+      id: `pc-cup-${index + 1}`,
+      image: pcCupImage,
+      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
+    }))
+  },
+  {
+    category: "pp-series",
+    slug: "pp-culture-containers",
+    image: ppContainerImage,
+    zh: { name: "PP组培容器", description: "PP培养容器按容量和口径规格展示，适合批量采购比对。" },
+    en: { name: "PP Culture Containers", description: "PP containers organized by capacity and opening size for bulk sourcing." },
+    cards: [
+      ["160ml", "54mm", "66mm", "66mm", "PP", "66mm配套盖"],
+      ["200ml", "70mm", "68mm", "68mm", "PP", "68mm配套盖"],
+      ["300ml", "78mm", "73mm", "73mm", "PP", "73mm配套盖"],
+      ["500ml", "95mm", "90mm", "90mm", "PP", "90mm配套盖"],
+      ["750ml", "95mm", "110mm", "110mm", "PP", "110mm配套盖"],
+      ["1000ml", "125mm", "110mm", "110mm", "PP", "110mm配套盖"]
+    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
+      id: `pp-container-${index + 1}`,
+      image: ppContainerImage,
+      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
+    }))
+  },
+  {
+    category: "pp-series",
+    slug: "pp-culture-boxes",
+    image: ppBoxImage,
+    zh: { name: "PP培养盒", description: "培养盒以长宽高和材质为主要采购参数。" },
+    en: { name: "PP Culture Boxes", description: "Culture boxes listed by length, width, height, and material." },
+    cards: [
+      {
+        id: "pp-box-1",
+        image: ppBoxImage,
+        fields: { capacity: "按规格匹配", length: "85mm", width: "60mm", height: "45mm", material: "PP" }
+      }
+    ]
+  },
+  {
+    category: "pp-series",
+    slug: "heat-seal-culture-bags",
+    image: bagImage,
+    zh: { name: "热封组培袋", description: "热封袋按袋体尺寸和透气膜配置展示。" },
+    en: { name: "Heat Seal Culture Bags", description: "Heat seal bags listed by bag size and filter patch configuration." },
+    cards: [
+      { id: "heat-seal-bag-1", image: bagImage, fields: { length: "14cm", width: "12cm", height: "按袋型", material: "PP膜", filterPatchInfo: "支持透气膜配置" } },
+      { id: "heat-seal-bag-2", image: bagImage, fields: { length: "24cm", width: "20cm", height: "按袋型", material: "PP膜", filterPatchInfo: "支持透气膜配置" } }
+    ]
+  },
+  {
+    category: "pp-series",
+    slug: "self-seal-stand-up-culture-bags",
+    image: bagImage,
+    zh: { name: "自封自立组培袋", description: "自封自立袋按尺寸和透气膜配置展示。" },
+    en: { name: "Self-Seal Stand-Up Culture Bags", description: "Self-seal stand-up bags listed by size and filter patch configuration." },
+    cards: [
+      { id: "self-seal-bag-1", image: bagImage, fields: { length: "14cm", width: "12cm", height: "按袋型", material: "PP膜", filterPatchInfo: "支持透气膜配置" } },
+      { id: "self-seal-bag-2", image: bagImage, fields: { length: "18.5cm", width: "16cm", height: "按袋型", material: "PP膜", filterPatchInfo: "支持透气膜配置" } }
+    ]
+  },
+  {
+    category: "accessories",
+    slug: "culture-lids",
+    image: lidImage,
+    zh: { name: "组培盖", description: "按盖体型号展示，便于与容器口径对应。" },
+    en: { name: "Culture Lids", description: "Lid models listed for matching with container openings." },
+    cards: ["30#", "40#", "52#", "53#", "54#", "55#", "56#", "57#", "58#", "60#", "61#", "63#", "64#", "65#", "69#", "70#", "72#", "75#", "77#", "80#", "82#", "90#", "95#"].map((modelNumber) => ({
+      id: `lid-${modelNumber.replace("#", "")}`,
+      image: lidImage,
+      fields: { modelNumber }
+    }))
+  },
+  {
+    category: "accessories",
+    slug: "sealing-film",
+    image: filmImage,
+    zh: { name: "封口膜", description: "按膜片尺寸和透气孔径展示。" },
+    en: { name: "Sealing Film", description: "Sealing film listed by film size and vent hole diameter." },
+    cards: ["12×12cm", "14×14cm", "16×16cm"].flatMap((filmSize) =>
+      ["1cm", "2cm", "3cm"].map((ventHoleDiameter) => ({
+        id: `film-${filmSize}-${ventHoleDiameter}`,
+        image: filmImage,
+        fields: { filmSize, ventHoleDiameter }
+      }))
+    )
+  },
+  {
+    category: "accessories",
+    slug: "culture-baskets",
+    image: basketImage,
+    zh: { name: "组培筐", description: "按长宽高和重量展示，适用于组培容器周转和存放。" },
+    en: { name: "Culture Baskets", description: "Baskets listed by length, width, height, and weight for handling and storage." },
+    cards: [
+      ["490mm", "320mm", "50mm", "300g"],
+      ["510mm", "310mm", "70mm", "270g"],
+      ["520mm", "420mm", "60mm", "430g"],
+      ["520mm", "420mm", "70mm", "440g"],
+      ["530mm", "430mm", "70mm", "480g"],
+      ["600mm", "440mm", "60mm", "500g"],
+      ["620mm", "520mm", "60mm", "700g"],
+      ["670mm", "450mm", "60mm", "700g"],
+      ["670mm", "455mm", "65mm", "680g"]
+    ].map(([length, width, height, weight], index) => ({
+      id: `basket-${index + 1}`,
+      image: basketImage,
+      fields: { length, width, height, weight }
+    }))
+  },
+  {
+    category: "featured",
+    slug: "sugar-free-ventilated-culture-box",
+    image: sugarFreeImage,
+    zh: { name: "无糖透气培养盒", description: "特色产品保持现有展示结构，后续可继续补充正式规格。" },
+    en: { name: "Sugar-Free Ventilated Culture Box", description: "Featured product retained with the current structure for future specification updates." },
+    cards: [
+      {
+        id: "sugar-free-box-1",
+        image: sugarFreeImage,
+        fields: { capacity: "按型号匹配", height: "按型号", bottomDiameter: "按型号", openingDiameter: "按型号", material: "透明塑料", compatibleLid: "透气盒盖" }
+      }
+    ]
+  }
+];
+
+export function getSpecGroupsByCategory(categorySlug: string) {
+  return productSpecGroups.filter((group) => group.category === categorySlug);
+}
+
 export const knowledgeCategories = [
   {
     slug: "product-encyclopedia",
-    zh: "Product Encyclopedia",
-    en: "Product Encyclopedia"
+    zh: "产品资料库",
+    en: "Product Library"
   },
   {
     slug: "tissue-culture-knowledge",
-    zh: "Tissue Culture Knowledge",
-    en: "Tissue Culture Knowledge"
+    zh: "组织培养知识库",
+    en: "Tissue Culture Resources"
   },
   {
     slug: "faq",
-    zh: "FAQ",
+    zh: "常见问题",
     en: "FAQ"
   },
   {
     slug: "industry-news-insights",
-    zh: "Industry News & Insights",
-    en: "Industry News & Insights"
+    zh: "行业资讯",
+    en: "Industry Updates"
   }
 ] as const;
 

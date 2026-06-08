@@ -5,7 +5,7 @@ export const metadata = buildMetadata({
   locale: "en",
   path: "/knowledge-base/",
   title: "Knowledge Base | Fulong Plastic",
-  description: "Fulong Plastic Knowledge Base includes Product Encyclopedia, Tissue Culture Knowledge, FAQ, and Industry News & Insights."
+  description: "Fulong Plastic Knowledge Base includes Product Library, Tissue Culture Resources, FAQ, and Industry Updates."
 });
 
 export default function Page() {

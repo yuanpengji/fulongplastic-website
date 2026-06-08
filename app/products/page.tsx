@@ -5,7 +5,7 @@ export const metadata = buildMetadata({
   locale: "zh",
   path: "/products/",
   title: "产品中心 | 富龙塑业组织培养容器",
-  description: "富龙塑业产品中心包含PC系列、PP系列、配套产品和无糖透气培养盒，按容量、尺寸、材质和适配盖展示。"
+  description: "富龙塑业产品中心包含PC组培系列、PP组培系列、组培配套产品和特色产品，按规格卡片直接展示。"
 });
 
 export default function Page() {
