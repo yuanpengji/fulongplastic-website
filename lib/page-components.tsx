@@ -76,6 +76,30 @@ function formatSpecValue(value: string, locale: Locale) {
   return value.replace(/(\d+mm)配套盖/g, "$1 matched lid");
 }
 
+function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[number]["cards"][number]["fields"]) {
+  if (fields.modelNumber) {
+    return ["modelNumber"];
+  }
+
+  if (fields.filmSize) {
+    return ["filmSize", "ventHoleDiameter"];
+  }
+
+  if (fields.weight) {
+    return ["length", "width", "height", "weight"];
+  }
+
+  if (fields.filterPatchInfo) {
+    return ["length", "width", "material", "filterPatchInfo"];
+  }
+
+  if (fields.length && fields.width) {
+    return ["capacity", "length", "width", "height", "material"];
+  }
+
+  return ["capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
+}
+
 function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroupsByCategory>[number]; locale: Locale }) {
   const t = text[locale];
 
@@ -88,16 +112,22 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
         {group.cards.map((card) => (
           <article key={card.id} className="overflow-hidden rounded-lg border border-line bg-panel">
-            <div className="aspect-[4/3] bg-black">
-              <Image src={card.image} alt={group[locale].name} width={420} height={315} className="h-full w-full object-contain p-4" />
+            <div className="aspect-square overflow-hidden">
+              <Image src={card.image} alt={group[locale].name} width={600} height={600} className="h-full w-full object-cover" />
             </div>
             <dl className="grid gap-2 p-4 text-sm">
-              {Object.entries(card.fields).map(([field, value]) => (
-                <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
-                  <dt className="text-steel">{t.fields[field as keyof typeof t.fields]}</dt>
-                  <dd className="text-right font-semibold text-slate-100">{formatSpecValue(value, locale)}</dd>
-                </div>
-              ))}
+              {getSpecFieldOrder(card.fields)
+                .filter((field) => card.fields[field as keyof typeof card.fields])
+                .map((field) => {
+                  const value = card.fields[field as keyof typeof card.fields];
+
+                  return (
+                    <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
+                      <dt className="text-steel">{t.fields[field as keyof typeof t.fields]}</dt>
+                      <dd className="text-right font-semibold text-slate-100">{formatSpecValue(String(value), locale)}</dd>
+                    </div>
+                  );
+                })}
             </dl>
           </article>
         ))}
@@ -123,13 +153,12 @@ export function HomePage({ locale }: { locale: Locale }) {
         }}
       />
       <section className="relative min-h-[680px] overflow-hidden border-b border-line bg-black">
-        <Image src="/products/pc-tissue-culture-bottles.jpg" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom opacity-65" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#08090b_0%,rgba(8,9,11,.92)_34%,rgba(8,9,11,.35)_100%)]" />
+        <Image src="/products/pc-tissue-culture-bottles.jpg" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom" />
         <div className="container relative flex min-h-[680px] items-center">
-          <div className="max-w-2xl py-20">
+          <div className="max-w-xl py-20 pr-8 lg:pr-16">
             <span className="eyebrow">{company[locale].positioning}</span>
             <h1 className="mt-5 text-5xl font-bold leading-tight md:text-7xl">{hero.heroTitle}</h1>
-            <p className="mt-6 text-lg leading-8 text-slate-300">{hero.heroSubtitle}</p>
+            <p className="mt-6 max-w-lg text-lg leading-8 text-slate-300">{hero.heroSubtitle}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href={localizePath("/products/", locale)} className="btn btn-primary">
                 {t.actions.viewProducts}
@@ -216,10 +245,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="mt-8 grid gap-5 md:grid-cols-4">
             {knowledgeCategories.map((category) => (
               <Link key={category.slug} href={localizePath(`/knowledge-base/${category.slug}/`, locale)} className="panel p-5">
-                <h3 className="font-bold">{category[locale]}</h3>
-                <p className="mt-3 text-sm text-steel">
-                  {getArticlesByCategory(category.slug)[0]?.[locale].summary}
-                </p>
+                <h3 className="font-bold">{hero.knowledgePreviewTitles[category.slug]}</h3>
               </Link>
             ))}
           </div>
@@ -409,7 +435,7 @@ export function KnowledgeBasePage({ locale }: { locale: Locale }) {
       <PageHero
         eyebrow={t.nav.knowledge}
         title={locale === "zh" ? "知识库" : "Knowledge Base"}
-        description={locale === "zh" ? "围绕产品资料库、组织培养知识库、常见问题和行业资讯建立可持续扩展的内容结构。" : "A scalable content structure for Product Library, Tissue Culture Resources, FAQ, and Industry Updates."}
+        description={locale === "zh" ? "围绕产品资料库、组织培养知识库、常见问题和行业资讯建立可持续扩展的内容结构。" : "A scalable content structure for Product Library, Tissue Culture Knowledge Base, FAQ, and Industry Insights."}
       />
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-4">
