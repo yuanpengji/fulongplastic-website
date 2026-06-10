@@ -8,8 +8,8 @@ export function ProductCard({ product, locale }: { product: Product; locale: Loc
 
   return (
     <Link href={productPath(product, locale)} className="panel group overflow-hidden">
-      <div className="aspect-[4/3] bg-black">
-        <Image src={product.image} alt={content.name} width={720} height={540} className="h-full w-full object-contain p-5 transition duration-200 group-hover:scale-[1.02]" />
+      <div className="aspect-square overflow-hidden">
+        <Image src={product.image} alt={content.name} width={720} height={720} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" />
       </div>
       <div className="p-5">
         <h3 className="text-lg font-bold">{content.name}</h3>

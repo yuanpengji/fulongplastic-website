@@ -90,7 +90,7 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
   }
 
   if (fields.filterPatchInfo) {
-    return ["length", "width", "material", "filterPatchInfo"];
+    return ["length", "width", "height", "material", "filterPatchInfo"];
   }
 
   if (fields.length && fields.width) {
@@ -118,6 +118,7 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
             <dl className="grid gap-2 p-4 text-sm">
               {getSpecFieldOrder(card.fields)
                 .filter((field) => card.fields[field as keyof typeof card.fields])
+                .filter((field) => !card.hiddenFields?.includes(field as keyof typeof text.zh.fields))
                 .map((field) => {
                   const value = card.fields[field as keyof typeof card.fields];
 
@@ -195,8 +196,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {productCategories.map((category) => (
               <Link key={category.slug} href={localizePath(`/products/${category.slug}/`, locale)} className="panel overflow-hidden">
-                <div className="aspect-[4/3] bg-black">
-                  <Image src={category.image} alt={category[locale].title} width={520} height={390} className="h-full w-full object-contain p-5" />
+                <div className="aspect-square overflow-hidden bg-black">
+                  <Image src={category.image} alt={category[locale].title} width={600} height={600} className="h-full w-full object-cover" />
                 </div>
                 <div className="p-5">
                   <h3 className="text-xl font-bold">{category[locale].name}</h3>
@@ -264,13 +265,19 @@ export function ProductsPage({ locale }: { locale: Locale }) {
       <PageHero
         eyebrow={t.nav.products}
         title={locale === "zh" ? "产品中心" : "Products"}
-        description={locale === "zh" ? "按PC组培系列、PP组培系列、组培配套产品和特色产品组织，便于按规格卡片直接查找。" : "Organized for B2B buyers by PC tissue culture products, PP culture containers, accessories, and featured products for specification-based sourcing."}
+        description={
+          locale === "zh"
+            ? "产品涵盖PC组培系列、PP组培系列、组培配套产品及特色培养设备，为植物组织培养、种苗繁育和科研实验提供完整解决方案。"
+            : "Our product portfolio includes PC tissue culture products, PP tissue culture products, accessories, and specialty cultivation equipment, providing complete solutions for plant tissue culture, propagation, and laboratory applications."
+        }
       />
       <section className="section">
         <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {productCategories.map((category) => (
             <Link key={category.slug} href={localizePath(`/products/${category.slug}/`, locale)} className="panel overflow-hidden">
-              <Image src={category.image} alt={category[locale].title} width={600} height={450} className="aspect-[4/3] bg-black object-contain p-5" />
+              <div className="aspect-square overflow-hidden bg-black">
+                <Image src={category.image} alt={category[locale].title} width={600} height={600} className="h-full w-full object-cover" />
+              </div>
               <div className="p-5">
                 <h2 className="text-xl font-bold">{category[locale].name}</h2>
                 <p className="mt-3 text-sm leading-6 text-steel">{category[locale].description}</p>
@@ -286,10 +293,7 @@ export function ProductsPage({ locale }: { locale: Locale }) {
 export function CategoryPage({ locale, categorySlug }: { locale: Locale; categorySlug: string }) {
   const category = getCategory(categorySlug);
   if (!category) notFound();
-  const specGroups = getSpecGroupsByCategory(categorySlug);
-  const relatedProducts = products
-    .filter((product) => product.category !== categorySlug)
-    .slice(0, 3);
+  const categoryProducts = products.filter((product) => product.category === categorySlug);
 
   return (
     <Shell locale={locale} path={`/products/${categorySlug}/`}>
@@ -304,20 +308,10 @@ export function CategoryPage({ locale, categorySlug }: { locale: Locale; categor
       />
       <PageHero eyebrow={category[locale].name} title={category[locale].title} description={category[locale].description} />
       <section className="section">
-        <div className="container space-y-14">
-          {specGroups.map((group) => (
-            <SpecCardGrid key={group.slug} group={group} locale={locale} />
+        <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {categoryProducts.map((product) => (
+            <ProductCard key={product.slug} product={product} locale={locale} />
           ))}
-        </div>
-      </section>
-      <section className="section-tight border-y border-line bg-[#0b0d10]">
-        <div className="container">
-          <h2 className="text-3xl font-bold">{text[locale].actions.relatedProducts}</h2>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {relatedProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} locale={locale} />
-            ))}
-          </div>
         </div>
       </section>
       <ContactBlock locale={locale} productName={category[locale].title} />
@@ -331,6 +325,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
   const content = product[locale];
   const t = text[locale];
   const related = product.related.map(getProduct).filter(Boolean) as typeof products;
+  const specGroups = getSpecGroupsByCategory(product.category).filter((group) => group.slug === product.slug);
 
   return (
     <Shell locale={locale} path={product.category === "featured" ? `/products/featured/${product.slug}/` : `/products/${product.category}/${product.slug}/`}>
@@ -368,6 +363,15 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
           </div>
         </div>
       </section>
+      {specGroups.length ? (
+        <section className="section-tight border-y border-line bg-[#0b0d10]">
+          <div className="container space-y-12">
+            {specGroups.map((group) => (
+              <SpecCardGrid key={group.slug} group={group} locale={locale} />
+            ))}
+          </div>
+        </section>
+      ) : null}
       <section className="section-tight border-y border-line bg-[#0b0d10]">
         <div className="container">
           <h2 className="text-3xl font-bold">{locale === "zh" ? "规格表" : "Specification Table"}</h2>

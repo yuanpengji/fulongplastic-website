@@ -5,7 +5,7 @@ export const metadata = buildMetadata({
   locale: "en",
   path: "/",
   title: "Fulong Plastic | Tissue Culture Container Manufacturer & Supplier",
-  description: "Fulong Plastic has over 20 years of manufacturing experience, specializing in tissue culture containers and related accessories for B2B customers."
+  description: "Fulong Plastic supplies specification-stable tissue culture containers and accessories for research institutions, laboratories, commercial propagation companies, and global B2B buyers."
 });
 
 export default function Page() {

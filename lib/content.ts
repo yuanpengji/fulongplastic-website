@@ -36,7 +36,7 @@ export const text = {
       modelNumber: "型号",
       filmSize: "膜片尺寸",
       ventHoleDiameter: "透气孔径",
-      filterPatchInfo: "透气膜信息",
+      filterPatchInfo: "透气膜选项",
       material: "材质",
       compatibleLid: "适配盖",
       name: "姓名",
@@ -75,7 +75,7 @@ export const text = {
       modelNumber: "Model",
       filmSize: "Film Size",
       ventHoleDiameter: "Vent Hole Diameter",
-      filterPatchInfo: "Filter Patch Information",
+      filterPatchInfo: "Breathable Membrane Option",
       material: "Material",
       compatibleLid: "Compatible Lid",
       name: "Name",
@@ -122,13 +122,13 @@ export const company = {
     aboutMore:
       "公司长期服务高校、科研院所、商业化繁育企业、农业科研客户及国际客户，重视规格一致性、容器适配性和长期供货稳定性。针对不同培养流程和使用习惯，富龙塑业可配合客户进行产品结构、规格和配套方案的开发沟通。",
     proofPoints: [
-      "20余年制造经验",
-      "源头工厂供货",
-      "服务高校与科研院所",
-      "服务商业化繁育客户",
-      "面向国际客户供货",
-      "支持产品定制开发",
-      "长期稳定供应能力"
+      "20+年组织培养容器制造经验",
+      "组织培养容器源头工厂",
+      "服务高校与科研机构",
+      "服务商业化种苗繁育企业",
+      "全球客户长期供货",
+      "定制化产品开发能力",
+      "稳定批量交付能力"
     ]
   },
   en: {
@@ -138,13 +138,13 @@ export const company = {
     aboutMore:
       "We supply universities, research institutes, commercial propagation companies, agricultural research customers, and international buyers. Our work focuses on specification consistency, container compatibility, reliable long-term supply, and practical product development for different tissue culture and cultivation workflows.",
     proofPoints: [
-      "20+ years manufacturing experience",
-      "Direct factory supply",
-      "Universities and research institutes customers",
-      "Commercial propagation customers",
-      "International customers",
-      "Custom product development",
-      "Reliable long-term supply"
+      "20+ years in tissue culture container manufacturing",
+      "Original factory for tissue culture containers",
+      "Serving universities and research institutions",
+      "Serving commercial seedling propagation companies",
+      "Long-term supply for global customers",
+      "Custom product development capability",
+      "Stable bulk delivery capability"
     ]
   }
 };
@@ -152,33 +152,33 @@ export const company = {
 export const applications = [
   {
     slug: "plant-tissue-culture",
-    zh: "植物组织培养",
-    en: "Plant Tissue Culture"
+    zh: "植物组织培养实验",
+    en: "Plant Tissue Culture Research"
   },
   {
     slug: "seedling-propagation",
-    zh: "种苗繁育",
-    en: "Seedling Propagation"
+    zh: "商业化种苗繁育",
+    en: "Commercial Seedling Propagation"
   },
   {
     slug: "micropropagation",
-    zh: "植物微繁殖",
-    en: "Micropropagation"
+    zh: "植物微繁殖生产",
+    en: "Plant Micropropagation Production"
   },
   {
     slug: "agricultural-research",
-    zh: "农业科研",
-    en: "Agricultural Research"
+    zh: "农业与园艺科研",
+    en: "Agricultural and Horticultural Research"
   },
   {
     slug: "university-laboratory-research",
-    zh: "高校与科研实验室",
-    en: "University & Laboratory Research"
+    zh: "高校与科研机构",
+    en: "Universities and Research Institutions"
   },
   {
     slug: "other-research-cultivation-applications",
-    zh: "其他培养应用",
-    en: "Other Culture Applications"
+    zh: "其他培养与繁育应用",
+    en: "Other Culture and Propagation Applications"
   }
 ];
 
@@ -189,12 +189,12 @@ export const productCategories = [
     zh: {
       name: "PC组培系列",
       title: "PC组培系列",
-      description: "涵盖PC组培瓶、PC组培试管与PC广口培养杯，按容量、口径、底径、高度、材质和适配盖集中展示。"
+      description: "富龙塑业PC组培系列采用高透明聚碳酸酯（PC）材料制造，具有优异的透光性和机械强度。产品支持透气培养，可重复使用，并可耐受最高130℃高温高压灭菌。"
     },
     en: {
       name: "PC Tissue Culture Series",
       title: "PC Tissue Culture Series",
-      description: "PC tissue culture bottles, culture tubes, and wide-mouth culture cups organized by capacity, opening diameter, bottom diameter, height, material, and compatible lids."
+      description: "Manufactured from high-transparency polycarbonate (PC), these products provide excellent clarity and durability. They support ventilated culture and are autoclavable up to 130°C."
     }
   },
   {
@@ -203,12 +203,12 @@ export const productCategories = [
     zh: {
       name: "PP组培系列",
       title: "PP组培系列",
-      description: "涵盖PP组培容器、PP培养盒、热封组培袋与自封自立组培袋，便于按规格进行选型、比对和批量询价。"
+      description: "富龙塑业PP组培系列采用优质聚丙烯（PP）材料制造，具有良好的透明度、耐热性和化学稳定性，兼顾培养效果与经济性。"
     },
     en: {
       name: "PP Culture Series",
       title: "PP Culture Series",
-      description: "PP tissue culture containers, culture boxes, heat-seal culture bags, and self-seal stand-up culture bags for specification comparison, sourcing, and bulk inquiries."
+      description: "Fulong PP tissue culture products are manufactured from high-quality polypropylene (PP), offering excellent transparency, heat resistance, chemical stability, and cost efficiency."
     }
   },
   {
@@ -217,12 +217,12 @@ export const productCategories = [
     zh: {
       name: "组培配套产品",
       title: "组培配套产品",
-      description: "提供组培盖、封口膜与组培筐等配套产品，围绕容器适配、封口透气和周转存放需求供应。"
+      description: "涵盖组培盖、封口膜与组培筐，围绕容器适配、封口透气、集中摆放、转运和管理需求供应。"
     },
     en: {
       name: "Accessories",
       title: "Accessories",
-      description: "Culture lids, sealing film, and culture baskets supplied for container matching, sealing, ventilation, handling, and storage workflows."
+      description: "Culture lids, sealing films, and tissue culture baskets for container matching, sealing, ventilation, organized placement, transportation, and management."
     }
   },
   {
@@ -231,14 +231,14 @@ export const productCategories = [
     zh: {
       name: "特色产品",
       title: "特色产品",
-      description: "展示无糖透气培养盒，便于客户了解产品结构并提交进一步规格需求。"
+      description: "展示无糖透气培养盒等特色培养设备，支持无糖培养及特殊培养环境应用。"
     },
     en: {
       name: "Featured Products",
       title: "Featured Products",
-      description: "Featuring the Sugar-Free Ventilated Culture Box for buyers who need to review the product structure and discuss specifications."
+      description: "Featuring specialty cultivation equipment such as the Sugar-Free Ventilated Culture Box for sugar-free culture and specialized cultivation environments."
     }
-  }
+  },
 ] as const;
 
 export type Product = {
@@ -276,27 +276,27 @@ export const products: Product[] = [
     category: "pc-series",
     image: "/products/pc-tissue-culture-bottles.jpg",
     specs: {
-      capacity: "145ml / 160ml / 250ml / 300ml / 340ml / 430ml / 520ml / 600ml / 650ml / 800ml / 1000ml",
-      height: "57-185mm",
-      bottomDiameter: "60-100mm",
+      capacity: "145mL / 160mL / 180mL / 240mL / 250mL / 260mL / 270mL / 300mL / 350mL / 520mL / 600mL / 650mL / 800mL / 1000mL",
+      height: "96mm / 80mm / 57mm / 72mm / 98mm / 90mm / 108mm / 110mm / 100mm / 145mm / 185mm",
+      bottomDiameter: "60mm / 77x77mm / 77mm / 67mm / 70mm / 68mm / 91mm / 95x95mm / 96mm",
       material: "PC",
-      compatibleLid: "Vented or sealed culture lids"
+      compatibleLid: "41# / 53# / 58# / 60# / 72# / 61# / 64# / 69# / 77# / 95#"
     },
-    variants: ["96 x 60mm 145ml", "80 x 60mm 160ml", "90 x 82 x 65mm 340ml", "90 x 81 x 85mm 430ml", "108 x 91mm 520ml", "185 x 96mm 1000ml"],
-    related: ["culture-lids", "vent-filter-patches", "culture-baskets"],
+    variants: ["96×60mm", "80×60mm", "57×77×77mm", "80×77mm", "72×77×77mm", "98×67mm", "90×70mm", "108×68mm", "96×77mm", "96×77×77mm", "110×77mm", "108×91mm", "100×95×95mm", "110×95×95mm", "145×96mm", "185×96mm"],
+    related: ["pc-culture-tubes", "pc-wide-mouth-culture-cups", "culture-lids"],
     zh: {
       name: "PC组培瓶",
-      description: "多规格PC组培瓶，重点展示容量、尺寸、材质和适配盖信息。",
-      features: ["多容量规格可选", "透明PC瓶身", "可配透气或密封盖", "支持规格化批量询价"],
+      description: "富龙塑业PC组培瓶采用高透明PC材料制造，透光性优异，便于观察培养状态。产品支持透气培养，可重复使用，并可耐受最高130℃高温高压灭菌，适用于植物组织培养、种苗繁育及科研实验等应用场景。",
+      features: ["高透明PC材质", "支持透气培养", "可重复使用", "可耐受最高130℃高温高压灭菌"],
       seoTitle: "PC组培瓶 | 富龙塑业组织培养容器",
-      metaDescription: "富龙塑业提供多规格PC组培瓶，规格覆盖145ml至1000ml，重点参数包括容量、高度、底部直径、PC材质和适配盖。"
+      metaDescription: "富龙塑业PC组培瓶采用高透明PC材料制造，支持透气培养、重复使用及最高130℃高温高压灭菌。"
     },
     en: {
       name: "PC Tissue Culture Bottles",
-      description: "PC tissue culture bottles organized by capacity, dimensions, material, and compatible lids.",
-      features: ["Multiple capacities available", "Transparent PC body", "Compatible with vented or sealed lids", "Specification-based bulk inquiry"],
+      description: "Fulong PC tissue culture bottles are manufactured from high-transparency polycarbonate, offering excellent clarity and durability. They support ventilated culture, are reusable, and autoclavable up to 130°C for tissue culture, propagation, and laboratory applications.",
+      features: ["High-transparency PC material", "Ventilated culture supported", "Reusable design", "Autoclavable up to 130°C"],
       seoTitle: "PC Tissue Culture Bottles | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies PC tissue culture bottles from 145ml to 1000ml with key specifications including capacity, height, bottom diameter, material, and compatible lids."
+      metaDescription: "Fulong PC tissue culture bottles offer excellent clarity, ventilated culture support, reusability, and autoclaving up to 130°C."
     }
   },
   {
@@ -304,27 +304,27 @@ export const products: Product[] = [
     category: "pc-series",
     image: "/products/pc-culture-tubes.jpg",
     specs: {
-      capacity: "Based on tube size",
-      height: "91mm / 100mm / 150mm / 200mm",
+      capacity: "50mL / 80mL / 100mL / 120mL",
+      height: "100mm / 150mm / 200mm / 91mm",
       bottomDiameter: "30mm / 47mm",
       material: "PC",
-      compatibleLid: "Matched tube caps"
+      compatibleLid: "30# / 40#"
     },
-    variants: ["91 x 47mm", "100 x 30mm", "150 x 30mm", "200 x 30mm"],
-    related: ["culture-lids", "vent-filter-patches"],
+    variants: ["100×30mm", "150×30mm", "200×30mm", "91×47mm"],
+    related: ["pc-tissue-culture-bottles", "pc-wide-mouth-culture-cups", "culture-lids"],
     zh: {
       name: "PC组培试管",
-      description: "PC组培试管用于小容量培养与实验室培养，页面以尺寸和适配盖为核心。",
-      features: ["多种高度规格", "透明管体", "适合小容量培养", "支持配套盖体选择"],
+      description: "富龙塑业PC组培试管采用高透明聚碳酸酯（PC）材料制造，具有优异的透光性和机械强度。产品支持透气培养，并可耐受最高130℃高温高压灭菌。试管培养方式有助于降低污染风险，特别适用于植物组织培养初代培养阶段、无菌实验及科研培养应用。",
+      features: ["高透明PC材质", "支持透气培养", "最高130℃高温高压灭菌", "适用于初代培养与无菌实验"],
       seoTitle: "PC组培试管 | 富龙塑业",
-      metaDescription: "富龙塑业PC组培试管提供91×47mm、100×30mm、150×30mm、200×30mm等规格，重点展示高度、底部直径、材质和适配盖。"
+      metaDescription: "富龙塑业PC组培试管采用高透明PC材料，支持透气培养和最高130℃高温高压灭菌，适用于初代培养与无菌实验。"
     },
     en: {
       name: "PC Culture Tubes",
-      description: "PC culture tubes for small-volume culture and laboratory use, structured around dimensions and compatible caps.",
-      features: ["Multiple height options", "Transparent tube body", "Suitable for small-volume culture", "Matched cap options available"],
+      description: "Fulong PC culture tubes are manufactured from high-transparency polycarbonate (PC), providing excellent clarity and durability. They support ventilated culture and are autoclavable up to 130°C. The tube format helps reduce contamination risk and is particularly suitable for primary culture stages, sterile laboratory work, and research applications.",
+      features: ["High-transparency PC material", "Ventilated culture supported", "Autoclavable up to 130°C", "Suitable for primary culture and sterile work"],
       seoTitle: "PC Culture Tubes | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies PC culture tubes including 91×47mm, 100×30mm, 150×30mm, and 200×30mm sizes with specification-focused product information."
+      metaDescription: "Fulong PC culture tubes provide excellent clarity, ventilated culture support, and autoclaving up to 130°C for primary culture and sterile laboratory work."
     }
   },
   {
@@ -332,27 +332,27 @@ export const products: Product[] = [
     category: "pc-series",
     image: "/products/pc-wide-mouth-culture-cups.jpg",
     specs: {
-      capacity: "340ml / 430ml",
-      height: "95mm / 125mm",
-      bottomDiameter: "83mm",
+      capacity: "340mL / 430mL / /",
+      height: "65mm / 85mm / 95mm / 125mm",
+      bottomDiameter: "82mm / 81mm / 83mm",
       material: "PC",
-      compatibleLid: "Sealed lid / vented lid"
+      compatibleLid: "90# / 透气款 / 密封款"
     },
-    variants: ["90 x 83 x 95mm sealed lid", "90 x 83 x 95mm vented lid", "90 x 83 x 125mm sealed lid", "90 x 83 x 125mm vented lid"],
-    related: ["culture-lids", "vent-filter-patches"],
+    variants: ["65×90×82mm", "85×90×81mm", "95×90×83mm", "125×90×83mm"],
+    related: ["pc-tissue-culture-bottles", "pc-culture-tubes", "culture-lids"],
     zh: {
       name: "PC广口培养杯",
-      description: "PC广口培养杯提供不同高度和盖型选择，便于按培养需求选型。",
-      features: ["340ml与430ml规格", "广口结构", "密封盖与透气盖可选", "规格清晰便于询价"],
+      description: "富龙塑业PC广口培养杯采用高透明PC材料制造，广口设计便于接种、观察和取样。产品支持透气培养，可重复使用，并可耐受最高130℃高温高压灭菌，广泛应用于植物组织培养及实验培养领域。",
+      features: ["广口设计", "高透明PC材质", "支持透气培养", "可耐受最高130℃高温高压灭菌"],
       seoTitle: "PC广口培养杯 | 富龙塑业",
-      metaDescription: "富龙塑业PC广口培养杯提供340ml、430ml及不同高度规格，可选择密封盖或透气盖，适合按规格选型。"
+      metaDescription: "富龙塑业PC广口培养杯采用高透明PC材料，广口设计便于接种、观察和取样，支持透气培养及最高130℃灭菌。"
     },
     en: {
       name: "PC Wide-Mouth Culture Cups",
-      description: "PC wide-mouth culture cups with different height and lid options for specification-based selection.",
-      features: ["340ml and 430ml options", "Wide mouth structure", "Sealed and vented lid options", "Clear specification comparison"],
+      description: "The wide-mouth design allows easier inoculation, observation, and sampling. Manufactured from high-transparency PC, these culture cups support ventilated culture and are autoclavable up to 130°C.",
+      features: ["Wide-mouth design", "High-transparency PC material", "Ventilated culture supported", "Autoclavable up to 130°C"],
       seoTitle: "PC Wide-Mouth Culture Cups | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies PC wide-mouth culture cups in 340ml and 430ml options with sealed or vented lids and clear specification data."
+      metaDescription: "Fulong PC wide-mouth culture cups support easier inoculation, observation, sampling, ventilated culture, and autoclaving up to 130°C."
     }
   },
   {
@@ -360,27 +360,27 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-containers.jpg",
     specs: {
-      capacity: "160ml / 200ml / 300ml / 500ml / 750ml / 1000ml",
-      height: "54-95mm",
-      bottomDiameter: "66-110mm",
+      capacity: "160mL / 200mL / 300mL / 500mL / 750mL / 1000mL",
+      height: "68mm / 65mm / 73mm / 90mm / 110mm / 124mm",
+      bottomDiameter: "55mm / 73mm / 77mm / 92mm / 96mm / 105mm",
       material: "PP",
-      compatibleLid: "Matched PP culture lids"
+      compatibleLid: "/"
     },
-    variants: ["66 x 54mm 160ml", "73 x 78mm 300ml", "90 x 95mm 500ml", "110 x 95mm 750ml"],
-    related: ["culture-lids", "vent-filter-patches", "culture-baskets"],
+    variants: ["68×67×55mm", "65×80×73mm", "73×100×77mm", "90×120×92mm", "110×122×96mm", "124×130×105mm"],
+    related: ["pp-culture-boxes", "heat-seal-culture-bags", "culture-lids"],
     zh: {
-      name: "PP培养容器",
-      description: "PP培养容器按容量和尺寸组织规格，适合批量采购前进行参数确认。",
-      features: ["多容量规格", "PP材质", "配套盖体可选", "适合长期稳定供货"],
-      seoTitle: "PP培养容器 | 富龙塑业",
-      metaDescription: "富龙塑业供应PP培养容器，容量覆盖160ml、200ml、300ml、500ml、750ml、1000ml，重点展示容量、高度、底部直径、材质和适配盖。"
+      name: "PP组培容器",
+      description: "富龙塑业PP组培容器采用优质PP材料制造，具有良好的透明度、耐热性和化学稳定性。产品支持透气培养，并可耐受最高120℃高温高压灭菌。兼顾培养效果与经济性，适用于科研实验及大批量培养需求。",
+      features: ["优质PP材质", "支持透气培养", "最高120℃高温高压灭菌", "适合大批量培养需求"],
+      seoTitle: "PP组培容器 | 富龙塑业",
+      metaDescription: "富龙塑业PP组培容器采用优质PP材料，支持透气培养和最高120℃高温高压灭菌，适用于科研实验及大批量培养。"
     },
     en: {
       name: "PP Tissue Culture Containers",
-      description: "PP culture containers organized by capacity and dimensions for specification confirmation before bulk purchasing.",
-      features: ["Multiple capacity options", "PP material", "Matched lid options", "Suitable for stable long-term supply"],
+      description: "Manufactured from high-quality polypropylene (PP), these culture containers provide excellent transparency, heat resistance, and chemical stability. They support ventilated culture and are autoclavable up to 120°C. Combining cultivation performance with cost efficiency, they are suitable for laboratory and large-scale cultivation applications.",
+      features: ["High-quality PP material", "Ventilated culture supported", "Autoclavable up to 120°C", "Suitable for large-scale cultivation"],
       seoTitle: "PP Tissue Culture Containers | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies PP culture containers from 160ml to 1000ml with capacity, height, bottom diameter, material, and compatible lid details."
+      metaDescription: "Fulong PP tissue culture containers provide transparency, heat resistance, ventilated culture support, and autoclaving up to 120°C."
     }
   },
   {
@@ -388,27 +388,27 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-boxes.jpg",
     specs: {
-      capacity: "Based on box size",
-      height: "45mm",
-      bottomDiameter: "85 x 60mm",
+      capacity: "150mL",
+      height: "60mm",
+      bottomDiameter: "85mm",
       material: "PP",
-      compatibleLid: "Matched box lid"
+      compatibleLid: "/"
     },
-    variants: ["85 x 60 x 45mm"],
-    related: ["culture-lids", "vent-filter-patches"],
+    variants: ["85×45×60mm"],
+    related: ["pp-culture-containers", "heat-seal-culture-bags", "culture-baskets"],
     zh: {
       name: "PP培养盒",
-      description: "PP培养盒以尺寸、材质和盖体适配为主要选型信息。",
-      features: ["紧凑盒型", "PP材质", "配套盖体", "适合按规格询价"],
+      description: "富龙塑业PP培养盒采用优质PP材料制造，重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。适用于植物组织培养、种苗培养及实验培养应用，在保证培养效果的同时兼顾经济性需求。",
+      features: ["优质PP材质", "重量轻", "耐高温耐腐蚀", "兼顾培养效果与经济性"],
       seoTitle: "PP培养盒 | 富龙塑业",
-      metaDescription: "富龙塑业PP培养盒提供85×60×45mm等规格，页面重点展示容量、尺寸、材质和适配盖。"
+      metaDescription: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，支持高温高压灭菌，适用于组织培养、种苗培养和实验培养。"
     },
     en: {
       name: "PP Culture Boxes",
-      description: "PP culture boxes focused on dimensions, material, and compatible lid information.",
-      features: ["Compact box format", "PP material", "Matched lid", "Specification-based inquiry"],
+      description: "Fulong PP culture boxes are manufactured from high-quality polypropylene. Lightweight, heat-resistant, and autoclavable, they are suitable for plant tissue culture, propagation, and laboratory cultivation while maintaining excellent cost efficiency.",
+      features: ["High-quality PP material", "Lightweight design", "Heat-resistant and autoclavable", "Cost-efficient cultivation option"],
       seoTitle: "PP Culture Boxes | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies PP culture boxes such as 85×60×45mm with specification-focused product information."
+      metaDescription: "Fulong PP culture boxes are lightweight, heat-resistant, autoclavable, and suitable for plant tissue culture, propagation, and laboratory cultivation."
     }
   },
   {
@@ -416,27 +416,27 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/heat-seal-culture-bags.jpg",
     specs: {
-      capacity: "Based on bag size",
-      height: "14cm / 24cm",
-      bottomDiameter: "12cm / 20cm width",
-      material: "PP film",
-      compatibleLid: "Heat seal closure"
+      capacity: "按规格匹配",
+      height: "14cm / 18cm",
+      bottomDiameter: "12cm / 8cm",
+      material: "PP",
+      compatibleLid: "密封 / 单孔 / 双孔可选"
     },
-    variants: ["12 x 14cm", "20 x 24cm"],
-    related: ["vent-filter-patches", "sealing-film"],
+    variants: ["12×14cm 平口袋", "12×8×18cm 自立袋"],
+    related: ["self-seal-stand-up-culture-bags", "sealing-film", "culture-lids"],
     zh: {
       name: "热封组培袋",
-      description: "热封组培袋按袋体尺寸和封口方式展示，适合规格化询价。",
-      features: ["12×14cm与20×24cm规格", "热封封口", "可配合透气膜使用", "适合批量供应"],
+      description: "热封组培袋具有重量轻、运输方便、存储空间占用小等特点。产品支持高温高压灭菌，可选密封、单孔透气或双孔透气结构，适用于植物组织培养及无菌培养应用。作为一次性培养耗材，具有良好的经济性和使用便利性。",
+      features: ["重量轻便于运输", "节省存储空间", "可选密封或透气结构", "适用于无菌培养应用"],
       seoTitle: "热封组培袋 | 富龙塑业",
-      metaDescription: "富龙塑业热封组培袋提供12×14cm、20×24cm规格，支持按尺寸、材质和封口方式进行询价。"
+      metaDescription: "热封组培袋重量轻、运输方便、节省存储空间，可选密封、单孔透气或双孔透气结构，适用于无菌培养应用。"
     },
     en: {
-      name: "Heat Seal Culture Bags",
-      description: "Heat seal culture bags listed by bag size and closure method for specification-based inquiries.",
-      features: ["12×14cm and 20×24cm sizes", "Heat seal closure", "Can be used with vent filter patches", "Bulk supply available"],
-      seoTitle: "Heat Seal Culture Bags | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies heat-seal culture bags in 12×14cm and 20×24cm sizes with specification-focused inquiry information."
+      name: "Heat-Seal Tissue Culture Bags",
+      description: "Heat-seal culture bags are lightweight, easy to transport, and require minimal storage space. Available with sealed, single-vent, or dual-vent configurations for sterile culture applications.",
+      features: ["Lightweight and easy to transport", "Minimal storage space", "Sealed or vented options", "For sterile culture applications"],
+      seoTitle: "Heat-Seal Tissue Culture Bags | Fulong Plastic",
+      metaDescription: "Heat-seal culture bags are lightweight, easy to transport, space-efficient, and available with sealed, single-vent, or dual-vent configurations."
     }
   },
   {
@@ -444,27 +444,27 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/heat-seal-culture-bags.jpg",
     specs: {
-      capacity: "Based on bag size",
+      capacity: "按规格匹配",
       height: "14cm / 18.5cm",
-      bottomDiameter: "12cm / 16cm width",
-      material: "PP film",
-      compatibleLid: "Self-seal closure"
+      bottomDiameter: "12cm / 16cm",
+      material: "PP",
+      compatibleLid: "密封 / 单孔 / 双孔可选"
     },
-    variants: ["12 x 14cm", "16 x 18.5cm"],
-    related: ["vent-filter-patches", "sealing-film"],
+    variants: ["12×14cm 自立袋", "16×18.5cm 自立袋"],
+    related: ["heat-seal-culture-bags", "sealing-film", "culture-lids"],
     zh: {
-      name: "自封站立组培袋",
-      description: "自封站立组培袋以袋体尺寸、材质和封口方式为核心规格。",
-      features: ["自封结构", "站立袋型", "两种基础规格", "支持批量询价"],
-      seoTitle: "自封站立组培袋 | 富龙塑业",
-      metaDescription: "富龙塑业自封站立组培袋提供12×14cm、16×18.5cm规格，重点展示尺寸、材质和封口方式。"
+      name: "自封自立组培袋",
+      description: "自封自立组培袋兼具便捷封装和稳定摆放优势，重量轻、运输成本低、存储方便。产品支持高温高压灭菌，可选密封、单孔透气或双孔透气结构，适用于植物组织培养及无菌培养应用。作为一次性培养耗材，具有较高的经济效益。",
+      features: ["自封自立结构", "重量轻且便于运输", "可选密封或透气结构", "适用于无菌培养应用"],
+      seoTitle: "自封自立组培袋 | 富龙塑业",
+      metaDescription: "自封自立组培袋便于封装和稳定摆放，支持高温高压灭菌，可选密封、单孔透气或双孔透气结构。"
     },
     en: {
-      name: "Self-Seal Stand-Up Culture Bags",
-      description: "Self-seal stand-up culture bags focused on size, material, and closure specifications.",
-      features: ["Self-seal structure", "Stand-up bag format", "Two base sizes", "Bulk inquiry supported"],
-      seoTitle: "Self-Seal Stand-Up Culture Bags | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies self-seal stand-up culture bags in 12×14cm and 16×18.5cm sizes with clear specification details."
+      name: "Self-Seal Stand-Up Tissue Culture Bags",
+      description: "Self-standing culture bags combine convenient sealing with stable placement. Lightweight and cost-efficient, they are available with sealed, single-vent, or dual-vent configurations for sterile culture applications.",
+      features: ["Self-seal stand-up structure", "Lightweight and cost-efficient", "Sealed or vented options", "For sterile culture applications"],
+      seoTitle: "Self-Seal Stand-Up Tissue Culture Bags | Fulong Plastic",
+      metaDescription: "Self-standing culture bags combine convenient sealing with stable placement and are available with sealed, single-vent, or dual-vent configurations."
     }
   },
   {
@@ -472,54 +472,27 @@ export const products: Product[] = [
     category: "accessories",
     image: "/products/culture-lids.jpg",
     specs: {
-      capacity: "Not applicable",
-      height: "Varies by lid model",
+      capacity: "不适用",
+      height: "/",
       bottomDiameter: "30# / 40# / 52# / 53# / 54# / 55# / 56# / 57# / 58# / 60# / 61# / 63# / 64# / 65# / 69# / 70# / 72# / 75# / 77# / 80# / 82# / 90# / 95#",
-      material: "PP / PE options by model",
-      compatibleLid: "Compatible with matching culture containers"
+      material: "/",
+      compatibleLid: "按容器型号匹配"
     },
-    related: ["pc-tissue-culture-bottles", "pp-culture-containers", "vent-filter-patches"],
+    variants: ["30#", "40#", "52#", "53#", "54#", "55#", "56#", "57#", "58#", "60#", "61#", "63#", "64#", "65#", "69#", "70#", "72#", "75#", "77#", "80#", "82#", "90#", "95#"],
+    related: ["pc-tissue-culture-bottles", "pp-culture-containers", "sealing-film"],
     zh: {
       name: "组培盖",
-      description: "组培盖按型号和适配容器进行选择，可配合透气膜或密封应用。",
-      features: ["多型号可选", "适配多类容器", "可做透气或密封配置", "支持配套询价"],
+      description: "可定制透气膜，膜片直径支持1cm、2cm、3cm，安装方式支持内置膜和外置膜。",
+      features: ["支持透气膜定制", "1cm、2cm、3cm膜片直径", "支持内置膜和外置膜", "适配多类培养容器"],
       seoTitle: "组培盖 | 富龙塑业",
-      metaDescription: "富龙塑业供应多型号组培盖，包括30#至95#等规格，可与组培瓶、培养容器及透气膜配套使用。"
+      metaDescription: "可定制透气膜，膜片直径支持1cm、2cm、3cm，安装方式支持内置膜和外置膜。"
     },
     en: {
-      name: "Culture Lids",
-      description: "Culture lids selected by model and compatible container, available for vented or sealed use.",
-      features: ["Multiple models available", "Compatible with different containers", "Vented or sealed configurations", "Accessory inquiry supported"],
-      seoTitle: "Culture Lids | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies culture lids from 30# to 95# models for tissue culture bottles, culture containers, and vent filter patch applications."
-    }
-  },
-  {
-    slug: "vent-filter-patches",
-    category: "accessories",
-    image: "/products/vent-filter-patches.jpg",
-    specs: {
-      capacity: "Not applicable",
-      height: "Patch thickness by material",
-      bottomDiameter: "1.8cm / 2.0cm / 3.0cm",
-      material: "Vent filter membrane",
-      compatibleLid: "Culture lids and culture bags"
-    },
-    variants: ["1.8cm", "2.0cm", "3.0cm"],
-    related: ["culture-lids", "heat-seal-culture-bags", "self-seal-stand-up-culture-bags"],
-    zh: {
-      name: "透气膜",
-      description: "透气膜按直径规格和适配对象展示，可用于组培盖和组培袋。",
-      features: ["1.8cm、2.0cm、3.0cm规格", "适配盖体或袋体", "用于透气配置", "支持配套供应"],
-      seoTitle: "透气膜 | 富龙塑业组培配件",
-      metaDescription: "富龙塑业供应1.8cm、2.0cm、3.0cm透气膜，可用于组培盖、组培袋及相关培养容器配套。"
-    },
-    en: {
-      name: "Vent Filter Patches",
-      description: "Vent filter patches listed by diameter and compatibility with lids or culture bags.",
-      features: ["1.8cm, 2.0cm, and 3.0cm sizes", "For lids or bags", "Accessory material for compatible products", "Accessory supply available"],
-      seoTitle: "Vent Filter Patches | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies 1.8cm, 2.0cm, and 3.0cm vent filter patches for culture lids, culture bags, and related containers."
+      name: "Tissue Culture Lids",
+      description: "Breathable membrane customization is available with 1 cm, 2 cm, and 3 cm membrane diameters, using internal or external membrane installation.",
+      features: ["Breathable membrane customization", "1cm, 2cm, and 3cm membrane diameters", "Internal and external installation options", "Compatible with multiple culture containers"],
+      seoTitle: "Tissue Culture Lids | Fulong Plastic",
+      metaDescription: "Breathable membrane customization is available with 1 cm, 2 cm, and 3 cm membrane diameters, using internal or external membrane installation."
     }
   },
   {
@@ -527,26 +500,27 @@ export const products: Product[] = [
     category: "accessories",
     image: "/products/vent-filter-patches.jpg",
     specs: {
-      capacity: "Not applicable",
-      height: "By roll or sheet specification",
-      bottomDiameter: "By requested width",
-      material: "Sealing film",
-      compatibleLid: "Culture vessels and containers"
+      capacity: "不适用",
+      height: "/",
+      bottomDiameter: "12×12cm / 14×14cm / 16×16cm",
+      material: "PP",
+      compatibleLid: "1cm / 2cm / 3cm"
     },
-    related: ["heat-seal-culture-bags", "pp-culture-boxes"],
+    variants: ["12×12cm", "14×14cm", "16×16cm"],
+    related: ["culture-lids", "heat-seal-culture-bags", "self-seal-stand-up-culture-bags"],
     zh: {
       name: "封口膜",
-      description: "封口膜作为培养容器配套耗材，按宽度、规格和使用方式确认。",
-      features: ["配套培养容器使用", "按规格询价", "适合耗材补充", "支持长期供应"],
+      description: "富龙塑业封口膜可根据培养容器尺寸及培养需求进行定制。目前常规尺寸包括12×12cm、14×14cm及16×16cm，中心透气孔支持1cm、2cm及3cm规格。可根据客户需求定制更大尺寸及不同孔径方案，并支持多种透气膜配置，以满足不同培养环境要求。",
+      features: ["支持尺寸定制", "常规尺寸12×12cm、14×14cm、16×16cm", "支持1cm、2cm、3cm中心透气孔", "可配置多种透气膜方案"],
       seoTitle: "封口膜 | 富龙塑业",
-      metaDescription: "富龙塑业供应封口膜等组培配套耗材，可按规格、宽度和使用方式进行询价。"
+      metaDescription: "富龙塑业封口膜支持12×12cm、14×14cm、16×16cm常规尺寸及1cm、2cm、3cm中心透气孔，并可按需求定制。"
     },
     en: {
-      name: "Sealing Film",
-      description: "Sealing film for culture container applications, confirmed by width, specification, and usage method.",
-      features: ["For culture container use", "Specification-based inquiry", "Accessory supply item", "Long-term supply available"],
-      seoTitle: "Sealing Film | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies sealing film and related tissue culture accessories with specification-based inquiry support."
+      name: "Sealing Films",
+      description: "Sealing films can be customized according to container size and cultivation requirements. Standard sizes include 12×12cm, 14×14cm, and 16×16cm, with vent diameters of 1cm, 2cm, and 3cm. Larger dimensions, custom vent sizes, and different membrane options are available.",
+      features: ["Custom film sizes available", "Standard 12×12cm, 14×14cm, and 16×16cm sizes", "1cm, 2cm, and 3cm central vent options", "Multiple membrane configurations available"],
+      seoTitle: "Sealing Films | Fulong Plastic",
+      metaDescription: "Fulong sealing films support standard and custom sizes, 1cm, 2cm, and 3cm vent diameters, and multiple membrane configurations."
     }
   },
   {
@@ -554,27 +528,27 @@ export const products: Product[] = [
     category: "accessories",
     image: "/products/culture-baskets.jpg",
     specs: {
-      capacity: "Based on basket size",
-      height: "50-70mm",
-      bottomDiameter: "490 x 320mm to 670 x 455mm",
-      material: "Plastic",
-      compatibleLid: "Not applicable"
+      capacity: "按规格匹配",
+      height: "70mm / 50mm / 60mm",
+      bottomDiameter: "510mm / 490mm / 520mm / 530mm / 600mm / 620mm / 670mm",
+      material: "/",
+      compatibleLid: "不适用"
     },
-    variants: ["490 x 320 x 50mm", "520 x 420 x 60mm", "520 x 420 x 70mm", "600 x 440 x 60mm", "620 x 520 x 60mm", "670 x 450 x 60mm"],
-    related: ["pc-tissue-culture-bottles", "pp-culture-containers"],
+    variants: ["510×310×70mm", "490×320×50mm", "520×420×60mm", "520×420×70mm", "530×430×70mm", "600×440×60mm（网格A）", "600×440×60mm（网格B）", "620×520×60mm", "670×450×60mm"],
+    related: ["pc-tissue-culture-bottles", "pp-culture-containers", "culture-lids"],
     zh: {
-      name: "培养篮",
-      description: "培养篮按长宽高和重量规格展示，用于组培容器周转、清洗或存放。",
-      features: ["多尺寸规格", "塑料网格结构", "适合容器周转", "支持批量供应"],
-      seoTitle: "培养篮 | 富龙塑业组培配套产品",
-      metaDescription: "富龙塑业供应多规格培养篮，尺寸覆盖490×320×50mm至670×450×60mm等，可用于组培容器周转和存放。"
+      name: "组培筐",
+      description: "富龙塑业组培筐采用耐高温PP材料制造，具有良好的通风性和排水性。适用于组培瓶、培养杯等培养容器的集中摆放、转运和管理。不同规格组培筐可适配不同培养容器数量和尺寸需求，如需适配方案可联系富龙塑业获取专业建议。",
+      features: ["耐高温PP材质", "良好通风性和排水性", "适用于集中摆放和转运", "支持不同容器适配需求"],
+      seoTitle: "组培筐 | 富龙塑业",
+      metaDescription: "富龙塑业组培筐采用耐高温PP材料，适用于组培瓶、培养杯等培养容器的集中摆放、转运和管理。"
     },
     en: {
-      name: "Culture Baskets",
-      description: "Culture baskets listed by length, width, height, and weight for handling, washing, or storage.",
-      features: ["Multiple size options", "Plastic grid structure", "For container handling", "Bulk supply supported"],
-      seoTitle: "Culture Baskets | Fulong Plastic",
-      metaDescription: "Fulong Plastic supplies culture baskets in multiple sizes for tissue culture container handling, washing, and storage."
+      name: "Tissue Culture Baskets",
+      description: "Manufactured from heat-resistant PP, tissue culture baskets provide excellent airflow and drainage. Designed for organized placement, transportation, and management of culture containers. Different basket sizes fit different cultivation requirements.",
+      features: ["Heat-resistant PP material", "Excellent airflow and drainage", "For organized placement and transportation", "Multiple sizes for different cultivation needs"],
+      seoTitle: "Tissue Culture Baskets | Fulong Plastic",
+      metaDescription: "Fulong tissue culture baskets are manufactured from heat-resistant PP for organized placement, transportation, and management of culture containers."
     }
   },
   {
@@ -582,28 +556,29 @@ export const products: Product[] = [
     category: "featured",
     image: "/products/sugar-free-ventilated-culture-box.jpg",
     specs: {
-      capacity: "Based on box model",
-      height: "By model",
-      bottomDiameter: "By model",
-      material: "Transparent plastic",
-      compatibleLid: "Ventilated box lid"
+      capacity: "/",
+      height: "170mm",
+      bottomDiameter: "240mm",
+      material: "PP",
+      compatibleLid: "透气盒盖"
     },
-    related: ["pp-culture-boxes", "vent-filter-patches"],
+    variants: ["无糖透气培养盒"],
+    related: ["pp-culture-boxes", "culture-lids", "sealing-film"],
     zh: {
       name: "无糖透气培养盒",
-      description: "无糖透气培养盒作为重点产品展示，页面保留简洁规格、特点和询价入口。",
-      features: ["透气盒盖结构", "透明盒体", "适合无糖培养相关应用", "支持定制开发沟通"],
+      description: "富龙塑业无糖透气培养盒采用主动换气设计，可外接换气泵、二氧化碳监测器及调节阀使用。产品采用四角出气、中央进气结构，并结合防菌膜与过滤器双重保护，实现空气流通同时有效阻隔污染源，提高培养稳定性和成活率。本产品拥有自主专利技术，适用于无糖培养及特殊培养环境应用。",
+      features: ["主动换气设计", "可外接换气泵、二氧化碳监测器及调节阀", "防菌膜与过滤器双重保护", "自主专利技术"],
       seoTitle: "无糖透气培养盒 | 富龙塑业",
-      metaDescription: "富龙塑业无糖透气培养盒展示容量、尺寸、材质、适配盖等核心规格，并支持定制开发与批量询价。"
+      metaDescription: "富龙塑业无糖透气培养盒采用主动换气设计，可外接换气泵、二氧化碳监测器及调节阀，适用于无糖培养及特殊培养环境。"
     },
     en: {
-      name: "Sugar-Free Ventilated Culture Box",
-      description: "Sugar-Free Ventilated Culture Box presented with concise specifications, short features, and an inquiry entry.",
-      features: ["Ventilated lid structure", "Transparent box body", "For sugar-free culture related applications", "Custom development discussion supported"],
-      seoTitle: "Sugar-Free Ventilated Culture Box | Fulong Plastic",
-      metaDescription: "Fulong Plastic presents the Sugar-Free Ventilated Culture Box with key specifications including capacity, dimensions, material, and lid compatibility."
+      name: "Sterile Ventilated Tissue Culture Box",
+      description: "The Sugar-Free Ventilated Culture Box features an active ventilation system and can be connected to air pumps, CO₂ monitors, and airflow control valves. Its four-corner exhaust and central intake design, combined with dual protection from filtration and antimicrobial membranes, improves cultivation stability and survival rates. This product is protected by proprietary patented technology.",
+      features: ["Active ventilation system", "Compatible with air pumps, CO₂ monitors, and airflow control valves", "Dual filtration and antimicrobial membrane protection", "Proprietary patented technology"],
+      seoTitle: "Sterile Ventilated Tissue Culture Box | Fulong Plastic",
+      metaDescription: "The Sugar-Free Ventilated Culture Box features active ventilation, air pump and CO₂ monitor compatibility, dual protection, and proprietary patented technology."
     }
-  }
+  },
 ];
 
 type FieldKey = keyof (typeof text)["zh"]["fields"];
@@ -611,6 +586,10 @@ type FieldKey = keyof (typeof text)["zh"]["fields"];
 export type SpecCard = {
   id: string;
   image: string;
+  imageFileName?: string;
+  sourceName?: string;
+  remark?: string;
+  hiddenFields?: FieldKey[];
   fields: Partial<Record<FieldKey, string>>;
 };
 
@@ -645,184 +624,180 @@ export const productSpecGroups: ProductSpecGroup[] = [
     category: "pc-series",
     slug: "pc-tissue-culture-bottles",
     image: pcBottleImage,
-    zh: { name: "PC组培瓶", description: "常用PC组培瓶规格按关键尺寸直接展示，便于采购、实验室和繁育项目快速比对。" },
-    en: { name: "PC Tissue Culture Bottles", description: "Common PC bottle specifications are listed by key dimensions for laboratory, propagation, and procurement review." },
+    zh: { name: "PC组培瓶", description: "富龙塑业PC组培瓶采用高透明PC材料制造，透光性优异，便于观察培养状态。" },
+    en: { name: "PC Tissue Culture Bottles", description: "Fulong PC tissue culture bottles are manufactured from high-transparency polycarbonate for excellent clarity and durability." },
     cards: [
-      ["145ml", "96mm", "60mm", "60mm", "PC", "60#"].map(String),
-      ["160ml", "80mm", "60mm", "60mm", "PC", "60#"].map(String),
-      ["250ml", "72mm", "77mm", "77mm", "PC", "77#"].map(String),
-      ["250ml", "98mm", "67mm", "67mm", "PC", "67#"].map(String),
-      ["260ml", "90mm", "70mm", "70mm", "PC", "70#"].map(String),
-      ["270ml", "108mm", "68mm", "68mm", "PC", "68#"].map(String),
-      ["300ml", "96mm", "77mm", "77mm", "PC", "77#"].map(String),
-      ["340ml", "90mm", "82mm", "65mm", "PC", "65#"].map(String),
-      ["350ml", "96mm", "77mm", "77mm", "PC", "77#"].map(String),
-      ["430ml", "90mm", "81mm", "85mm", "PC", "85#"].map(String),
-      ["520ml", "108mm", "91mm", "91mm", "PC", "90#"].map(String),
-      ["600ml", "100mm", "95mm", "95mm", "PC", "95#"].map(String),
-      ["650ml", "110mm", "95mm", "95mm", "PC", "95#"].map(String),
-      ["700ml", "105mm", "100mm", "100mm", "PC", "95#"].map(String),
-      ["800ml", "145mm", "96mm", "96mm", "PC", "95#"].map(String),
-      ["1000ml", "185mm", "96mm", "96mm", "PC", "95#"].map(String)
-    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
-      id: `pc-bottle-${index + 1}`,
-      image: pcBottleImage,
-      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
-    }))
+      { id: "pc-tissue-culture-bottles-1", image: pcBottleImage, imageFileName: "96x60.jpg", sourceName: "96×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "145mL", openingDiameter: "/", bottomDiameter: "60mm", height: "96mm", material: "PC", compatibleLid: "41#" } },
+      { id: "pc-tissue-culture-bottles-2", image: pcBottleImage, imageFileName: "80x60.jpg", sourceName: "80×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "160mL", openingDiameter: "/", bottomDiameter: "60mm", height: "80mm", material: "PC", compatibleLid: "53#" } },
+      { id: "pc-tissue-culture-bottles-3", image: pcBottleImage, imageFileName: "57x77x77.jpg", sourceName: "57×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "180mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "57mm", material: "PC", compatibleLid: "58#" } },
+      { id: "pc-tissue-culture-bottles-4", image: pcBottleImage, imageFileName: "80x77.jpg", sourceName: "80×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "240mL", openingDiameter: "/", bottomDiameter: "77mm", height: "80mm", material: "PC", compatibleLid: "60#" } },
+      { id: "pc-tissue-culture-bottles-5", image: pcBottleImage, imageFileName: "72x77x77.jpg", sourceName: "72×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "72mm", material: "PC", compatibleLid: "72#" } },
+      { id: "pc-tissue-culture-bottles-6", image: pcBottleImage, imageFileName: "98x67.jpg", sourceName: "98×67mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "67mm", height: "98mm", material: "PC", compatibleLid: "61#" } },
+      { id: "pc-tissue-culture-bottles-7", image: pcBottleImage, imageFileName: "90x70.jpg", sourceName: "90×70mm", hiddenFields: ["openingDiameter"], fields: { capacity: "260mL", openingDiameter: "/", bottomDiameter: "70mm", height: "90mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-8", image: pcBottleImage, imageFileName: "108x68.jpg", sourceName: "108×68mm", hiddenFields: ["openingDiameter"], fields: { capacity: "270mL", openingDiameter: "/", bottomDiameter: "68mm", height: "108mm", material: "PC", compatibleLid: "60#" } },
+      { id: "pc-tissue-culture-bottles-9", image: pcBottleImage, imageFileName: "96x77.jpg", sourceName: "96×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "300mL", openingDiameter: "/", bottomDiameter: "77mm", height: "96mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-10", image: pcBottleImage, imageFileName: "96x77x77.jpg", sourceName: "96×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "96mm", material: "PC", compatibleLid: "72#" } },
+      { id: "pc-tissue-culture-bottles-11", image: pcBottleImage, imageFileName: "110x77.jpg", sourceName: "110×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77mm", height: "110mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-12", image: pcBottleImage, imageFileName: "108x91.jpg", sourceName: "108×91mm", hiddenFields: ["openingDiameter"], fields: { capacity: "520mL", openingDiameter: "/", bottomDiameter: "91mm", height: "108mm", material: "PC", compatibleLid: "69#" } },
+      { id: "pc-tissue-culture-bottles-13", image: pcBottleImage, imageFileName: "100x95x95.jpg", sourceName: "100×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "600mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "100mm", material: "PC", compatibleLid: "77#" } },
+      { id: "pc-tissue-culture-bottles-14", image: pcBottleImage, imageFileName: "110x95x95.jpg", sourceName: "110×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "650mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "110mm", material: "PC", compatibleLid: "95#" } },
+      { id: "pc-tissue-culture-bottles-15", image: pcBottleImage, imageFileName: "145x96.jpg", sourceName: "145×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "800mL", openingDiameter: "/", bottomDiameter: "96mm", height: "145mm", material: "PC", compatibleLid: "77#" } },
+      { id: "pc-tissue-culture-bottles-16", image: pcBottleImage, imageFileName: "185x96.jpg", sourceName: "185×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "1000mL", openingDiameter: "/", bottomDiameter: "96mm", height: "185mm", material: "PC", compatibleLid: "77#" } },
+    ]
   },
   {
     category: "pc-series",
     slug: "pc-culture-tubes",
     image: pcTubeImage,
-    zh: { name: "PC组培试管", description: "适用于小容量培养、单株培养和实验室研究场景的PC试管规格。" },
-    en: { name: "PC Culture Tubes", description: "PC tube sizes for small-volume culture, single-plant culture, and laboratory research workflows." },
+    zh: { name: "PC组培试管", description: "富龙塑业PC组培试管适用于植物组织培养初代培养阶段、无菌实验及科研培养应用。" },
+    en: { name: "PC Culture Tubes", description: "Fulong PC culture tubes are suitable for primary culture stages, sterile laboratory work, and research applications." },
     cards: [
-      ["按规格匹配", "91mm", "47mm", "47mm", "PC", "47mm配套盖"],
-      ["按规格匹配", "100mm", "30mm", "30mm", "PC", "30mm配套盖"],
-      ["按规格匹配", "150mm", "30mm", "30mm", "PC", "30mm配套盖"],
-      ["按规格匹配", "200mm", "30mm", "30mm", "PC", "30mm配套盖"]
-    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
-      id: `pc-tube-${index + 1}`,
-      image: pcTubeImage,
-      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
-    }))
+      { id: "pc-culture-tubes-1", image: pcTubeImage, imageFileName: "100x30.jpg", sourceName: "100×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "50mL", openingDiameter: "/", bottomDiameter: "30mm", height: "100mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-2", image: pcTubeImage, imageFileName: "150x30.jpg", sourceName: "150×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "80mL", openingDiameter: "/", bottomDiameter: "30mm", height: "150mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-3", image: pcTubeImage, imageFileName: "200x30.jpg", sourceName: "200×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "100mL", openingDiameter: "/", bottomDiameter: "30mm", height: "200mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-4", image: pcTubeImage, imageFileName: "91x47.jpg", sourceName: "91×47mm", hiddenFields: ["openingDiameter"], fields: { capacity: "120mL", openingDiameter: "/", bottomDiameter: "47mm", height: "91mm", material: "PC", compatibleLid: "40#" } },
+    ]
   },
   {
     category: "pc-series",
     slug: "pc-wide-mouth-culture-cups",
     image: pcCupImage,
-    zh: { name: "PC广口培养杯", description: "广口杯型便于接种、观察和培养操作，按容量、口径和盖型区分。" },
-    en: { name: "PC Wide-Mouth Culture Cups", description: "Wide-mouth cups for inoculation, observation, and culture handling, listed by capacity, opening size, and lid option." },
+    zh: { name: "PC广口培养杯", description: "广口设计便于接种、观察和取样，适用于植物组织培养及实验培养领域。" },
+    en: { name: "PC Wide-Mouth Culture Cups", description: "The wide-mouth design allows easier inoculation, observation, and sampling in tissue culture and laboratory cultivation." },
     cards: [
-      ["340ml", "95mm", "83mm", "90mm", "PC", "密封盖"],
-      ["340ml", "95mm", "83mm", "90mm", "PC", "透气盖"],
-      ["430ml", "125mm", "83mm", "90mm", "PC", "密封盖"],
-      ["430ml", "125mm", "83mm", "90mm", "PC", "透气盖"],
-      ["340ml", "95mm", "83mm", "90mm", "PC", "可配透气膜盖"],
-      ["430ml", "125mm", "83mm", "90mm", "PC", "可配透气膜盖"]
-    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
-      id: `pc-cup-${index + 1}`,
-      image: pcCupImage,
-      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
-    }))
+      { id: "pc-wide-mouth-culture-cups-1", image: pcCupImage, imageFileName: "65x90x82.jpg", sourceName: "65×90×82mm", fields: { capacity: "340mL", openingDiameter: "90mm", bottomDiameter: "82mm", height: "65mm", material: "PC", compatibleLid: "90#" } },
+      { id: "pc-wide-mouth-culture-cups-2", image: pcCupImage, imageFileName: "85x90x81.jpg", sourceName: "85×90×81mm", fields: { capacity: "430mL", openingDiameter: "90mm", bottomDiameter: "81mm", height: "85mm", material: "PC", compatibleLid: "90#" } },
+      { id: "pc-wide-mouth-culture-cups-3", image: pcCupImage, imageFileName: "95x90x83-vent.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "透气款" } },
+      { id: "pc-wide-mouth-culture-cups-4", image: pcCupImage, imageFileName: "125x90x83-vent.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "透气款" } },
+      { id: "pc-wide-mouth-culture-cups-5", image: pcCupImage, imageFileName: "95x90x83-solid.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "密封款" } },
+      { id: "pc-wide-mouth-culture-cups-6", image: pcCupImage, imageFileName: "125x90x83-solid.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "密封款" } },
+    ]
   },
   {
     category: "pp-series",
     slug: "pp-culture-containers",
     image: ppContainerImage,
-    zh: { name: "PP组培容器", description: "PP组培容器按容量、口径和盖体适配信息展示，适合批量选型和长期供货沟通。" },
-    en: { name: "PP Tissue Culture Containers", description: "PP containers organized by capacity, opening size, and lid compatibility for bulk sourcing and long-term supply planning." },
+    zh: { name: "PP组培容器", description: "富龙塑业PP组培容器兼顾培养效果与经济性，适用于科研实验及大批量培养需求。" },
+    en: { name: "PP Tissue Culture Containers", description: "Fulong PP tissue culture containers combine cultivation performance with cost efficiency for laboratory and large-scale use." },
     cards: [
-      ["160ml", "54mm", "66mm", "66mm", "PP", "66mm配套盖"],
-      ["200ml", "70mm", "68mm", "68mm", "PP", "68mm配套盖"],
-      ["300ml", "78mm", "73mm", "73mm", "PP", "73mm配套盖"],
-      ["500ml", "95mm", "90mm", "90mm", "PP", "90mm配套盖"],
-      ["750ml", "95mm", "110mm", "110mm", "PP", "110mm配套盖"],
-      ["1000ml", "125mm", "110mm", "110mm", "PP", "110mm配套盖"]
-    ].map(([capacity, height, bottomDiameter, openingDiameter, material, compatibleLid], index) => ({
-      id: `pp-container-${index + 1}`,
-      image: ppContainerImage,
-      fields: { capacity, height, bottomDiameter, openingDiameter, material, compatibleLid }
-    }))
+      { id: "pp-culture-containers-1", image: ppContainerImage, imageFileName: "68x67x55.jpg", sourceName: "68×67×55mm", hiddenFields: ["compatibleLid"], fields: { capacity: "160mL", openingDiameter: "67mm", bottomDiameter: "55mm", height: "68mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-2", image: ppContainerImage, imageFileName: "65x80x73.jpg", sourceName: "65×80×73mm", hiddenFields: ["compatibleLid"], fields: { capacity: "200mL", openingDiameter: "80mm", bottomDiameter: "73mm", height: "65mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-3", image: ppContainerImage, imageFileName: "73x100x77.jpg", sourceName: "73×100×77mm", hiddenFields: ["compatibleLid"], fields: { capacity: "300mL", openingDiameter: "100mm", bottomDiameter: "77mm", height: "73mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-4", image: ppContainerImage, imageFileName: "90x120x92.jpg", sourceName: "90×120×92mm", hiddenFields: ["compatibleLid"], fields: { capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "92mm", height: "90mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-5", image: ppContainerImage, imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-6", image: ppContainerImage, imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", compatibleLid: "/" } },
+    ]
   },
   {
     category: "pp-series",
     slug: "pp-culture-boxes",
     image: ppBoxImage,
-    zh: { name: "PP培养盒", description: "PP培养盒以长宽高和材质为核心参数，便于确认培养空间和装载方式。" },
-    en: { name: "PP Culture Boxes", description: "PP culture boxes are listed by length, width, height, and material for culture space and handling review." },
+    zh: { name: "PP培养盒", description: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。" },
+    en: { name: "PP Culture Boxes", description: "Fulong PP culture boxes are lightweight, heat-resistant, corrosion-resistant, and autoclavable." },
     cards: [
-      {
-        id: "pp-box-1",
-        image: ppBoxImage,
-        fields: { capacity: "按规格匹配", length: "85mm", width: "60mm", height: "45mm", material: "PP" }
-      }
+      { id: "pp-culture-boxes-1", image: ppBoxImage, imageFileName: "85x45x60.jpg", sourceName: "85×45×60mm", fields: { capacity: "150mL", length: "85mm", width: "45mm", height: "60mm", material: "PP" } },
     ]
   },
   {
     category: "pp-series",
     slug: "heat-seal-culture-bags",
     image: bagImage,
-    zh: { name: "热封组培袋", description: "热封组培袋按袋体尺寸和透气膜配置展示，适合按项目用量询价。" },
-    en: { name: "Heat-Seal Culture Bags", description: "Heat-seal culture bags are listed by bag size and filter patch configuration for project-based inquiries." },
+    zh: { name: "热封组培袋", description: "热封组培袋重量轻、运输方便、存储空间占用小，适用于植物组织培养及无菌培养应用。" },
+    en: { name: "Heat-Seal Tissue Culture Bags", description: "Heat-seal culture bags are lightweight, easy to transport, and require minimal storage space for sterile culture applications." },
     cards: [
-      { id: "heat-seal-bag-1", image: bagImage, fields: { length: "14cm", width: "12cm", material: "PP膜", filterPatchInfo: "支持透气膜配置" } },
-      { id: "heat-seal-bag-2", image: bagImage, fields: { length: "24cm", width: "20cm", material: "PP膜", filterPatchInfo: "支持透气膜配置" } }
+      { id: "heat-seal-culture-bags-1", image: bagImage, imageFileName: "bag-12x14-flat.jpg", sourceName: "12×14cm 平口袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "heat-seal-culture-bags-2", image: bagImage, imageFileName: "bag-12x8x18-standup.jpg", sourceName: "12×8×18cm 自立袋", fields: { length: "12cm", width: "8cm", height: "18cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
     ]
   },
   {
     category: "pp-series",
     slug: "self-seal-stand-up-culture-bags",
     image: bagImage,
-    zh: { name: "自封自立组培袋", description: "自封自立组培袋按尺寸和透气膜配置展示，便于确认封口方式和使用场景。" },
-    en: { name: "Self-Seal Stand-Up Culture Bags", description: "Self-seal stand-up culture bags are listed by size and filter patch configuration for closure and use-case review." },
+    zh: { name: "自封自立组培袋", description: "自封自立组培袋兼具便捷封装和稳定摆放优势，适用于植物组织培养及无菌培养应用。" },
+    en: { name: "Self-Seal Stand-Up Tissue Culture Bags", description: "Self-standing culture bags combine convenient sealing with stable placement for sterile culture applications." },
     cards: [
-      { id: "self-seal-bag-1", image: bagImage, fields: { length: "14cm", width: "12cm", material: "PP膜", filterPatchInfo: "支持透气膜配置" } },
-      { id: "self-seal-bag-2", image: bagImage, fields: { length: "18.5cm", width: "16cm", material: "PP膜", filterPatchInfo: "支持透气膜配置" } }
+      { id: "self-seal-stand-up-culture-bags-1", image: bagImage, imageFileName: "bag-12x14-standup.jpg", sourceName: "12×14cm 自立袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "self-seal-stand-up-culture-bags-2", image: bagImage, imageFileName: "bag-16x18.5-standup.jpg", sourceName: "16×18.5cm 自立袋", fields: { length: "/", width: "16cm", height: "18.5cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
     ]
   },
   {
     category: "accessories",
     slug: "culture-lids",
     image: lidImage,
-    zh: { name: "组培盖", description: "按盖体型号展示，便于与不同容器口径和封口需求匹配。" },
-    en: { name: "Culture Lids", description: "Lid models listed for matching container openings and sealing requirements." },
-    cards: ["30#", "40#", "52#", "53#", "54#", "55#", "56#", "57#", "58#", "60#", "61#", "63#", "64#", "65#", "69#", "70#", "72#", "75#", "77#", "80#", "82#", "90#", "95#"].map((modelNumber) => ({
-      id: `lid-${modelNumber.replace("#", "")}`,
-      image: lidImage,
-      fields: { modelNumber }
-    }))
+    zh: { name: "组培盖", description: "可定制透气膜，膜片直径支持1cm、2cm、3cm，安装方式支持内置膜和外置膜。" },
+    en: { name: "Tissue Culture Lids", description: "Breathable membrane customization is available with 1 cm, 2 cm, and 3 cm membrane diameters, using internal or external membrane installation." },
+    cards: [
+      { id: "culture-lids-1", image: lidImage, imageFileName: "30.jpg", sourceName: "30#", fields: { modelNumber: "30#" } },
+      { id: "culture-lids-2", image: lidImage, imageFileName: "40.jpg", sourceName: "40#", fields: { modelNumber: "40#" } },
+      { id: "culture-lids-3", image: lidImage, imageFileName: "52.jpg", sourceName: "52#", fields: { modelNumber: "52#" } },
+      { id: "culture-lids-4", image: lidImage, imageFileName: "53.jpg", sourceName: "53#", fields: { modelNumber: "53#" } },
+      { id: "culture-lids-5", image: lidImage, imageFileName: "54.jpg", sourceName: "54#", fields: { modelNumber: "54#" } },
+      { id: "culture-lids-6", image: lidImage, imageFileName: "55.jpg", sourceName: "55#", fields: { modelNumber: "55#" } },
+      { id: "culture-lids-7", image: lidImage, imageFileName: "56.jpg", sourceName: "56#", fields: { modelNumber: "56#" } },
+      { id: "culture-lids-8", image: lidImage, imageFileName: "57.jpg", sourceName: "57#", fields: { modelNumber: "57#" } },
+      { id: "culture-lids-9", image: lidImage, imageFileName: "58.jpg", sourceName: "58#", fields: { modelNumber: "58#" } },
+      { id: "culture-lids-10", image: lidImage, imageFileName: "60.jpg", sourceName: "60#", fields: { modelNumber: "60#" } },
+      { id: "culture-lids-11", image: lidImage, imageFileName: "61.jpg", sourceName: "61#", fields: { modelNumber: "61#" } },
+      { id: "culture-lids-12", image: lidImage, imageFileName: "63.jpg", sourceName: "63#", fields: { modelNumber: "63#" } },
+      { id: "culture-lids-13", image: lidImage, imageFileName: "64.jpg", sourceName: "64#", fields: { modelNumber: "64#" } },
+      { id: "culture-lids-14", image: lidImage, imageFileName: "65.jpg", sourceName: "65#", fields: { modelNumber: "65#" } },
+      { id: "culture-lids-15", image: lidImage, imageFileName: "69.jpg", sourceName: "69#", fields: { modelNumber: "69#" } },
+      { id: "culture-lids-16", image: lidImage, imageFileName: "70.jpg", sourceName: "70#", fields: { modelNumber: "70#" } },
+      { id: "culture-lids-17", image: lidImage, imageFileName: "72.jpg", sourceName: "72#", fields: { modelNumber: "72#" } },
+      { id: "culture-lids-18", image: lidImage, imageFileName: "75.jpg", sourceName: "75#", fields: { modelNumber: "75#" } },
+      { id: "culture-lids-19", image: lidImage, imageFileName: "77.jpg", sourceName: "77#", fields: { modelNumber: "77#" } },
+      { id: "culture-lids-20", image: lidImage, imageFileName: "80.jpg", sourceName: "80#", fields: { modelNumber: "80#" } },
+      { id: "culture-lids-21", image: lidImage, imageFileName: "82.jpg", sourceName: "82#", fields: { modelNumber: "82#" } },
+      { id: "culture-lids-22", image: lidImage, imageFileName: "90.jpg", sourceName: "90#", fields: { modelNumber: "90#" } },
+      { id: "culture-lids-23", image: lidImage, imageFileName: "95.jpg", sourceName: "95#", fields: { modelNumber: "95#" } },
+    ]
   },
   {
     category: "accessories",
     slug: "sealing-film",
     image: filmImage,
-    zh: { name: "封口膜", description: "封口膜按膜片尺寸和透气孔径展示，便于确认封口与透气配置。" },
-    en: { name: "Sealing Film", description: "Sealing film is listed by film size and vent hole diameter for sealing and ventilation configuration." },
-    cards: ["12×12cm", "14×14cm", "16×16cm"].flatMap((filmSize) =>
-      ["1cm", "2cm", "3cm"].map((ventHoleDiameter) => ({
-        id: `film-${filmSize}-${ventHoleDiameter}`,
-        image: filmImage,
-        fields: { filmSize, ventHoleDiameter }
-      }))
-    )
+    zh: { name: "封口膜", description: "富龙塑业封口膜可根据培养容器尺寸及培养需求进行定制。" },
+    en: { name: "Sealing Films", description: "Sealing films can be customized according to container size and cultivation requirements." },
+    cards: [
+      { id: "sealing-film-1", image: filmImage, imageFileName: "film-12x12-1cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-2", image: filmImage, imageFileName: "film-12x12-2cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-3", image: filmImage, imageFileName: "film-12x12-3cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "3cm" } },
+      { id: "sealing-film-4", image: filmImage, imageFileName: "film-14x14-1cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-5", image: filmImage, imageFileName: "film-14x14-2cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-6", image: filmImage, imageFileName: "film-14x14-3cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "3cm" } },
+      { id: "sealing-film-7", image: filmImage, imageFileName: "film-16x16-1cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-8", image: filmImage, imageFileName: "film-16x16-2cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-9", image: filmImage, imageFileName: "film-16x16-3cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "3cm" } },
+    ]
   },
   {
     category: "accessories",
     slug: "culture-baskets",
     image: basketImage,
-    zh: { name: "组培筐", description: "组培筐按长宽高和重量展示，适用于容器灭菌、周转、清洗和存放。" },
-    en: { name: "Culture Baskets", description: "Culture baskets are listed by length, width, height, and weight for sterilization, handling, washing, and storage." },
+    zh: { name: "组培筐", description: "富龙塑业组培筐采用耐高温PP材料制造，适用于培养容器集中摆放、转运和管理。" },
+    en: { name: "Tissue Culture Baskets", description: "Tissue culture baskets are manufactured from heat-resistant PP for organized placement, transportation, and management." },
     cards: [
-      ["490mm", "320mm", "50mm", "300g"],
-      ["510mm", "310mm", "70mm", "270g"],
-      ["520mm", "420mm", "60mm", "430g"],
-      ["520mm", "420mm", "70mm", "440g"],
-      ["530mm", "430mm", "70mm", "480g"],
-      ["600mm", "440mm", "60mm", "500g"],
-      ["620mm", "520mm", "60mm", "700g"],
-      ["670mm", "450mm", "60mm", "700g"],
-      ["670mm", "455mm", "65mm", "680g"]
-    ].map(([length, width, height, weight], index) => ({
-      id: `basket-${index + 1}`,
-      image: basketImage,
-      fields: { length, width, height, weight }
-    }))
+      { id: "culture-baskets-1", image: basketImage, imageFileName: "basket-510x310x70.jpg", sourceName: "510×310×70mm", fields: { length: "510mm", width: "310mm", height: "70mm", weight: "270g" } },
+      { id: "culture-baskets-2", image: basketImage, imageFileName: "basket-490x320x50.jpg", sourceName: "490×320×50mm", fields: { length: "490mm", width: "320mm", height: "50mm", weight: "300g" } },
+      { id: "culture-baskets-3", image: basketImage, imageFileName: "basket-520x420x60.jpg", sourceName: "520×420×60mm", fields: { length: "520mm", width: "420mm", height: "60mm", weight: "430g" } },
+      { id: "culture-baskets-4", image: basketImage, imageFileName: "basket-520x420x70.jpg", sourceName: "520×420×70mm", fields: { length: "520mm", width: "420mm", height: "70mm", weight: "440g" } },
+      { id: "culture-baskets-5", image: basketImage, imageFileName: "basket-530x430x70.jpg", sourceName: "530×430×70mm", fields: { length: "530mm", width: "430mm", height: "70mm", weight: "480g" } },
+      { id: "basket-grid-a", image: basketImage, imageFileName: "basket-600x440x60-a.jpg", sourceName: "600×440×60mm（网格A）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
+      { id: "basket-grid-b", image: basketImage, imageFileName: "basket-600x440x60-b.jpg", sourceName: "600×440×60mm（网格B）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
+      { id: "culture-baskets-8", image: basketImage, imageFileName: "basket-620x520x60.jpg", sourceName: "620×520×60mm", fields: { length: "620mm", width: "520mm", height: "60mm", weight: "700g" } },
+      { id: "culture-baskets-9", image: basketImage, imageFileName: "basket-670x450x60.jpg", sourceName: "670×450×60mm", fields: { length: "670mm", width: "450mm", height: "60mm", weight: "700g" } },
+    ]
   },
   {
     category: "featured",
     slug: "sugar-free-ventilated-culture-box",
     image: sugarFreeImage,
-    zh: { name: "无糖透气培养盒", description: "无糖透气培养盒保持现有展示结构，后续可继续补充正式规格。" },
-    en: { name: "Sugar-Free Ventilated Culture Box", description: "The Sugar-Free Ventilated Culture Box remains available for future specification updates." },
+    zh: { name: "无糖透气培养盒", description: "可配套换气泵、CO₂监测器、调节阀等设备使用。" },
+    en: { name: "Sterile Ventilated Tissue Culture Box", description: "Compatible with air pumps, CO₂ monitors and flow control valves." },
     cards: [
-      {
-        id: "sugar-free-box-1",
-        image: sugarFreeImage,
-        fields: { capacity: "按型号匹配", height: "按型号", bottomDiameter: "按型号", openingDiameter: "按型号", material: "透明塑料", compatibleLid: "透气盒盖" }
-      }
+      { id: "sugar-free-ventilated-culture-box-1", image: sugarFreeImage, imageFileName: "vented-culture-box.jpg", sourceName: "无糖透气培养盒", remark: "可配套换气泵、CO2监测器、调节阀等", fields: { capacity: "/", length: "240mm", width: "195mm", height: "170mm", material: "PP" } },
     ]
-  }
+  },
 ];
 
 export function getSpecGroupsByCategory(categorySlug: string) {
