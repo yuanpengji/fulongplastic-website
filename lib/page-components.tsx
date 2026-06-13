@@ -8,7 +8,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { SpecTable } from "@/components/SpecTable";
 import { StructuredData } from "@/components/StructuredData";
 import {
-  applications,
+  applicationGallery,
   articles,
   company,
   getArticle,
@@ -65,6 +65,8 @@ function formatSpecValue(value: string, locale: Locale) {
     支持透气膜配置: "Filter patch option available",
     密封盖: "Sealed lid",
     透气盖: "Vented lid",
+    透气款: "Vented Lid",
+    密封款: "Solid Lid",
     可配透气膜盖: "Compatible with vented membrane lid",
     透气盒盖: "Ventilated box lid"
   };
@@ -73,7 +75,12 @@ function formatSpecValue(value: string, locale: Locale) {
     return replacements[value];
   }
 
-  return value.replace(/(\d+mm)配套盖/g, "$1 matched lid");
+  return value
+    .replace(/密封/g, "Sealed")
+    .replace(/单孔/g, "Single Vent Hole")
+    .replace(/双孔/g, "Double Vent Hole")
+    .replace(/可选/g, "Optional")
+    .replace(/(\d+mm)配套盖/g, "$1 matched lid");
 }
 
 function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[number]["cards"][number]["fields"]) {
@@ -98,6 +105,80 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
   }
 
   return ["capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
+}
+
+function parseMarkdownTableRow(line: string) {
+  return line
+    .replace(/^\|/, "")
+    .replace(/\|$/, "")
+    .split("|")
+    .map((cell) => cell.trim());
+}
+
+function isMarkdownTableDivider(line: string) {
+  return /^\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?$/.test(line);
+}
+
+function renderArticleBody(body: string) {
+  const blocks = body.split(/\n\s*\n/).map((block) => block.trim()).filter(Boolean);
+
+  return (
+    <div className="mt-8 space-y-6 text-lg leading-9 text-slate-200">
+      {blocks.map((block, index) => {
+        if (block.startsWith("### ")) {
+          return <h3 key={index} className="pt-4 text-2xl font-bold leading-8 text-white">{block.replace(/^###\s+/, "")}</h3>;
+        }
+
+        if (block.startsWith("## ")) {
+          return <h2 key={index} className="pt-8 text-3xl font-bold leading-9 text-white">{block.replace(/^##\s+/, "")}</h2>;
+        }
+
+        if (block.split("\n").every((line) => line.trim().startsWith("- "))) {
+          return (
+            <ul key={index} className="list-disc space-y-2 pl-6">
+              {block.split("\n").map((line) => (
+                <li key={line}>{line.trim().replace(/^-\s+/, "")}</li>
+              ))}
+            </ul>
+          );
+        }
+
+        if (block.includes("\n") && block.split("\n").some((line) => line.trim().startsWith("|"))) {
+          const rows = block
+            .split("\n")
+            .map((line) => line.trim())
+            .filter((line) => line.startsWith("|") && !isMarkdownTableDivider(line))
+            .map(parseMarkdownTableRow);
+          const [header, ...bodyRows] = rows;
+
+          return (
+            <div key={index} className="overflow-x-auto rounded-lg border border-line">
+              <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+                <thead className="bg-white/5 text-slate-100">
+                  <tr>
+                    {header.map((cell) => (
+                      <th key={cell} className="border-b border-line px-4 py-3 font-semibold">{cell}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {bodyRows.map((row, rowIndex) => (
+                    <tr key={`${row.join("-")}-${rowIndex}`} className="border-t border-line">
+                      {row.map((cell, cellIndex) => (
+                        <td key={`${cell}-${cellIndex}`} className="px-4 py-3">{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+
+        return <p key={index}>{block}</p>;
+      })}
+    </div>
+  );
 }
 
 function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroupsByCategory>[number]; locale: Locale }) {
@@ -210,31 +291,47 @@ export function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <section className="section">
-        <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <span className="eyebrow">{t.nav.applications}</span>
-            <h2 className="mt-3 text-4xl font-bold">{locale === "zh" ? "宽泛应用场景" : "Broad Application Areas"}</h2>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {applications.map((application) => (
-              <div key={application.slug} className="panel p-5 font-semibold">
-                {application[locale]}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section border-y border-line bg-[#0b0d10]">
         <div className="container">
           <span className="eyebrow">{locale === "zh" ? "应用" : "Applications"}</span>
           <h2 className="mt-3 text-4xl font-bold">{locale === "zh" ? "应用场景展示" : "Application Scenarios"}</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[0, 1, 2].map((item) => (
-              <div key={item} className="flex aspect-[4/3] items-center justify-center rounded-lg border border-line bg-black text-sm font-semibold text-steel">
-                {locale === "zh" ? "图片占位" : "Image Placeholder"}
-              </div>
-            ))}
+          <div data-applications-carousel className="group relative mt-8 overflow-hidden rounded-lg border border-line bg-black">
+            <div data-applications-track className="flex transition-transform duration-500 ease-out">
+              {applicationGallery.map((item) => (
+                <div key={item.image} className="relative h-[300px] w-full shrink-0 md:h-[380px] lg:h-[460px]">
+                  <Image src={item.image} alt={item[locale]} fill className="object-contain" sizes="100vw" />
+                </div>
+              ))}
+            </div>
+            <button type="button" data-applications-prev aria-label={locale === "zh" ? "上一张" : "Previous"} className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-black/70 text-2xl text-slate-100">
+              ‹
+            </button>
+            <button type="button" data-applications-next aria-label={locale === "zh" ? "下一张" : "Next"} className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-black/70 text-2xl text-slate-100">
+              ›
+            </button>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+(() => {
+  const carousel = document.currentScript?.closest("[data-applications-carousel]");
+  if (!carousel || carousel.dataset.ready === "true") return;
+  carousel.dataset.ready = "true";
+  const track = carousel.querySelector("[data-applications-track]");
+  const slides = track ? Array.from(track.children) : [];
+  if (!track || slides.length < 2) return;
+  let index = 0;
+  const show = (nextIndex) => {
+    index = (nextIndex + slides.length) % slides.length;
+    track.style.transform = "translateX(" + (-index * 100) + "%)";
+  };
+  const next = () => show(index + 1);
+  const previous = () => show(index - 1);
+  carousel.querySelector("[data-applications-next]")?.addEventListener("click", next);
+  carousel.querySelector("[data-applications-prev]")?.addEventListener("click", previous);
+  window.setInterval(next, 8000);
+})();
+                `
+              }}
+            />
           </div>
         </div>
       </section>
@@ -419,10 +516,13 @@ export function ApplicationsPage({ locale }: { locale: Locale }) {
         description={locale === "zh" ? "应用页面保持宽泛、中性，用于帮助客户按使用场景进入产品选型。" : "This page keeps application language broad and neutral, helping customers start product selection by usage context."}
       />
       <section className="section">
-        <div className="container grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {applications.map((application) => (
-            <div key={application.slug} className="panel p-6">
-              <h2 className="text-xl font-bold">{application[locale]}</h2>
+        <div className="container grid gap-5 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4">
+          {applicationGallery.map((item) => (
+            <div key={item.image} className="panel overflow-hidden">
+              <div className="relative aspect-square">
+                <Image src={item.image} alt={item[locale]} fill className="object-cover" sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw" />
+              </div>
+              <h2 className="p-6 text-center text-xl font-bold">{item[locale]}</h2>
             </div>
           ))}
         </div>
@@ -504,7 +604,7 @@ export function ArticlePage({ locale, articleSlug }: { locale: Locale; articleSl
           <p className="mt-4 text-sm text-slate-400">
             {locale === "zh" ? "发布日期" : "Publish Date"}: {article.publishDate} · {locale === "zh" ? "更新日期" : "Updated Date"}: {article.updatedDate}
           </p>
-          <p className="mt-8 text-lg leading-9 text-slate-200">{article[locale].body}</p>
+          {renderArticleBody(article[locale].body)}
         </div>
       </article>
       <section className="section-tight border-y border-line bg-[#0b0d10]">

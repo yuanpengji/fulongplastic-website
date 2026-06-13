@@ -1,4 +1,9 @@
+import { articles } from "@/content/articles";
+
 export type Locale = "zh" | "en";
+
+export { articles } from "@/content/articles";
+export type { KnowledgeArticle } from "@/content/articles";
 
 export const siteUrl = "https://www.fulongplastic.com";
 
@@ -112,8 +117,8 @@ export const homepage = {
 };
 
 export const company = {
-  email: "sales@fulongplastic.com",
-  whatsapp: "To be confirmed",
+  email: "sales.fulongplastic@gmail.com",
+  whatsapp: "+86 18358715006",
   phone: "+86 18358715006",
   zh: {
     positioning: "组织培养容器及相关配套产品源头生产厂家",
@@ -179,6 +184,59 @@ export const applications = [
     slug: "other-research-cultivation-applications",
     zh: "其他培养与繁育应用",
     en: "Other Culture and Propagation Applications"
+  }
+];
+
+export const applicationGallery = [
+  {
+    image: "/applications/application-01.jpg",
+    zh: "实验室规模化组培生产",
+    en: "Laboratory Tissue Culture Production"
+  },
+  {
+    image: "/applications/application-02.jpg",
+    zh: "客户大批量育苗应用",
+    en: "Large-Scale Commercial Propagation"
+  },
+  {
+    image: "/applications/application-03.jpg",
+    zh: "透气封口膜应用效果",
+    en: "Tissue Culture Sealing Film Performance"
+  },
+  {
+    image: "/applications/application-04.jpg",
+    zh: "PP组培盒实际应用",
+    en: "PP Culture Boxes with Sealing Film"
+  },
+  {
+    image: "/applications/application-05.jpg",
+    zh: "自立组培袋育苗应用",
+    en: "Self-Standing Culture Bag Application"
+  },
+  {
+    image: "/applications/application-06.jpg",
+    zh: "透气组培袋生产效果",
+    en: "Ventilated Culture Bag Production"
+  },
+  {
+    image: "/applications/application-07.JPG",
+    zh: "PP组培桶生产应用",
+    en: "PP Culture Containers in Use"
+  },
+  {
+    image: "/applications/application-08.jpg",
+    zh: "组培袋规模化培养",
+    en: "Large-Scale Culture Bag Cultivation"
+  },
+  {
+    image: "/applications/application-09.jpg",
+    zh: "热封组培袋应用效果",
+    en: "Heat-Seal Culture Bag Application"
+  },
+  {
+    image: "/applications/application-10.jpg",
+    zh: "组培瓶规模化生产",
+    en: "Mass Production with Culture Bottles"
   }
 ];
 
@@ -388,13 +446,13 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-boxes.jpg",
     specs: {
-      capacity: "150mL",
-      height: "60mm",
-      bottomDiameter: "85mm",
+      capacity: "500mL / 600mL / 800mL / 不适用",
+      height: "80mm / 80mm / 100mm / 100mm / 60mm / 45mm",
+      bottomDiameter: "80mm / 90mm / 90mm / 80mm / 88mm / 60mm",
       material: "PP",
-      compatibleLid: "/"
+      compatibleLid: "不适用"
     },
-    variants: ["85×45×60mm"],
+    variants: ["120×80×80mm", "120×90×80mm", "120×90×100mm", "100×80×100mm", "120×88×60mm", "87×60×45mm"],
     related: ["pp-culture-containers", "heat-seal-culture-bags", "culture-baskets"],
     zh: {
       name: "PP培养盒",
@@ -414,7 +472,7 @@ export const products: Product[] = [
   {
     slug: "heat-seal-culture-bags",
     category: "pp-series",
-    image: "/products/heat-seal-culture-bags.jpg",
+    image: "/products/self-seal-stand-up-culture-bags.jpg",
     specs: {
       capacity: "按规格匹配",
       height: "14cm / 18cm",
@@ -627,22 +685,22 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PC组培瓶", description: "富龙塑业PC组培瓶采用高透明PC材料制造，透光性优异，便于观察培养状态。" },
     en: { name: "PC Tissue Culture Bottles", description: "Fulong PC tissue culture bottles are manufactured from high-transparency polycarbonate for excellent clarity and durability." },
     cards: [
-      { id: "pc-tissue-culture-bottles-1", image: pcBottleImage, imageFileName: "96x60.jpg", sourceName: "96×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "145mL", openingDiameter: "/", bottomDiameter: "60mm", height: "96mm", material: "PC", compatibleLid: "41#" } },
-      { id: "pc-tissue-culture-bottles-2", image: pcBottleImage, imageFileName: "80x60.jpg", sourceName: "80×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "160mL", openingDiameter: "/", bottomDiameter: "60mm", height: "80mm", material: "PC", compatibleLid: "53#" } },
-      { id: "pc-tissue-culture-bottles-3", image: pcBottleImage, imageFileName: "57x77x77.jpg", sourceName: "57×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "180mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "57mm", material: "PC", compatibleLid: "58#" } },
-      { id: "pc-tissue-culture-bottles-4", image: pcBottleImage, imageFileName: "80x77.jpg", sourceName: "80×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "240mL", openingDiameter: "/", bottomDiameter: "77mm", height: "80mm", material: "PC", compatibleLid: "60#" } },
-      { id: "pc-tissue-culture-bottles-5", image: pcBottleImage, imageFileName: "72x77x77.jpg", sourceName: "72×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "72mm", material: "PC", compatibleLid: "72#" } },
-      { id: "pc-tissue-culture-bottles-6", image: pcBottleImage, imageFileName: "98x67.jpg", sourceName: "98×67mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "67mm", height: "98mm", material: "PC", compatibleLid: "61#" } },
-      { id: "pc-tissue-culture-bottles-7", image: pcBottleImage, imageFileName: "90x70.jpg", sourceName: "90×70mm", hiddenFields: ["openingDiameter"], fields: { capacity: "260mL", openingDiameter: "/", bottomDiameter: "70mm", height: "90mm", material: "PC", compatibleLid: "64#" } },
-      { id: "pc-tissue-culture-bottles-8", image: pcBottleImage, imageFileName: "108x68.jpg", sourceName: "108×68mm", hiddenFields: ["openingDiameter"], fields: { capacity: "270mL", openingDiameter: "/", bottomDiameter: "68mm", height: "108mm", material: "PC", compatibleLid: "60#" } },
-      { id: "pc-tissue-culture-bottles-9", image: pcBottleImage, imageFileName: "96x77.jpg", sourceName: "96×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "300mL", openingDiameter: "/", bottomDiameter: "77mm", height: "96mm", material: "PC", compatibleLid: "64#" } },
-      { id: "pc-tissue-culture-bottles-10", image: pcBottleImage, imageFileName: "96x77x77.jpg", sourceName: "96×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "96mm", material: "PC", compatibleLid: "72#" } },
-      { id: "pc-tissue-culture-bottles-11", image: pcBottleImage, imageFileName: "110x77.jpg", sourceName: "110×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77mm", height: "110mm", material: "PC", compatibleLid: "64#" } },
-      { id: "pc-tissue-culture-bottles-12", image: pcBottleImage, imageFileName: "108x91.jpg", sourceName: "108×91mm", hiddenFields: ["openingDiameter"], fields: { capacity: "520mL", openingDiameter: "/", bottomDiameter: "91mm", height: "108mm", material: "PC", compatibleLid: "69#" } },
-      { id: "pc-tissue-culture-bottles-13", image: pcBottleImage, imageFileName: "100x95x95.jpg", sourceName: "100×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "600mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "100mm", material: "PC", compatibleLid: "77#" } },
-      { id: "pc-tissue-culture-bottles-14", image: pcBottleImage, imageFileName: "110x95x95.jpg", sourceName: "110×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "650mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "110mm", material: "PC", compatibleLid: "95#" } },
-      { id: "pc-tissue-culture-bottles-15", image: pcBottleImage, imageFileName: "145x96.jpg", sourceName: "145×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "800mL", openingDiameter: "/", bottomDiameter: "96mm", height: "145mm", material: "PC", compatibleLid: "77#" } },
-      { id: "pc-tissue-culture-bottles-16", image: pcBottleImage, imageFileName: "185x96.jpg", sourceName: "185×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "1000mL", openingDiameter: "/", bottomDiameter: "96mm", height: "185mm", material: "PC", compatibleLid: "77#" } },
+      { id: "pc-tissue-culture-bottles-1", image: "/products/pc-bottles/96x60.JPG", imageFileName: "96x60.jpg", sourceName: "96×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "145mL", openingDiameter: "/", bottomDiameter: "60mm", height: "96mm", material: "PC", compatibleLid: "41#" } },
+      { id: "pc-tissue-culture-bottles-2", image: "/products/pc-bottles/80x60.JPG", imageFileName: "80x60.jpg", sourceName: "80×60mm", hiddenFields: ["openingDiameter"], fields: { capacity: "160mL", openingDiameter: "/", bottomDiameter: "60mm", height: "80mm", material: "PC", compatibleLid: "53#" } },
+      { id: "pc-tissue-culture-bottles-3", image: "/products/pc-bottles/57x77x77.JPG", imageFileName: "57x77x77.jpg", sourceName: "57×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "180mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "57mm", material: "PC", compatibleLid: "58#" } },
+      { id: "pc-tissue-culture-bottles-4", image: "/products/pc-bottles/    80×77.JPG", imageFileName: "80x77.jpg", sourceName: "80×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "240mL", openingDiameter: "/", bottomDiameter: "77mm", height: "80mm", material: "PC", compatibleLid: "60#" } },
+      { id: "pc-tissue-culture-bottles-5", image: "/products/pc-bottles/72×77×77.JPG", imageFileName: "72x77x77.jpg", sourceName: "72×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "72mm", material: "PC", compatibleLid: "72#" } },
+      { id: "pc-tissue-culture-bottles-6", image: "/products/pc-bottles/98x67.JPG", imageFileName: "98x67.jpg", sourceName: "98×67mm", hiddenFields: ["openingDiameter"], fields: { capacity: "250mL", openingDiameter: "/", bottomDiameter: "67mm", height: "98mm", material: "PC", compatibleLid: "61#" } },
+      { id: "pc-tissue-culture-bottles-7", image: "/products/pc-bottles/90x70.JPG", imageFileName: "90x70.jpg", sourceName: "90×70mm", hiddenFields: ["openingDiameter"], fields: { capacity: "260mL", openingDiameter: "/", bottomDiameter: "70mm", height: "90mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-8", image: "/products/pc-bottles/108x68.JPG", imageFileName: "108x68.jpg", sourceName: "108×68mm", hiddenFields: ["openingDiameter"], fields: { capacity: "270mL", openingDiameter: "/", bottomDiameter: "68mm", height: "108mm", material: "PC", compatibleLid: "60#" } },
+      { id: "pc-tissue-culture-bottles-9", image: "/products/pc-bottles/96x77.JPG", imageFileName: "96x77.jpg", sourceName: "96×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "300mL", openingDiameter: "/", bottomDiameter: "77mm", height: "96mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-10", image: "/products/pc-bottles/96x77x77.JPG", imageFileName: "96x77x77.jpg", sourceName: "96×77×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "96mm", material: "PC", compatibleLid: "72#" } },
+      { id: "pc-tissue-culture-bottles-11", image: "/products/pc-bottles/110x77.JPG", imageFileName: "110x77.jpg", sourceName: "110×77mm", hiddenFields: ["openingDiameter"], fields: { capacity: "350mL", openingDiameter: "/", bottomDiameter: "77mm", height: "110mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-12", image: "/products/pc-bottles/108x91.JPG", imageFileName: "108x91.jpg", sourceName: "108×91mm", hiddenFields: ["openingDiameter"], fields: { capacity: "520mL", openingDiameter: "/", bottomDiameter: "91mm", height: "108mm", material: "PC", compatibleLid: "69#" } },
+      { id: "pc-tissue-culture-bottles-13", image: "/products/pc-bottles/100x95x95.JPG", imageFileName: "100x95x95.jpg", sourceName: "100×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "600mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "100mm", material: "PC", compatibleLid: "77#" } },
+      { id: "pc-tissue-culture-bottles-14", image: "/products/pc-bottles/110x95x95.JPG", imageFileName: "110x95x95.jpg", sourceName: "110×95×95mm", hiddenFields: ["openingDiameter"], fields: { capacity: "650mL", openingDiameter: "/", bottomDiameter: "95x95mm", height: "110mm", material: "PC", compatibleLid: "95#" } },
+      { id: "pc-tissue-culture-bottles-15", image: "/products/pc-bottles/145x96.JPG", imageFileName: "145x96.jpg", sourceName: "145×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "800mL", openingDiameter: "/", bottomDiameter: "96mm", height: "145mm", material: "PC", compatibleLid: "77#" } },
+      { id: "pc-tissue-culture-bottles-16", image: "/products/pc-bottles/185x96.JPG", imageFileName: "185x96.jpg", sourceName: "185×96mm", hiddenFields: ["openingDiameter"], fields: { capacity: "1000mL", openingDiameter: "/", bottomDiameter: "96mm", height: "185mm", material: "PC", compatibleLid: "77#" } },
     ]
   },
   {
@@ -652,10 +710,10 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PC组培试管", description: "富龙塑业PC组培试管适用于植物组织培养初代培养阶段、无菌实验及科研培养应用。" },
     en: { name: "PC Culture Tubes", description: "Fulong PC culture tubes are suitable for primary culture stages, sterile laboratory work, and research applications." },
     cards: [
-      { id: "pc-culture-tubes-1", image: pcTubeImage, imageFileName: "100x30.jpg", sourceName: "100×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "50mL", openingDiameter: "/", bottomDiameter: "30mm", height: "100mm", material: "PC", compatibleLid: "30#" } },
-      { id: "pc-culture-tubes-2", image: pcTubeImage, imageFileName: "150x30.jpg", sourceName: "150×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "80mL", openingDiameter: "/", bottomDiameter: "30mm", height: "150mm", material: "PC", compatibleLid: "30#" } },
-      { id: "pc-culture-tubes-3", image: pcTubeImage, imageFileName: "200x30.jpg", sourceName: "200×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "100mL", openingDiameter: "/", bottomDiameter: "30mm", height: "200mm", material: "PC", compatibleLid: "30#" } },
-      { id: "pc-culture-tubes-4", image: pcTubeImage, imageFileName: "91x47.jpg", sourceName: "91×47mm", hiddenFields: ["openingDiameter"], fields: { capacity: "120mL", openingDiameter: "/", bottomDiameter: "47mm", height: "91mm", material: "PC", compatibleLid: "40#" } },
+      { id: "pc-culture-tubes-1", image: "/products/pc-tubes/100x30.jpg", imageFileName: "100x30.jpg", sourceName: "100×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "50mL", openingDiameter: "/", bottomDiameter: "30mm", height: "100mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-2", image: "/products/pc-tubes/150x30.jpg", imageFileName: "150x30.jpg", sourceName: "150×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "80mL", openingDiameter: "/", bottomDiameter: "30mm", height: "150mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-3", image: "/products/pc-tubes/200x30.jpg", imageFileName: "200x30.jpg", sourceName: "200×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "100mL", openingDiameter: "/", bottomDiameter: "30mm", height: "200mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-4", image: "/products/pc-tubes/91x47.jpg", imageFileName: "91x47.jpg", sourceName: "91×47mm", hiddenFields: ["openingDiameter"], fields: { capacity: "120mL", openingDiameter: "/", bottomDiameter: "47mm", height: "91mm", material: "PC", compatibleLid: "40#" } },
     ]
   },
   {
@@ -665,12 +723,12 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PC广口培养杯", description: "广口设计便于接种、观察和取样，适用于植物组织培养及实验培养领域。" },
     en: { name: "PC Wide-Mouth Culture Cups", description: "The wide-mouth design allows easier inoculation, observation, and sampling in tissue culture and laboratory cultivation." },
     cards: [
-      { id: "pc-wide-mouth-culture-cups-1", image: pcCupImage, imageFileName: "65x90x82.jpg", sourceName: "65×90×82mm", fields: { capacity: "340mL", openingDiameter: "90mm", bottomDiameter: "82mm", height: "65mm", material: "PC", compatibleLid: "90#" } },
-      { id: "pc-wide-mouth-culture-cups-2", image: pcCupImage, imageFileName: "85x90x81.jpg", sourceName: "85×90×81mm", fields: { capacity: "430mL", openingDiameter: "90mm", bottomDiameter: "81mm", height: "85mm", material: "PC", compatibleLid: "90#" } },
-      { id: "pc-wide-mouth-culture-cups-3", image: pcCupImage, imageFileName: "95x90x83-vent.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "透气款" } },
-      { id: "pc-wide-mouth-culture-cups-4", image: pcCupImage, imageFileName: "125x90x83-vent.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "透气款" } },
-      { id: "pc-wide-mouth-culture-cups-5", image: pcCupImage, imageFileName: "95x90x83-solid.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "密封款" } },
-      { id: "pc-wide-mouth-culture-cups-6", image: pcCupImage, imageFileName: "125x90x83-solid.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "密封款" } },
+      { id: "pc-wide-mouth-culture-cups-1", image: "/products/pc-wide-mouth-cups/65x90x82.JPG", imageFileName: "65x90x82.jpg", sourceName: "65×90×82mm", fields: { capacity: "340mL", openingDiameter: "90mm", bottomDiameter: "82mm", height: "65mm", material: "PC", compatibleLid: "90#" } },
+      { id: "pc-wide-mouth-culture-cups-2", image: "/products/pc-wide-mouth-cups/85x90x81.JPG", imageFileName: "85x90x81.jpg", sourceName: "85×90×81mm", fields: { capacity: "430mL", openingDiameter: "90mm", bottomDiameter: "81mm", height: "85mm", material: "PC", compatibleLid: "90#" } },
+      { id: "pc-wide-mouth-culture-cups-3", image: "/products/pc-wide-mouth-cups/95x90x83-vent.jpg", imageFileName: "95x90x83-vent.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "透气款" } },
+      { id: "pc-wide-mouth-culture-cups-4", image: "/products/pc-wide-mouth-cups/125x90x83-vent.jpg", imageFileName: "125x90x83-vent.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "透气款" } },
+      { id: "pc-wide-mouth-culture-cups-5", image: "/products/pc-wide-mouth-cups/95x90x83-solid.jpg", imageFileName: "95x90x83-solid.jpg", sourceName: "95×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "95mm", material: "PC", compatibleLid: "密封款" } },
+      { id: "pc-wide-mouth-culture-cups-6", image: "/products/pc-wide-mouth-cups/125x90x83-solid.jpg", imageFileName: "125x90x83-solid.jpg", sourceName: "125×90×83mm", fields: { capacity: "/", openingDiameter: "90mm", bottomDiameter: "83mm", height: "125mm", material: "PC", compatibleLid: "密封款" } },
     ]
   },
   {
@@ -680,12 +738,12 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PP组培容器", description: "富龙塑业PP组培容器兼顾培养效果与经济性，适用于科研实验及大批量培养需求。" },
     en: { name: "PP Tissue Culture Containers", description: "Fulong PP tissue culture containers combine cultivation performance with cost efficiency for laboratory and large-scale use." },
     cards: [
-      { id: "pp-culture-containers-1", image: ppContainerImage, imageFileName: "68x67x55.jpg", sourceName: "68×67×55mm", hiddenFields: ["compatibleLid"], fields: { capacity: "160mL", openingDiameter: "67mm", bottomDiameter: "55mm", height: "68mm", material: "PP", compatibleLid: "/" } },
-      { id: "pp-culture-containers-2", image: ppContainerImage, imageFileName: "65x80x73.jpg", sourceName: "65×80×73mm", hiddenFields: ["compatibleLid"], fields: { capacity: "200mL", openingDiameter: "80mm", bottomDiameter: "73mm", height: "65mm", material: "PP", compatibleLid: "/" } },
-      { id: "pp-culture-containers-3", image: ppContainerImage, imageFileName: "73x100x77.jpg", sourceName: "73×100×77mm", hiddenFields: ["compatibleLid"], fields: { capacity: "300mL", openingDiameter: "100mm", bottomDiameter: "77mm", height: "73mm", material: "PP", compatibleLid: "/" } },
-      { id: "pp-culture-containers-4", image: ppContainerImage, imageFileName: "90x120x92.jpg", sourceName: "90×120×92mm", hiddenFields: ["compatibleLid"], fields: { capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "92mm", height: "90mm", material: "PP", compatibleLid: "/" } },
-      { id: "pp-culture-containers-5", image: ppContainerImage, imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", compatibleLid: "/" } },
-      { id: "pp-culture-containers-6", image: ppContainerImage, imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-1", image: "/products/pp-containers/68x67x55.JPG", imageFileName: "68x67x55.jpg", sourceName: "68×67×55mm", hiddenFields: ["compatibleLid"], fields: { capacity: "160mL", openingDiameter: "67mm", bottomDiameter: "55mm", height: "68mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-2", image: "/products/pp-containers/65x80x73.JPG", imageFileName: "65x80x73.jpg", sourceName: "65×80×73mm", hiddenFields: ["compatibleLid"], fields: { capacity: "200mL", openingDiameter: "80mm", bottomDiameter: "73mm", height: "65mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-3", image: "/products/pp-containers/73x100x77.JPG", imageFileName: "73x100x77.jpg", sourceName: "73×100×77mm", hiddenFields: ["compatibleLid"], fields: { capacity: "300mL", openingDiameter: "100mm", bottomDiameter: "77mm", height: "73mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-4", image: "/products/pp-containers/90x120x92.JPG", imageFileName: "90x120x92.jpg", sourceName: "90×120×92mm", hiddenFields: ["compatibleLid"], fields: { capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "92mm", height: "90mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-5", image: "/products/pp-containers/110x122x96.JPG", imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-6", image: "/products/pp-containers/124x130x105.JPG", imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", compatibleLid: "/" } },
     ]
   },
   {
@@ -695,18 +753,23 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PP培养盒", description: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。" },
     en: { name: "PP Culture Boxes", description: "Fulong PP culture boxes are lightweight, heat-resistant, corrosion-resistant, and autoclavable." },
     cards: [
-      { id: "pp-culture-boxes-1", image: ppBoxImage, imageFileName: "85x45x60.jpg", sourceName: "85×45×60mm", fields: { capacity: "150mL", length: "85mm", width: "45mm", height: "60mm", material: "PP" } },
+      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.JPG", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "80mm", height: "80mm", material: "PP" } },
+      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.JPG", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { capacity: "600mL", openingDiameter: "120mm", bottomDiameter: "90mm", height: "80mm", material: "PP" } },
+      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.JPG", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { capacity: "800mL", openingDiameter: "120mm", bottomDiameter: "90mm", height: "100mm", material: "PP" } },
+      { id: "pp-culture-boxes-4", image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fields: { openingDiameter: "100mm", bottomDiameter: "80mm", height: "100mm", material: "PP" } },
+      { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.JPG", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { openingDiameter: "120mm", bottomDiameter: "88mm", height: "60mm", material: "PP" } },
+      { id: "pp-culture-boxes-6", image: "/products/pp-culture-boxes/87x60x45.JPG", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { length: "87mm", width: "60mm", height: "45mm", material: "PP" } },
     ]
   },
   {
     category: "pp-series",
     slug: "heat-seal-culture-bags",
-    image: bagImage,
+    image: "/products/self-seal-stand-up-culture-bags.jpg",
     zh: { name: "热封组培袋", description: "热封组培袋重量轻、运输方便、存储空间占用小，适用于植物组织培养及无菌培养应用。" },
     en: { name: "Heat-Seal Tissue Culture Bags", description: "Heat-seal culture bags are lightweight, easy to transport, and require minimal storage space for sterile culture applications." },
     cards: [
-      { id: "heat-seal-culture-bags-1", image: bagImage, imageFileName: "bag-12x14-flat.jpg", sourceName: "12×14cm 平口袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
-      { id: "heat-seal-culture-bags-2", image: bagImage, imageFileName: "bag-12x8x18-standup.jpg", sourceName: "12×8×18cm 自立袋", fields: { length: "12cm", width: "8cm", height: "18cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "heat-seal-culture-bags-1", image: "/products/culture-bags/12x14-flat.JPG", imageFileName: "bag-12x14-flat.jpg", sourceName: "12×14cm 平口袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "heat-seal-culture-bags-2", image: "/products/culture-bags/12x8x18-standup.JPG", imageFileName: "bag-12x8x18-standup.jpg", sourceName: "12×8×18cm 自立袋", fields: { length: "12cm", width: "8cm", height: "18cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
     ]
   },
   {
@@ -716,8 +779,8 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "自封自立组培袋", description: "自封自立组培袋兼具便捷封装和稳定摆放优势，适用于植物组织培养及无菌培养应用。" },
     en: { name: "Self-Seal Stand-Up Tissue Culture Bags", description: "Self-standing culture bags combine convenient sealing with stable placement for sterile culture applications." },
     cards: [
-      { id: "self-seal-stand-up-culture-bags-1", image: bagImage, imageFileName: "bag-12x14-standup.jpg", sourceName: "12×14cm 自立袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
-      { id: "self-seal-stand-up-culture-bags-2", image: bagImage, imageFileName: "bag-16x18.5-standup.jpg", sourceName: "16×18.5cm 自立袋", fields: { length: "/", width: "16cm", height: "18.5cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "self-seal-stand-up-culture-bags-1", image: "/products/culture-bags/12x14-standup.JPG", imageFileName: "bag-12x14-standup.jpg", sourceName: "12×14cm 自立袋", fields: { length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+      { id: "self-seal-stand-up-culture-bags-2", image: "/products/culture-bags/16x18.5-standup.JPG", imageFileName: "bag-16x18.5-standup.jpg", sourceName: "16×18.5cm 自立袋", fields: { length: "/", width: "16cm", height: "18.5cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
     ]
   },
   {
@@ -727,29 +790,29 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "组培盖", description: "可定制透气膜，膜片直径支持1cm、2cm、3cm，安装方式支持内置膜和外置膜。" },
     en: { name: "Tissue Culture Lids", description: "Breathable membrane customization is available with 1 cm, 2 cm, and 3 cm membrane diameters, using internal or external membrane installation." },
     cards: [
-      { id: "culture-lids-1", image: lidImage, imageFileName: "30.jpg", sourceName: "30#", fields: { modelNumber: "30#" } },
-      { id: "culture-lids-2", image: lidImage, imageFileName: "40.jpg", sourceName: "40#", fields: { modelNumber: "40#" } },
-      { id: "culture-lids-3", image: lidImage, imageFileName: "52.jpg", sourceName: "52#", fields: { modelNumber: "52#" } },
-      { id: "culture-lids-4", image: lidImage, imageFileName: "53.jpg", sourceName: "53#", fields: { modelNumber: "53#" } },
-      { id: "culture-lids-5", image: lidImage, imageFileName: "54.jpg", sourceName: "54#", fields: { modelNumber: "54#" } },
-      { id: "culture-lids-6", image: lidImage, imageFileName: "55.jpg", sourceName: "55#", fields: { modelNumber: "55#" } },
-      { id: "culture-lids-7", image: lidImage, imageFileName: "56.jpg", sourceName: "56#", fields: { modelNumber: "56#" } },
-      { id: "culture-lids-8", image: lidImage, imageFileName: "57.jpg", sourceName: "57#", fields: { modelNumber: "57#" } },
-      { id: "culture-lids-9", image: lidImage, imageFileName: "58.jpg", sourceName: "58#", fields: { modelNumber: "58#" } },
-      { id: "culture-lids-10", image: lidImage, imageFileName: "60.jpg", sourceName: "60#", fields: { modelNumber: "60#" } },
-      { id: "culture-lids-11", image: lidImage, imageFileName: "61.jpg", sourceName: "61#", fields: { modelNumber: "61#" } },
-      { id: "culture-lids-12", image: lidImage, imageFileName: "63.jpg", sourceName: "63#", fields: { modelNumber: "63#" } },
-      { id: "culture-lids-13", image: lidImage, imageFileName: "64.jpg", sourceName: "64#", fields: { modelNumber: "64#" } },
-      { id: "culture-lids-14", image: lidImage, imageFileName: "65.jpg", sourceName: "65#", fields: { modelNumber: "65#" } },
-      { id: "culture-lids-15", image: lidImage, imageFileName: "69.jpg", sourceName: "69#", fields: { modelNumber: "69#" } },
-      { id: "culture-lids-16", image: lidImage, imageFileName: "70.jpg", sourceName: "70#", fields: { modelNumber: "70#" } },
-      { id: "culture-lids-17", image: lidImage, imageFileName: "72.jpg", sourceName: "72#", fields: { modelNumber: "72#" } },
-      { id: "culture-lids-18", image: lidImage, imageFileName: "75.jpg", sourceName: "75#", fields: { modelNumber: "75#" } },
-      { id: "culture-lids-19", image: lidImage, imageFileName: "77.jpg", sourceName: "77#", fields: { modelNumber: "77#" } },
-      { id: "culture-lids-20", image: lidImage, imageFileName: "80.jpg", sourceName: "80#", fields: { modelNumber: "80#" } },
-      { id: "culture-lids-21", image: lidImage, imageFileName: "82.jpg", sourceName: "82#", fields: { modelNumber: "82#" } },
-      { id: "culture-lids-22", image: lidImage, imageFileName: "90.jpg", sourceName: "90#", fields: { modelNumber: "90#" } },
-      { id: "culture-lids-23", image: lidImage, imageFileName: "95.jpg", sourceName: "95#", fields: { modelNumber: "95#" } },
+      { id: "culture-lids-1", image: "/products/culture-lids/lid-30.JPG", imageFileName: "30.jpg", sourceName: "30#", fields: { modelNumber: "30#" } },
+      { id: "culture-lids-2", image: "/products/culture-lids/lid-40.JPG", imageFileName: "40.jpg", sourceName: "40#", fields: { modelNumber: "40#" } },
+      { id: "culture-lids-3", image: "/products/culture-lids/lid-52.JPG", imageFileName: "52.jpg", sourceName: "52#", fields: { modelNumber: "52#" } },
+      { id: "culture-lids-4", image: "/products/culture-lids/lid-53.JPG", imageFileName: "53.jpg", sourceName: "53#", fields: { modelNumber: "53#" } },
+      { id: "culture-lids-5", image: "/products/culture-lids/lid-54.JPG", imageFileName: "54.jpg", sourceName: "54#", fields: { modelNumber: "54#" } },
+      { id: "culture-lids-6", image: "/products/culture-lids/lid-55.JPG", imageFileName: "55.jpg", sourceName: "55#", fields: { modelNumber: "55#" } },
+      { id: "culture-lids-7", image: "/products/culture-lids/lid-56.JPG", imageFileName: "56.jpg", sourceName: "56#", fields: { modelNumber: "56#" } },
+      { id: "culture-lids-8", image: "/products/culture-lids/lid-57.JPG", imageFileName: "57.jpg", sourceName: "57#", fields: { modelNumber: "57#" } },
+      { id: "culture-lids-9", image: "/products/culture-lids/lid-58.JPG", imageFileName: "58.jpg", sourceName: "58#", fields: { modelNumber: "58#" } },
+      { id: "culture-lids-10", image: "/products/culture-lids/lid-60.JPG", imageFileName: "60.jpg", sourceName: "60#", fields: { modelNumber: "60#" } },
+      { id: "culture-lids-11", image: "/products/culture-lids/lid-61.JPG", imageFileName: "61.jpg", sourceName: "61#", fields: { modelNumber: "61#" } },
+      { id: "culture-lids-12", image: "/products/culture-lids/lid-63.JPG", imageFileName: "63.jpg", sourceName: "63#", fields: { modelNumber: "63#" } },
+      { id: "culture-lids-13", image: "/products/culture-lids/lid-64.JPG", imageFileName: "64.jpg", sourceName: "64#", fields: { modelNumber: "64#" } },
+      { id: "culture-lids-14", image: "/products/culture-lids/lid-65.JPG", imageFileName: "65.jpg", sourceName: "65#", fields: { modelNumber: "65#" } },
+      { id: "culture-lids-15", image: "/products/culture-lids/lid-69.JPG", imageFileName: "69.jpg", sourceName: "69#", fields: { modelNumber: "69#" } },
+      { id: "culture-lids-16", image: "/products/culture-lids/lid-70.JPG", imageFileName: "70.jpg", sourceName: "70#", fields: { modelNumber: "70#" } },
+      { id: "culture-lids-17", image: "/products/culture-lids/lid-72.JPG", imageFileName: "72.jpg", sourceName: "72#", fields: { modelNumber: "72#" } },
+      { id: "culture-lids-18", image: "/products/culture-lids/lid-75.JPG", imageFileName: "75.jpg", sourceName: "75#", fields: { modelNumber: "75#" } },
+      { id: "culture-lids-19", image: "/products/culture-lids/lid-77.JPG", imageFileName: "77.jpg", sourceName: "77#", fields: { modelNumber: "77#" } },
+      { id: "culture-lids-20", image: "/products/culture-lids/lid-80.JPG", imageFileName: "80.jpg", sourceName: "80#", fields: { modelNumber: "80#" } },
+      { id: "culture-lids-21", image: "/products/culture-lids/lid-82.JPG", imageFileName: "82.jpg", sourceName: "82#", fields: { modelNumber: "82#" } },
+      { id: "culture-lids-22", image: "/products/culture-lids/lid-90.JPG", imageFileName: "90.jpg", sourceName: "90#", fields: { modelNumber: "90#" } },
+      { id: "culture-lids-23", image: "/products/culture-lids/lid-95.JPG", imageFileName: "95.jpg", sourceName: "95#", fields: { modelNumber: "95#" } },
     ]
   },
   {
@@ -759,15 +822,15 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "封口膜", description: "富龙塑业封口膜可根据培养容器尺寸及培养需求进行定制。" },
     en: { name: "Sealing Films", description: "Sealing films can be customized according to container size and cultivation requirements." },
     cards: [
-      { id: "sealing-film-1", image: filmImage, imageFileName: "film-12x12-1cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "1cm" } },
-      { id: "sealing-film-2", image: filmImage, imageFileName: "film-12x12-2cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "2cm" } },
-      { id: "sealing-film-3", image: filmImage, imageFileName: "film-12x12-3cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "3cm" } },
-      { id: "sealing-film-4", image: filmImage, imageFileName: "film-14x14-1cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "1cm" } },
-      { id: "sealing-film-5", image: filmImage, imageFileName: "film-14x14-2cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "2cm" } },
-      { id: "sealing-film-6", image: filmImage, imageFileName: "film-14x14-3cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "3cm" } },
-      { id: "sealing-film-7", image: filmImage, imageFileName: "film-16x16-1cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "1cm" } },
-      { id: "sealing-film-8", image: filmImage, imageFileName: "film-16x16-2cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "2cm" } },
-      { id: "sealing-film-9", image: filmImage, imageFileName: "film-16x16-3cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "3cm" } },
+      { id: "sealing-film-1", image: "/products/sealing-films/12x12-hole10.JPG", imageFileName: "film-12x12-1cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-2", image: "/products/sealing-films/12x12-hole20.JPG", imageFileName: "film-12x12-2cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-3", image: "/products/sealing-films/12x12-hole30.JPG", imageFileName: "film-12x12-3cm.jpg", sourceName: "12×12cm", fields: { filmSize: "12×12cm", ventHoleDiameter: "3cm" } },
+      { id: "sealing-film-4", image: "/products/sealing-films/14x14-hole10.JPG", imageFileName: "film-14x14-1cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-5", image: "/products/sealing-films/14x14-hole20.JPG", imageFileName: "film-14x14-2cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-6", image: "/products/sealing-films/14x14-hole30.JPG", imageFileName: "film-14x14-3cm.jpg", sourceName: "14×14cm", fields: { filmSize: "14×14cm", ventHoleDiameter: "3cm" } },
+      { id: "sealing-film-7", image: "/products/sealing-films/16x16-hole10.JPG", imageFileName: "film-16x16-1cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "1cm" } },
+      { id: "sealing-film-8", image: "/products/sealing-films/16x16-hole20.JPG", imageFileName: "film-16x16-2cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "2cm" } },
+      { id: "sealing-film-9", image: "/products/sealing-films/16x16-hole30.JPG", imageFileName: "film-16x16-3cm.jpg", sourceName: "16×16cm", fields: { filmSize: "16×16cm", ventHoleDiameter: "3cm" } },
     ]
   },
   {
@@ -777,15 +840,15 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "组培筐", description: "富龙塑业组培筐采用耐高温PP材料制造，适用于培养容器集中摆放、转运和管理。" },
     en: { name: "Tissue Culture Baskets", description: "Tissue culture baskets are manufactured from heat-resistant PP for organized placement, transportation, and management." },
     cards: [
-      { id: "culture-baskets-1", image: basketImage, imageFileName: "basket-510x310x70.jpg", sourceName: "510×310×70mm", fields: { length: "510mm", width: "310mm", height: "70mm", weight: "270g" } },
-      { id: "culture-baskets-2", image: basketImage, imageFileName: "basket-490x320x50.jpg", sourceName: "490×320×50mm", fields: { length: "490mm", width: "320mm", height: "50mm", weight: "300g" } },
-      { id: "culture-baskets-3", image: basketImage, imageFileName: "basket-520x420x60.jpg", sourceName: "520×420×60mm", fields: { length: "520mm", width: "420mm", height: "60mm", weight: "430g" } },
-      { id: "culture-baskets-4", image: basketImage, imageFileName: "basket-520x420x70.jpg", sourceName: "520×420×70mm", fields: { length: "520mm", width: "420mm", height: "70mm", weight: "440g" } },
-      { id: "culture-baskets-5", image: basketImage, imageFileName: "basket-530x430x70.jpg", sourceName: "530×430×70mm", fields: { length: "530mm", width: "430mm", height: "70mm", weight: "480g" } },
-      { id: "basket-grid-a", image: basketImage, imageFileName: "basket-600x440x60-a.jpg", sourceName: "600×440×60mm（网格A）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
-      { id: "basket-grid-b", image: basketImage, imageFileName: "basket-600x440x60-b.jpg", sourceName: "600×440×60mm（网格B）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
-      { id: "culture-baskets-8", image: basketImage, imageFileName: "basket-620x520x60.jpg", sourceName: "620×520×60mm", fields: { length: "620mm", width: "520mm", height: "60mm", weight: "700g" } },
-      { id: "culture-baskets-9", image: basketImage, imageFileName: "basket-670x450x60.jpg", sourceName: "670×450×60mm", fields: { length: "670mm", width: "450mm", height: "60mm", weight: "700g" } },
+      { id: "culture-baskets-1", image: "/products/culture-baskets/510x310x70.JPG", imageFileName: "basket-510x310x70.jpg", sourceName: "510×310×70mm", fields: { length: "510mm", width: "310mm", height: "70mm", weight: "270g" } },
+      { id: "culture-baskets-2", image: "/products/culture-baskets/490x320x50.JPG", imageFileName: "basket-490x320x50.jpg", sourceName: "490×320×50mm", fields: { length: "490mm", width: "320mm", height: "50mm", weight: "300g" } },
+      { id: "culture-baskets-3", image: "/products/culture-baskets/520x420x60.JPG", imageFileName: "basket-520x420x60.jpg", sourceName: "520×420×60mm", fields: { length: "520mm", width: "420mm", height: "60mm", weight: "430g" } },
+      { id: "culture-baskets-4", image: "/products/culture-baskets/520x420x70.JPG", imageFileName: "basket-520x420x70.jpg", sourceName: "520×420×70mm", fields: { length: "520mm", width: "420mm", height: "70mm", weight: "440g" } },
+      { id: "culture-baskets-5", image: "/products/culture-baskets/530x430x70.JPG", imageFileName: "basket-530x430x70.jpg", sourceName: "530×430×70mm", fields: { length: "530mm", width: "430mm", height: "70mm", weight: "480g" } },
+      { id: "basket-grid-a", image: "/products/culture-baskets/600x440x60-grid-a.JPG", imageFileName: "basket-600x440x60-a.jpg", sourceName: "600×440×60mm（网格A）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
+      { id: "basket-grid-b", image: "/products/culture-baskets/600x440x60-grid-b.JPG", imageFileName: "basket-600x440x60-b.jpg", sourceName: "600×440×60mm（网格B）", fields: { length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
+      { id: "culture-baskets-8", image: "/products/culture-baskets/620x520x60.JPG", imageFileName: "basket-620x520x60.jpg", sourceName: "620×520×60mm", fields: { length: "620mm", width: "520mm", height: "60mm", weight: "700g" } },
+      { id: "culture-baskets-9", image: "/products/culture-baskets/670x450x60.JPG", imageFileName: "basket-670x450x60.jpg", sourceName: "670×450×60mm", fields: { length: "670mm", width: "450mm", height: "60mm", weight: "700g" } },
     ]
   },
   {
@@ -826,97 +889,6 @@ export const knowledgeCategories = [
     en: "Industry Insights"
   }
 ] as const;
-
-export const articles = [
-  {
-    slug: "how-to-read-tissue-culture-container-specifications",
-    category: "product-encyclopedia",
-    publishDate: "2026-06-07",
-    updatedDate: "2026-06-07",
-    relatedProducts: ["pc-tissue-culture-bottles", "pp-culture-containers"],
-    relatedArticles: ["pc-vs-pp-culture-containers"],
-    zh: {
-      title: "如何阅读组织培养容器规格",
-      summary: "从容量、口径、底径、高度、材质和适配盖等参数判断组培容器是否适合具体培养流程。",
-      body: "组织培养容器选型通常需要先确认容量、口径、底径、高度、材质和适配盖。对于高校实验室、科研项目和商业化繁育生产，规格一致性和容器适配性会直接影响采购沟通、耗材管理和长期供货安排。",
-      seoTitle: "如何阅读组织培养容器规格 | 富龙塑业知识库",
-      metaDescription: "了解组织培养容器规格中的容量、高度、底部直径、材质和适配盖，帮助采购前完成基础选型。"
-    },
-    en: {
-      title: "How to Read Tissue Culture Container Specifications",
-      summary: "Evaluate tissue culture containers by capacity, opening diameter, bottom diameter, height, material, and compatible lid.",
-      body: "Tissue culture container selection typically starts with capacity, opening diameter, bottom diameter, height, material, and compatible lid. For laboratories, research projects, and commercial propagation operations, specification consistency and container compatibility are important for procurement communication, consumable management, and long-term supply planning.",
-      seoTitle: "How to Read Tissue Culture Container Specifications | Fulong Plastic",
-      metaDescription: "Learn how capacity, height, bottom diameter, material, and compatible lid help buyers select tissue culture containers."
-    }
-  },
-  {
-    slug: "pc-vs-pp-culture-containers",
-    category: "tissue-culture-knowledge",
-    publishDate: "2026-06-07",
-    updatedDate: "2026-06-07",
-    relatedProducts: ["pc-tissue-culture-bottles", "pp-culture-containers"],
-    relatedArticles: ["how-to-read-tissue-culture-container-specifications"],
-    zh: {
-      title: "PC与PP培养容器的基础区别",
-      summary: "了解PC与PP培养容器在透明度、材质特性、使用场景和规格选择上的基础差异。",
-      body: "PC和PP培养容器可根据观察需求、培养流程、灭菌方式、规格尺寸和配套盖体进行选择。实际采购时，应结合培养对象、操作习惯、容器容量和材质要求进行确认。",
-      seoTitle: "PC与PP培养容器区别 | 富龙塑业知识库",
-      metaDescription: "了解PC培养容器和PP培养容器的基础区别，帮助按材质、规格和适配盖进行选型。"
-    },
-    en: {
-      title: "Basic Differences Between PC and PP Culture Containers",
-      summary: "Compare PC and PP culture containers by transparency, material properties, use case, and specification requirements.",
-      body: "PC and PP culture containers can be selected according to observation needs, culture workflow, sterilization method, dimensions, and compatible lids. Purchasing decisions should be based on the target culture process, operating habits, container capacity, and material requirements.",
-      seoTitle: "PC vs PP Culture Containers | Fulong Plastic Knowledge Base",
-      metaDescription: "Understand basic differences between PC and PP culture containers for material, specification, and lid compatibility selection."
-    }
-  },
-  {
-    slug: "requesting-a-quote-for-culture-containers",
-    category: "faq",
-    publishDate: "2026-06-07",
-    updatedDate: "2026-06-07",
-    relatedProducts: ["pc-tissue-culture-bottles", "culture-lids"],
-    relatedArticles: ["how-to-read-tissue-culture-container-specifications"],
-    zh: {
-      title: "询价组织培养容器时需要提供哪些信息？",
-      summary: "建议提供产品类型、规格参数、适配盖、预计数量、用途和目的国家，以便更快确认报价。",
-      body: "为了提高报价效率，询价时建议提供产品类型、容量、口径、底径、高度、材质、适配盖、预计数量、使用场景和目的国家。如涉及特殊尺寸、盖体结构或透气配置，也可一并说明。",
-      seoTitle: "组培容器询价需要哪些信息 | 富龙塑业FAQ",
-      metaDescription: "组培容器询价建议提供产品名称、容量、尺寸、材质、适配盖、数量和目的国家，以便快速确认报价。"
-    },
-    en: {
-      title: "What Information Is Needed for a Culture Container Quote?",
-      summary: "Provide product type, key specifications, compatible lid, estimated quantity, application, and destination country for faster quotation.",
-      body: "For an efficient quotation, buyers should provide product type, capacity, opening diameter, bottom diameter, height, material, compatible lid, estimated quantity, application, and destination country. If special dimensions, lid structures, or ventilation configurations are required, they should be noted as well.",
-      seoTitle: "What Information Is Needed for a Culture Container Quote | Fulong Plastic FAQ",
-      metaDescription: "For tissue culture container quotes, provide product name, capacity, dimensions, material, compatible lid, quantity, and destination country."
-    }
-  },
-  {
-    slug: "specification-driven-procurement-for-culture-supplies",
-    category: "industry-news-insights",
-    publishDate: "2026-06-07",
-    updatedDate: "2026-06-07",
-    relatedProducts: ["pc-tissue-culture-bottles", "pp-culture-containers", "culture-lids"],
-    relatedArticles: ["requesting-a-quote-for-culture-containers"],
-    zh: {
-      title: "组培耗材采购为什么需要规格驱动",
-      summary: "规格驱动的采购方式有助于提高选型效率，减少重复沟通，并保障长期供货中的产品一致性。",
-      body: "对于高校、科研院所、组培实验室和商业化繁育客户，规格驱动的采购方式有助于清晰确认容量、口径、尺寸、材质和适配关系，减少重复沟通，并支持长期稳定供应和后续补货管理。",
-      seoTitle: "组培耗材规格驱动采购 | 富龙塑业行业资讯",
-      metaDescription: "规格驱动的组培耗材采购有助于确认容量、尺寸、材质和适配关系，提升长期供应中的沟通效率。"
-    },
-    en: {
-      title: "Why Specification-Driven Procurement Matters for Culture Supplies",
-      summary: "Specification-driven procurement improves selection efficiency, reduces repeated communication, and supports product consistency in long-term supply.",
-      body: "For universities, research institutes, tissue culture laboratories, and commercial propagation customers, specification-driven procurement helps clarify capacity, opening size, dimensions, material, and compatibility. This reduces repeated communication and supports stable long-term supply and repeat purchasing.",
-      seoTitle: "Specification-Driven Procurement for Culture Supplies | Fulong Plastic",
-      metaDescription: "Specification-driven procurement helps buyers confirm capacity, dimensions, material, and compatibility for long-term tissue culture supply."
-    }
-  }
-];
 
 export function getCategory(slug: string) {
   return productCategories.find((category) => category.slug === slug);

@@ -18,8 +18,8 @@ export function ContactBlock({ locale, productName }: { locale: Locale; productN
           </p>
           <div className="mt-6 grid gap-2 text-sm text-slate-300">
             <p>{locale === "zh" ? "电话" : "Phone"}: {company.phone}</p>
-            <p>Email: {company.email}</p>
-            <p>WhatsApp: {company.whatsapp}</p>
+            <p>Email: <a href={`mailto:${company.email}`}>{company.email}</a></p>
+            <p>WhatsApp: <a href="https://wa.me/8618358715006">{company.whatsapp}</a></p>
           </div>
         </div>
         <form className="grid gap-4 rounded-lg border border-line bg-panel p-5">
