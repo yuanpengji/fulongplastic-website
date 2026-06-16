@@ -235,15 +235,8 @@ export function HomePage({ locale }: { locale: Locale }) {
         }}
       />
       <section className="relative overflow-hidden border-b border-line bg-black md:min-h-[680px]">
-        <Image
-          src="/products/pc-tissue-culture-bottles.webp"
-          alt={hero.heroTitle}
-          fill
-          priority
-          className={locale === "en" ? "hidden object-contain object-[82%_100%] md:block" : "hidden object-contain object-right-bottom md:block"}
-        />
-        <div className="container relative flex flex-col py-14 md:min-h-[680px] md:flex-row md:items-center md:py-0">
-          <div className="max-w-xl md:py-20 md:pr-8 lg:pr-16">
+        <div className="container relative flex flex-col py-14 md:grid md:min-h-[680px] md:grid-cols-[minmax(0,0.95fr)_minmax(360px,1.05fr)] md:items-center md:gap-8 md:py-0 lg:gap-12 xl:gap-16">
+          <div className="max-w-xl md:py-20 md:pl-4 lg:pl-8">
             <span className="eyebrow">{company[locale].positioning}</span>
             <h1 className="mt-5 max-w-[9em] text-[40px] font-bold leading-[1.12] md:max-w-none md:text-7xl md:leading-tight">
               {locale === "zh" ? (
@@ -268,6 +261,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                 {t.actions.requestQuote}
               </Link>
             </div>
+          </div>
+          <div className="relative hidden h-[500px] w-full md:block lg:h-[560px]">
+            <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority sizes="(min-width: 1024px) 48vw, 44vw" className="object-contain object-center" />
           </div>
           <div className="relative mt-9 aspect-square w-[94vw] max-w-[430px] self-center md:hidden">
             <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="object-contain object-center" />
