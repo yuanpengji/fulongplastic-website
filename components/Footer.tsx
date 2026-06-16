@@ -11,7 +11,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded border border-line bg-black">
-              <Image src="/Logo.JPG" alt={t.brand} width={36} height={36} className="h-full w-full rounded object-contain" />
+              <Image src="/Logo.webp" alt={t.brand} width={36} height={36} className="h-full w-full rounded object-contain" />
             </span>
             <h2 className="text-lg font-bold">{t.brand}</h2>
           </div>

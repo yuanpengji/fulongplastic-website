@@ -26,7 +26,7 @@ export function Header({ locale, path }: HeaderProps) {
       <div className="container flex min-h-16 items-center justify-between gap-5">
         <Link href={localizePath("/", locale)} className="flex items-center gap-3 leading-tight">
           <span className="flex h-9 w-9 items-center justify-center rounded border border-line bg-black text-[10px] font-bold text-steel">
-            <Image src="/Logo.JPG" alt={t.brand} width={36} height={36} className="h-full w-full rounded object-contain" priority />
+            <Image src="/Logo.webp" alt={t.brand} width={36} height={36} className="h-full w-full rounded object-contain" priority />
           </span>
           <span className="flex flex-col">
             <span className="text-base font-bold">{t.brand}</span>

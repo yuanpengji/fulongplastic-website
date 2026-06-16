@@ -235,7 +235,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         }}
       />
       <section className="relative min-h-[680px] overflow-hidden border-b border-line bg-black">
-        <Image src="/products/pc-tissue-culture-bottles.jpg" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom" />
+        <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom" />
         <div className="container relative flex min-h-[680px] items-center">
           <div className="max-w-xl py-20 pr-8 lg:pr-16">
             <span className="eyebrow">{company[locale].positioning}</span>
