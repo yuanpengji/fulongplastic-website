@@ -235,7 +235,13 @@ export function HomePage({ locale }: { locale: Locale }) {
         }}
       />
       <section className="relative overflow-hidden border-b border-line bg-black md:min-h-[680px]">
-        <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="hidden object-contain object-right-bottom md:block" />
+        <Image
+          src="/products/pc-tissue-culture-bottles.webp"
+          alt={hero.heroTitle}
+          fill
+          priority
+          className={locale === "en" ? "hidden object-contain object-[82%_100%] md:block" : "hidden object-contain object-right-bottom md:block"}
+        />
         <div className="container relative flex flex-col py-14 md:min-h-[680px] md:flex-row md:items-center md:py-0">
           <div className="max-w-xl md:py-20 md:pr-8 lg:pr-16">
             <span className="eyebrow">{company[locale].positioning}</span>
@@ -263,7 +269,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </Link>
             </div>
           </div>
-          <div className="relative mt-9 aspect-[4/3] w-full md:hidden">
+          <div className="relative mt-9 aspect-square w-[94vw] max-w-[430px] self-center md:hidden">
             <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="object-contain object-center" />
           </div>
         </div>
