@@ -710,10 +710,10 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PC组培试管", description: "富龙塑业PC组培试管适用于植物组织培养初代培养阶段、无菌实验及科研培养应用。" },
     en: { name: "PC Culture Tubes", description: "Fulong PC culture tubes are suitable for primary culture stages, sterile laboratory work, and research applications." },
     cards: [
-      { id: "pc-culture-tubes-1", image: "/products/pc-tubes/100x30.jpg", imageFileName: "100x30.jpg", sourceName: "100×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "50mL", openingDiameter: "/", bottomDiameter: "30mm", height: "100mm", material: "PC", compatibleLid: "30#" } },
-      { id: "pc-culture-tubes-2", image: "/products/pc-tubes/150x30.jpg", imageFileName: "150x30.jpg", sourceName: "150×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "80mL", openingDiameter: "/", bottomDiameter: "30mm", height: "150mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-1", image: "/products/pc-tubes/100x30.JPG", imageFileName: "100x30.jpg", sourceName: "100×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "50mL", openingDiameter: "/", bottomDiameter: "30mm", height: "100mm", material: "PC", compatibleLid: "30#" } },
+      { id: "pc-culture-tubes-2", image: "/products/pc-tubes/150x30.JPG", imageFileName: "150x30.jpg", sourceName: "150×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "80mL", openingDiameter: "/", bottomDiameter: "30mm", height: "150mm", material: "PC", compatibleLid: "30#" } },
       { id: "pc-culture-tubes-3", image: "/products/pc-tubes/200x30.jpg", imageFileName: "200x30.jpg", sourceName: "200×30mm", hiddenFields: ["openingDiameter"], fields: { capacity: "100mL", openingDiameter: "/", bottomDiameter: "30mm", height: "200mm", material: "PC", compatibleLid: "30#" } },
-      { id: "pc-culture-tubes-4", image: "/products/pc-tubes/91x47.jpg", imageFileName: "91x47.jpg", sourceName: "91×47mm", hiddenFields: ["openingDiameter"], fields: { capacity: "120mL", openingDiameter: "/", bottomDiameter: "47mm", height: "91mm", material: "PC", compatibleLid: "40#" } },
+      { id: "pc-culture-tubes-4", image: "/products/pc-tubes/91x47.JPG", imageFileName: "91x47.jpg", sourceName: "91×47mm", hiddenFields: ["openingDiameter"], fields: { capacity: "120mL", openingDiameter: "/", bottomDiameter: "47mm", height: "91mm", material: "PC", compatibleLid: "40#" } },
     ]
   },
   {
