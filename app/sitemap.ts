@@ -1,5 +1,18 @@
 import type { MetadataRoute } from "next";
-import { articles, localizePath, productCategories, productPath, products, siteUrl } from "@/lib/content";
+import { articles, productCategories, productPath, products, siteUrl } from "@/lib/content";
+
+const lastModified = new Date("2026-06-16T00:00:00.000Z");
+
+function toEnglishPath(path: string) {
+  return path === "/" ? "/en" : `/en${path}`;
+}
+
+function toSitemapEntry(path: string): MetadataRoute.Sitemap[number] {
+  return {
+    url: `${siteUrl}${path}`,
+    lastModified
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPaths = ["/", "/products/", "/applications/", "/knowledge-base/", "/about/", "/contact/"];
@@ -10,55 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articlePaths = articles.map((article) => `/knowledge-base/${article.category}/${article.slug}/`);
 
   const zhPaths = [...staticPaths, ...categoryPaths, ...knowledgePaths, ...articlePaths];
-  const localized = zhPaths.flatMap((path) => [
-    {
-      url: `${siteUrl}${path}`,
-      lastModified: new Date(),
-      alternates: {
-        languages: {
-          "zh-CN": `${siteUrl}${path}`,
-          en: `${siteUrl}${localizePath(path, "en")}`
-        }
-      }
-    },
-    {
-      url: `${siteUrl}${localizePath(path, "en")}`,
-      lastModified: new Date(),
-      alternates: {
-        languages: {
-          "zh-CN": `${siteUrl}${path}`,
-          en: `${siteUrl}${localizePath(path, "en")}`
-        }
-      }
-    }
-  ]);
+  const localizedPaths = zhPaths.flatMap((path) => [path, toEnglishPath(path)]);
 
   const productUrls = products.flatMap((product) => {
-    const zh = productPath(product, "zh");
-    const en = productPath(product, "en");
-    return [
-      {
-        url: `${siteUrl}${zh}`,
-        lastModified: new Date(),
-        alternates: {
-          languages: {
-            "zh-CN": `${siteUrl}${zh}`,
-            en: `${siteUrl}${en}`
-          }
-        }
-      },
-      {
-        url: `${siteUrl}${en}`,
-        lastModified: new Date(),
-        alternates: {
-          languages: {
-            "zh-CN": `${siteUrl}${zh}`,
-            en: `${siteUrl}${en}`
-          }
-        }
-      }
-    ];
+    return [productPath(product, "zh"), productPath(product, "en")];
   });
 
-  return [...localized, ...productUrls];
+  return Array.from(new Set([...localizedPaths, ...productUrls])).map(toSitemapEntry);
 }
