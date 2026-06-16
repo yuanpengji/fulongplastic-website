@@ -234,12 +234,25 @@ export function HomePage({ locale }: { locale: Locale }) {
           description: company[locale].positioning
         }}
       />
-      <section className="relative min-h-[680px] overflow-hidden border-b border-line bg-black">
-        <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="object-contain object-right-bottom" />
-        <div className="container relative flex min-h-[680px] items-center">
-          <div className="max-w-xl py-20 pr-8 lg:pr-16">
+      <section className="relative overflow-hidden border-b border-line bg-black md:min-h-[680px]">
+        <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="hidden object-contain object-right-bottom md:block" />
+        <div className="container relative flex flex-col py-14 md:min-h-[680px] md:flex-row md:items-center md:py-0">
+          <div className="max-w-xl md:py-20 md:pr-8 lg:pr-16">
             <span className="eyebrow">{company[locale].positioning}</span>
-            <h1 className="mt-5 text-5xl font-bold leading-tight md:text-7xl">{hero.heroTitle}</h1>
+            <h1 className="mt-5 max-w-[9em] text-[40px] font-bold leading-[1.12] md:max-w-none md:text-7xl md:leading-tight">
+              {locale === "zh" ? (
+                <>
+                  <span className="md:hidden">
+                    组织培养容器
+                    <br />
+                    <span className="whitespace-nowrap">源头生产厂家</span>
+                  </span>
+                  <span className="hidden md:inline">{hero.heroTitle}</span>
+                </>
+              ) : (
+                hero.heroTitle
+              )}
+            </h1>
             <p className="mt-6 max-w-lg text-lg leading-8 text-slate-300">{hero.heroSubtitle}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href={localizePath("/products/", locale)} className="btn btn-primary">
@@ -249,6 +262,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                 {t.actions.requestQuote}
               </Link>
             </div>
+          </div>
+          <div className="relative mt-9 aspect-[4/3] w-full md:hidden">
+            <Image src="/products/pc-tissue-culture-bottles.webp" alt={hero.heroTitle} fill priority className="object-contain object-center" />
           </div>
         </div>
       </section>
