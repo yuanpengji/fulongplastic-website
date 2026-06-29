@@ -100,6 +100,10 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
     return ["length", "width", "height", "material", "filterPatchInfo"];
   }
 
+  if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
+    return ["capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter"];
+  }
+
   if (fields.length && fields.width) {
     return ["capacity", "length", "width", "height", "material"];
   }

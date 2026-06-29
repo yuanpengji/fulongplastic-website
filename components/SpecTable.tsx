@@ -42,7 +42,14 @@ function formatTableValue(value: string, locale: Locale) {
 
 export function SpecTable({ product, locale }: { product: Product; locale: Locale }) {
   const t = text[locale];
-  const rows = [
+  const rows = product.slug === "pp-culture-boxes" ? [
+    [t.fields.capacity, product.specs.capacity],
+    [t.fields.topDimensions, product.specs.topDimensions ?? ""],
+    [t.fields.bottomDimensions, product.specs.bottomDimensions ?? ""],
+    [t.fields.height, product.specs.height],
+    [t.fields.material, product.specs.material],
+    [t.fields.filterMembraneDiameter, product.specs.filterMembraneDiameter ?? ""]
+  ] : [
     [t.fields.capacity, product.specs.capacity],
     [t.fields.height, product.specs.height],
     [t.fields.bottomDiameter, product.specs.bottomDiameter],
