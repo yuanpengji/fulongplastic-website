@@ -111,6 +111,32 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
   return ["capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
 }
 
+function getSpecFieldLabel({
+  groupSlug,
+  cardId,
+  field,
+  locale,
+  fallback
+}: {
+  groupSlug: string;
+  cardId: string;
+  field: string;
+  locale: Locale;
+  fallback: string;
+}) {
+  const isRoundPpCultureBox = groupSlug === "pp-culture-boxes" && ["pp-culture-boxes-1", "pp-culture-boxes-2", "pp-culture-boxes-3"].includes(cardId);
+
+  if (isRoundPpCultureBox && field === "topDimensions") {
+    return locale === "zh" ? "口径" : "Top Diameter";
+  }
+
+  if (isRoundPpCultureBox && field === "bottomDimensions") {
+    return locale === "zh" ? "底径" : "Bottom Diameter";
+  }
+
+  return fallback;
+}
+
 function parseMarkdownTableRow(line: string) {
   return line
     .replace(/^\|/, "")
@@ -209,7 +235,15 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
 
                   return (
                     <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
-                      <dt className="text-steel">{t.fields[field as keyof typeof t.fields]}</dt>
+                      <dt className="text-steel">
+                        {getSpecFieldLabel({
+                          groupSlug: group.slug,
+                          cardId: card.id,
+                          field,
+                          locale,
+                          fallback: t.fields[field as keyof typeof t.fields]
+                        })}
+                      </dt>
                       <dd className="text-right font-semibold text-slate-100">{formatSpecValue(String(value), locale)}</dd>
                     </div>
                   );
