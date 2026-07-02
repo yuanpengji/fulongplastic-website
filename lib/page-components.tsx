@@ -85,30 +85,30 @@ function formatSpecValue(value: string, locale: Locale) {
 
 function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[number]["cards"][number]["fields"]) {
   if (fields.modelNumber) {
-    return ["modelNumber"];
+    return ["productCode", "modelNumber"];
   }
 
   if (fields.filmSize) {
-    return ["filmSize", "ventHoleDiameter"];
+    return ["productCode", "filmSize", "ventHoleDiameter"];
   }
 
   if (fields.weight) {
-    return ["length", "width", "height", "weight"];
+    return ["productCode", "length", "width", "height", "weight"];
   }
 
   if (fields.filterPatchInfo) {
-    return ["length", "width", "height", "material", "filterPatchInfo"];
+    return ["productCode", "length", "width", "height", "material", "filterPatchInfo"];
   }
 
   if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
-    return ["capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter"];
+    return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter"];
   }
 
   if (fields.length && fields.width) {
-    return ["capacity", "length", "width", "height", "material"];
+    return ["productCode", "capacity", "length", "width", "height", "material"];
   }
 
-  return ["capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
+  return ["productCode", "capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
 }
 
 function getSpecFieldLabel({
