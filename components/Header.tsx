@@ -10,15 +10,15 @@ type HeaderProps = {
 export function Header({ locale, path }: HeaderProps) {
   const t = text[locale];
   const otherLocale = locale === "zh" ? "en" : "zh";
-  const switchPath = otherLocale === "en" ? `/en${path === "/" ? "" : path}` : path.replace(/^\/en/, "") || "/";
+  const switchPath = localizePath(path, otherLocale);
 
   const nav = [
     { href: "/", label: t.nav.home },
-    { href: "/products/", label: t.nav.products },
-    { href: "/applications/", label: t.nav.applications },
-    { href: "/knowledge-base/", label: t.nav.knowledge },
-    { href: "/about/", label: t.nav.about },
-    { href: "/contact/", label: t.nav.contact }
+    { href: "/products", label: t.nav.products },
+    { href: "/applications", label: t.nav.applications },
+    { href: "/knowledge-base", label: t.nav.knowledge },
+    { href: "/about", label: t.nav.about },
+    { href: "/contact", label: t.nav.contact }
   ];
 
   return (

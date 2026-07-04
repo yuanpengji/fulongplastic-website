@@ -931,17 +931,25 @@ export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);
 }
 
-export function localizePath(path: string, locale: Locale) {
-  if (locale === "en") {
-    return `/en${path === "/" ? "" : path}`;
+export function normalizePath(path: string) {
+  if (path === "/") {
+    return "/";
   }
-  return path;
+  return path.replace(/\/+$/, "");
+}
+
+export function localizePath(path: string, locale: Locale) {
+  const normalizedPath = normalizePath(path);
+  if (locale === "en") {
+    return normalizedPath === "/" ? "/en" : `/en${normalizedPath}`;
+  }
+  return normalizedPath;
 }
 
 export function productPath(product: Product, locale: Locale) {
   const base =
     product.category === "featured"
-      ? `/products/featured/${product.slug}/`
-      : `/products/${product.category}/${product.slug}/`;
+      ? `/products/featured/${product.slug}`
+      : `/products/${product.category}/${product.slug}`;
   return localizePath(base, locale);
 }

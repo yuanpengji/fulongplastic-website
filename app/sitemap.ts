@@ -1,26 +1,26 @@
 import type { MetadataRoute } from "next";
-import { articles, productCategories, productPath, products, siteUrl } from "@/lib/content";
+import { articles, localizePath, normalizePath, productCategories, productPath, products, siteUrl } from "@/lib/content";
 
 const lastModified = new Date("2026-06-16T00:00:00.000Z");
 
 function toEnglishPath(path: string) {
-  return path === "/" ? "/en" : `/en${path}`;
+  return localizePath(path, "en");
 }
 
 function toSitemapEntry(path: string): MetadataRoute.Sitemap[number] {
   return {
-    url: `${siteUrl}${path}`,
+    url: `${siteUrl}${normalizePath(path)}`,
     lastModified
   };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["/", "/products/", "/applications/", "/knowledge-base/", "/about/", "/contact/"];
-  const categoryPaths = productCategories.map((category) => `/products/${category.slug}/`);
+  const staticPaths = ["/", "/products", "/applications", "/knowledge-base", "/about", "/contact"];
+  const categoryPaths = productCategories.map((category) => `/products/${category.slug}`);
   const knowledgePaths = ["product-encyclopedia", "tissue-culture-knowledge", "faq", "industry-news-insights"].map(
-    (category) => `/knowledge-base/${category}/`
+    (category) => `/knowledge-base/${category}`
   );
-  const articlePaths = articles.map((article) => `/knowledge-base/${article.category}/${article.slug}/`);
+  const articlePaths = articles.map((article) => `/knowledge-base/${article.category}/${article.slug}`);
 
   const zhPaths = [...staticPaths, ...categoryPaths, ...knowledgePaths, ...articlePaths];
   const localizedPaths = zhPaths.flatMap((path) => [path, toEnglishPath(path)]);

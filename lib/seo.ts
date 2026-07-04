@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Locale, localizePath, siteUrl } from "@/lib/content";
+import { Locale, localizePath, normalizePath, siteUrl } from "@/lib/content";
 
 type SeoInput = {
   locale: Locale;
@@ -11,14 +11,16 @@ type SeoInput = {
 
 export function buildMetadata({ locale, path, title, description, image = "/products/pc-tissue-culture-bottles.jpg" }: SeoInput): Metadata {
   const url = `${siteUrl}${localizePath(path, locale)}`;
+  const zhUrl = `${siteUrl}${normalizePath(path)}`;
+  const enUrl = `${siteUrl}${localizePath(path, "en")}`;
   return {
     title,
     description,
     alternates: {
       canonical: url,
       languages: {
-        "zh-CN": `${siteUrl}${path}`,
-        en: `${siteUrl}/en${path === "/" ? "" : path}`
+        "zh-CN": zhUrl,
+        en: enUrl
       }
     },
     openGraph: {
