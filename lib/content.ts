@@ -458,7 +458,7 @@ export const products: Product[] = [
     image: "/products/pp-culture-boxes.webp",
     specs: {
       capacity: "500mL / 600mL / 800mL / 不适用 / 500mL / 750mL / 1000mL",
-      topDimensions: "120×80mm / 120×90mm / 120×90mm / 100mm / 120mm / 87×60mm / 95×95mm / 110×110mm / 110×110mm",
+      topDimensions: "120mm / 120mm / 120mm / 100mm / 120mm / 87×60mm / 95×95mm / 110×110mm / 110×110mm",
       bottomDimensions: "80mm / 90mm / 90mm / 80mm / 88mm / 不适用 / 80×80mm / 88×88mm / 92×92mm",
       height: "80mm / 80mm / 100mm / 100mm / 60mm / 45mm / 85mm / 95mm / 120mm",
       bottomDiameter: "80mm / 90mm / 90mm / 80mm / 88mm / 60mm / 80×80mm / 88×88mm / 92×92mm",
@@ -767,9 +767,9 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "PP培养盒", description: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。" },
     en: { name: "PP Culture Boxes", description: "Fulong PP culture boxes are lightweight, heat-resistant, corrosion-resistant, and autoclavable." },
     cards: [
-      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-120808080", capacity: "500mL", topDimensions: "120×80mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-120909080", capacity: "600mL", topDimensions: "120×90mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-1209090100", capacity: "800mL", topDimensions: "120×90mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-4", image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fields: { productCode: "PP-BOX-10080100", capacity: "不适用", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.webp", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { productCode: "PP-BOX-1208860", capacity: "不适用", topDimensions: "120mm", bottomDimensions: "88mm", height: "60mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-6", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "不适用", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", filterMembraneDiameter: "不适用" } },
