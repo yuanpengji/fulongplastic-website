@@ -131,7 +131,7 @@ export const company = {
   zh: {
     positioning: "组织培养容器及相关配套产品源头生产厂家",
     about:
-      "富龙塑业是一家专注于组织培养容器及配套耗材的源头生产厂家，拥有20余年塑料培养容器制造经验。公司产品涵盖PC组培瓶、PC组培试管、PC广口培养杯、PP组培容器、PP培养盒、组培袋、组培盖、封口膜及组培筐等，服务于植物组织培养、科研实验、农业研究、种苗繁育及相关培养场景。",
+      "富龙塑业是一家专注于组织培养容器及配套耗材的源头生产厂家，拥有20余年塑料培养容器制造经验。公司产品涵盖PC组培瓶、PC组培试管、PC广口培养杯、PP组培容器、一次性PP培养盒、组培袋、组培盖、封口膜及组培筐等，服务于植物组织培养、科研实验、农业研究、种苗繁育及相关培养场景。",
     aboutMore:
       "公司长期服务高校、科研院所、商业化繁育企业、农业科研客户及国际客户，重视规格一致性、容器适配性和长期供货稳定性。针对不同培养流程和使用习惯，富龙塑业可配合客户进行产品结构、规格和配套方案的开发沟通。",
     proofPoints: [
@@ -147,7 +147,7 @@ export const company = {
   en: {
     positioning: "Original manufacturer of tissue culture containers and related accessories",
     about:
-      "Fulong Plastic is an original manufacturer focused on tissue culture containers and related consumables, with more than 20 years of experience in plastic culture vessel manufacturing. The product range includes PC tissue culture bottles, PC culture tubes, PC wide-mouth culture cups, PP tissue culture containers, PP culture boxes, culture bags, culture lids, sealing film, culture baskets, and supporting supplies.",
+      "Fulong Plastic is an original manufacturer focused on tissue culture containers and related consumables, with more than 20 years of experience in plastic culture vessel manufacturing. The product range includes PC tissue culture bottles, PC culture tubes, PC wide-mouth culture cups, PP tissue culture containers, Disposable PP Culture Boxes, culture bags, culture lids, sealing film, culture baskets, and supporting supplies.",
     aboutMore:
       "We supply universities, research institutes, commercial propagation companies, agricultural research customers, and international buyers. Our work focuses on specification consistency, container compatibility, reliable long-term supply, and practical product development for different tissue culture and cultivation workflows.",
     proofPoints: [
@@ -214,7 +214,7 @@ export const applicationGallery = [
   {
     image: "/applications/application-04.jpg",
     zh: "PP组培盒实际应用",
-    en: "PP Culture Boxes with Sealing Film"
+    en: "Disposable PP Culture Boxes with Sealing Film"
   },
   {
     image: "/applications/application-05.jpg",
@@ -429,25 +429,25 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-containers.webp",
     specs: {
-      capacity: "160mL / 200mL / 300mL / 500mL / 750mL / 1000mL",
-      height: "68mm / 65mm / 73mm / 90mm / 110mm / 124mm",
-      bottomDiameter: "55mm / 73mm / 77mm / 92mm / 96mm / 105mm",
+      capacity: "500mL / 600mL / 800mL / 160mL / 200mL / 300mL / 500mL / 750mL / 1000mL / 不适用",
+      height: "80mm / 80mm / 100mm / 68mm / 65mm / 73mm / 90mm / 110mm / 124mm / 45mm",
+      bottomDiameter: "80mm / 90mm / 90mm / 55mm / 73mm / 77mm / 92mm / 96mm / 105mm / 不适用",
       material: "PP",
       compatibleLid: "/"
     },
-    variants: ["68×67×55mm", "65×80×73mm", "73×100×77mm", "90×120×92mm", "110×122×96mm", "124×130×105mm"],
+    variants: ["120×80×80mm", "120×90×80mm", "120×90×100mm", "68×67×55mm", "65×80×73mm", "73×100×77mm", "90×120×92mm", "110×122×96mm", "124×130×105mm", "87×60×45mm"],
     related: ["pp-culture-boxes", "heat-seal-culture-bags", "culture-lids"],
     zh: {
       name: "PP组培容器",
-      description: "富龙塑业PP组培容器采用优质PP材料制造，具有良好的透明度、耐热性和化学稳定性。产品支持透气培养，并可耐受最高120℃高温高压灭菌。兼顾培养效果与经济性，适用于科研实验及大批量培养需求。",
-      features: ["优质PP材质", "支持透气培养", "最高120℃高温高压灭菌", "适合大批量培养需求"],
+      description: "富龙塑业PP组培容器采用优质聚丙烯（PP）材料制造，兼顾培养效果与经济性，适用于科研实验及商业化植物组织培养生产。本系列产品可耐受约120℃高温高压灭菌。在规范使用和正确灭菌条件下，可重复使用数次，适用于继代培养、生根培养及日常培养管理。相较于一次性培养容器，可有效降低长期使用成本，适合需要重复灭菌、标准化管理及规模化生产的培养体系。",
+      features: ["优质聚丙烯（PP）材料", "约120℃高温高压灭菌", "规范条件下可重复使用", "适合标准化与规模化培养"],
       seoTitle: "PP组培容器 | 富龙塑业",
       metaDescription: "富龙塑业PP组培容器采用优质PP材料，支持透气培养和最高120℃高温高压灭菌，适用于科研实验及大批量培养。"
     },
     en: {
       name: "PP Tissue Culture Containers",
-      description: "Manufactured from high-quality polypropylene (PP), these culture containers provide excellent transparency, heat resistance, and chemical stability. They support ventilated culture and are autoclavable up to 120°C. Combining cultivation performance with cost efficiency, they are suitable for laboratory and large-scale cultivation applications.",
-      features: ["High-quality PP material", "Ventilated culture supported", "Autoclavable up to 120°C", "Suitable for large-scale cultivation"],
+      description: "Made from high-quality polypropylene (PP), these reusable culture containers are designed for routine plant tissue culture, research laboratories, and commercial micropropagation programs. The series is autoclavable at approximately 120°C and can be reused multiple times under proper operating, cleaning, and sterilization conditions. Compared with single-use vessels, they offer a cost-effective option for standardized production systems that require repeated sterilization and reliable day-to-day culture management.",
+      features: ["High-quality polypropylene (PP)", "Autoclavable at approximately 120°C", "Reusable under proper conditions", "Cost-effective for standardized production"],
       seoTitle: "PP Tissue Culture Containers | Fulong Plastic",
       metaDescription: "Fulong PP tissue culture containers provide transparency, heat resistance, ventilated culture support, and autoclaving up to 120°C."
     }
@@ -457,30 +457,30 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-boxes.webp",
     specs: {
-      capacity: "500mL / 600mL / 800mL / 不适用 / 500mL / 750mL / 1000mL",
-      topDimensions: "120mm / 120mm / 120mm / 100mm / 120mm / 87×60mm / 95×95mm / 110×110mm / 110×110mm",
-      bottomDimensions: "80mm / 90mm / 90mm / 80mm / 88mm / 不适用 / 80×80mm / 88×88mm / 92×92mm",
-      height: "80mm / 80mm / 100mm / 100mm / 60mm / 45mm / 85mm / 95mm / 120mm",
-      bottomDiameter: "80mm / 90mm / 90mm / 80mm / 88mm / 60mm / 80×80mm / 88×88mm / 92×92mm",
+      capacity: "不适用 / 500mL / 750mL / 1000mL",
+      topDimensions: "100mm / 95×95mm / 110×110mm / 110×110mm",
+      bottomDimensions: "80mm / 80×80mm / 88×88mm / 92×92mm",
+      height: "100mm / 85mm / 95mm / 120mm",
+      bottomDiameter: "80mm / 80×80mm / 88×88mm / 92×92mm",
       material: "PP",
       compatibleLid: "不适用",
-      filterMembraneDiameter: "不适用 / 不适用 / 不适用 / 不适用 / 不适用 / 不适用 / 2cm / 3cm / 3cm"
+      filterMembraneDiameter: "不适用 / 2cm / 3cm / 3cm"
     },
-    variants: ["120×80×80mm", "120×90×80mm", "120×90×100mm", "100×80×100mm", "120×88×60mm", "87×60×45mm", "95×95×85mm", "110×110×95mm", "110×110×120mm"],
+    variants: ["100×80×100mm", "95×95×85mm", "110×110×95mm", "110×110×120mm"],
     related: ["pp-culture-containers", "heat-seal-culture-bags", "culture-baskets"],
     zh: {
-      name: "PP培养盒",
-      description: "富龙塑业PP培养盒采用优质PP材料制造，重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。适用于植物组织培养、种苗培养及实验培养应用，在保证培养效果的同时兼顾经济性需求。",
-      features: ["优质PP材质", "重量轻", "耐高温耐腐蚀", "兼顾培养效果与经济性"],
-      seoTitle: "PP培养盒 | 富龙塑业",
-      metaDescription: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，支持高温高压灭菌，适用于组织培养、种苗培养和实验培养。"
+      name: "一次性PP培养盒",
+      description: "一次性PP培养盒主要用于植物组织培养流程。产品无需清洗，有助于减少交叉污染风险，适用于商业化批量培养和高周转生产流程，并可在一定程度上提高日常生产效率。其中，PP-BOX-10080100 为热封培养盒，需要配合封口膜及热封设备使用；其余规格均配备透气膜，可直接用于植物组织培养。",
+      features: ["一次性植物组织培养容器", "无需清洗", "减少交叉污染风险", "适合商业化批量培养"],
+      seoTitle: "一次性PP培养盒 | 富龙塑业",
+      metaDescription: "富龙塑业一次性PP培养盒无需清洗，可减少交叉污染风险，适用于商业化批量培养及高周转植物组织培养流程。"
     },
     en: {
-      name: "PP Culture Boxes",
-      description: "Fulong PP culture boxes are manufactured from high-quality polypropylene. Lightweight, heat-resistant, and autoclavable, they are suitable for plant tissue culture, propagation, and laboratory cultivation while maintaining excellent cost efficiency.",
-      features: ["High-quality PP material", "Lightweight design", "Heat-resistant and autoclavable", "Cost-efficient cultivation option"],
-      seoTitle: "PP Culture Boxes | Fulong Plastic",
-      metaDescription: "Fulong PP culture boxes are lightweight, heat-resistant, autoclavable, and suitable for plant tissue culture, propagation, and laboratory cultivation."
+      name: "Disposable PP Culture Boxes",
+      description: "Disposable PP Culture Boxes are designed for single-use plant tissue culture workflows where no cleaning, lower cross-contamination risk, and high-throughput commercial micropropagation are important. PP-BOX-10080100 is a heat-seal culture box used with sealing film and a heat sealer. The other models include an integrated vent membrane and are ready for immediate use in tissue culture production.",
+      features: ["Disposable tissue culture containers", "No cleaning required", "Helps reduce cross-contamination risk", "For high-throughput commercial micropropagation"],
+      seoTitle: "Disposable PP Culture Boxes | Fulong Plastic",
+      metaDescription: "Fulong Disposable PP Culture Boxes are single-use tissue culture containers for commercial micropropagation, reduced cleaning work, and lower cross-contamination risk."
     }
   },
   {
@@ -749,30 +749,29 @@ export const productSpecGroups: ProductSpecGroup[] = [
     category: "pp-series",
     slug: "pp-culture-containers",
     image: ppContainerImage,
-    zh: { name: "PP组培容器", description: "富龙塑业PP组培容器兼顾培养效果与经济性，适用于科研实验及大批量培养需求。" },
-    en: { name: "PP Tissue Culture Containers", description: "Fulong PP tissue culture containers combine cultivation performance with cost efficiency for laboratory and large-scale use." },
+    zh: { name: "PP组培容器", description: "富龙塑业PP组培容器采用优质聚丙烯（PP）材料制造，兼顾培养效果与经济性，适用于科研实验及商业化植物组织培养生产。" },
+    en: { name: "PP Tissue Culture Containers", description: "Reusable polypropylene culture containers for routine tissue culture, research laboratories, and commercial micropropagation." },
     cards: [
+      { id: "pp-culture-containers-round-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "pp-culture-containers-round-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "pp-culture-containers-round-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-containers-1", image: "/products/pp-containers/68x67x55.webp", imageFileName: "68x67x55.jpg", sourceName: "68×67×55mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-686755", capacity: "160mL", openingDiameter: "67mm", bottomDiameter: "55mm", height: "68mm", material: "PP", compatibleLid: "/" } },
       { id: "pp-culture-containers-2", image: "/products/pp-containers/65x80x73.webp", imageFileName: "65x80x73.jpg", sourceName: "65×80×73mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-658073", capacity: "200mL", openingDiameter: "80mm", bottomDiameter: "73mm", height: "65mm", material: "PP", compatibleLid: "/" } },
       { id: "pp-culture-containers-3", image: "/products/pp-containers/73x100x77.webp", imageFileName: "73x100x77.jpg", sourceName: "73×100×77mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-7310077", capacity: "300mL", openingDiameter: "100mm", bottomDiameter: "77mm", height: "73mm", material: "PP", compatibleLid: "/" } },
       { id: "pp-culture-containers-4", image: "/products/pp-containers/90x120x92.webp", imageFileName: "90x120x92.jpg", sourceName: "90×120×92mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-9012092", capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "92mm", height: "90mm", material: "PP", compatibleLid: "/" } },
       { id: "pp-culture-containers-5", image: "/products/pp-containers/110x122x96.webp", imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-11012296", capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", compatibleLid: "/" } },
       { id: "pp-culture-containers-6", image: "/products/pp-containers/124x130x105.webp", imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-124130105", capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", compatibleLid: "/" } },
+      { id: "pp-culture-containers-square-1", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "不适用", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", filterMembraneDiameter: "不适用" } },
     ]
   },
   {
     category: "pp-series",
     slug: "pp-culture-boxes",
     image: ppBoxImage,
-    zh: { name: "PP培养盒", description: "富龙塑业PP培养盒重量轻、耐高温、耐腐蚀，并支持高温高压灭菌。" },
-    en: { name: "PP Culture Boxes", description: "Fulong PP culture boxes are lightweight, heat-resistant, corrosion-resistant, and autoclavable." },
+    zh: { name: "一次性PP培养盒", description: "一次性PP培养盒主要用于植物组织培养流程，无需清洗，适用于商业化批量培养及高周转生产。" },
+    en: { name: "Disposable PP Culture Boxes", description: "Disposable PP Culture Boxes for single-use tissue culture, high-throughput production, and commercial propagation workflows." },
     cards: [
-      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-4", image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fields: { productCode: "PP-BOX-10080100", capacity: "不适用", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.webp", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { productCode: "PP-BOX-1208860", capacity: "不适用", topDimensions: "120mm", bottomDimensions: "88mm", height: "60mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "pp-culture-boxes-6", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "不适用", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-7", image: "/products/pp-culture-boxes/95x80x85.JPG", imageFileName: "95x80x85.JPG", sourceName: "95×95×85mm", fields: { productCode: "PP-BOX-958085-M02", capacity: "500mL", topDimensions: "95×95mm", bottomDimensions: "80×80mm", height: "85mm", material: "PP", filterMembraneDiameter: "2cm" } },
       { id: "pp-culture-boxes-8", image: "/products/pp-culture-boxes/110x88x95.JPG", imageFileName: "110x88x95.JPG", sourceName: "110×110×95mm", fields: { productCode: "PP-BOX-1108895-M03", capacity: "750mL", topDimensions: "110×110mm", bottomDimensions: "88×88mm", height: "95mm", material: "PP", filterMembraneDiameter: "3cm" } },
       { id: "pp-culture-boxes-9", image: "/products/pp-culture-boxes/110x92x120.JPG", imageFileName: "110x92x120.JPG", sourceName: "110×110×120mm", fields: { productCode: "PP-BOX-11092120-M03", capacity: "1000mL", topDimensions: "110×110mm", bottomDimensions: "92×92mm", height: "120mm", material: "PP", filterMembraneDiameter: "3cm" } },

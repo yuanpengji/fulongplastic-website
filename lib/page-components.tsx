@@ -124,7 +124,9 @@ function getSpecFieldLabel({
   locale: Locale;
   fallback: string;
 }) {
-  const isRoundPpCultureBox = groupSlug === "pp-culture-boxes" && ["pp-culture-boxes-1", "pp-culture-boxes-2", "pp-culture-boxes-3"].includes(cardId);
+  const isRoundPpCultureBox =
+    groupSlug === "pp-culture-containers" &&
+    ["pp-culture-containers-round-1", "pp-culture-containers-round-2", "pp-culture-containers-round-3"].includes(cardId);
 
   if (isRoundPpCultureBox && field === "topDimensions") {
     return locale === "zh" ? "口径" : "Top Diameter";
