@@ -1,6 +1,9 @@
 import { ProductPage } from "@/lib/page-components";
 import { getProduct, products } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+import { notFound } from "next/navigation";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return products.filter((product) => product.category === "featured").map((product) => ({ product: product.slug }));
@@ -8,7 +11,7 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { product: string } }) {
   const product = getProduct(params.product);
-  if (!product) return {};
+  if (!product || product.category !== "featured") notFound();
   return buildMetadata({
     locale: "zh",
     path: `/products/featured/${params.product}/`,
@@ -19,5 +22,7 @@ export function generateMetadata({ params }: { params: { product: string } }) {
 }
 
 export default function Page({ params }: { params: { product: string } }) {
+  const product = getProduct(params.product);
+  if (!product || product.category !== "featured") notFound();
   return <ProductPage locale="zh" productSlug={params.product} />;
 }
