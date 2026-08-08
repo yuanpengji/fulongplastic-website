@@ -345,13 +345,13 @@ export const products: Product[] = [
     category: "pc-series",
     image: "/products/pc-tissue-culture-bottles.webp",
     specs: {
-      capacity: "145mL / 160mL / 180mL / 240mL / 250mL / 260mL / 270mL / 300mL / 350mL / 520mL / 600mL / 650mL / 800mL / 1000mL",
-      height: "96mm / 80mm / 57mm / 72mm / 98mm / 90mm / 108mm / 110mm / 100mm / 145mm / 185mm",
-      bottomDiameter: "60mm / 77x77mm / 77mm / 67mm / 70mm / 68mm / 91mm / 95x95mm / 96mm",
+      capacity: "145mL / 160mL / 180mL / 240mL / 250mL / 260mL / 270mL / 300mL / 330mL / 350mL / 520mL / 600mL / 650mL / 800mL / 1000mL",
+      height: "96mm / 80mm / 57mm / 72mm / 98mm / 90mm / 108mm / 96mm / 110mm / 100mm / 145mm / 185mm",
+      bottomDiameter: "60mm / 77x77mm / 77mm / 67mm / 70mm / 68mm / 80mm / 91mm / 95x95mm / 96mm",
       material: "PC",
       compatibleLid: "41# / 53# / 58# / 60# / 72# / 61# / 64# / 69# / 77# / 95#"
     },
-    variants: ["96×60mm", "80×60mm", "57×77×77mm", "80×77mm", "72×77×77mm", "98×67mm", "90×70mm", "108×68mm", "96×77mm", "96×77×77mm", "110×77mm", "108×91mm", "100×95×95mm", "110×95×95mm", "145×96mm", "185×96mm"],
+    variants: ["96×60mm", "80×60mm", "57×77×77mm", "80×77mm", "72×77×77mm", "98×67mm", "90×70mm", "108×68mm", "96×77mm", "96×80mm", "96×77×77mm", "110×77mm", "108×91mm", "100×95×95mm", "110×95×95mm", "145×96mm", "185×96mm"],
     related: ["pc-culture-tubes", "pc-wide-mouth-culture-cups", "culture-lids"],
     zh: {
       name: "PC组培瓶",
@@ -708,6 +708,7 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pc-tissue-culture-bottles-7", image: "/products/pc-bottles/90x70.webp", imageFileName: "90x70.jpg", sourceName: "90×70mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-9070", capacity: "260mL", openingDiameter: "/", bottomDiameter: "70mm", height: "90mm", material: "PC", compatibleLid: "64#" } },
       { id: "pc-tissue-culture-bottles-8", image: "/products/pc-bottles/108x68.webp", imageFileName: "108x68.jpg", sourceName: "108×68mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-10868", capacity: "270mL", openingDiameter: "/", bottomDiameter: "68mm", height: "108mm", material: "PC", compatibleLid: "60#" } },
       { id: "pc-tissue-culture-bottles-9", image: "/products/pc-bottles/96x77.webp", imageFileName: "96x77.jpg", sourceName: "96×77mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-9677", capacity: "300mL", openingDiameter: "/", bottomDiameter: "77mm", height: "96mm", material: "PC", compatibleLid: "64#" } },
+      { id: "pc-tissue-culture-bottles-9a", image: "/products/pc-bottles/96×80mm（330ml）.JPG", imageFileName: "96×80mm（330ml）.JPG", sourceName: "96×80mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-9680", capacity: "330mL", openingDiameter: "/", bottomDiameter: "80mm", height: "96mm", material: "PC", compatibleLid: "64#" } },
       { id: "pc-tissue-culture-bottles-10", image: "/products/pc-bottles/96x77x77.webp", imageFileName: "96x77x77.jpg", sourceName: "96×77×77mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-967777", capacity: "350mL", openingDiameter: "/", bottomDiameter: "77x77mm", height: "96mm", material: "PC", compatibleLid: "72#" } },
       { id: "pc-tissue-culture-bottles-11", image: "/products/pc-bottles/110x77.webp", imageFileName: "110x77.jpg", sourceName: "110×77mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-11077", capacity: "350mL", openingDiameter: "/", bottomDiameter: "77mm", height: "110mm", material: "PC", compatibleLid: "64#" } },
       { id: "pc-tissue-culture-bottles-12", image: "/products/pc-bottles/108x91.webp", imageFileName: "108x91.jpg", sourceName: "108×91mm", hiddenFields: ["openingDiameter"], fields: { productCode: "PC-BTL-10891", capacity: "520mL", openingDiameter: "/", bottomDiameter: "91mm", height: "108mm", material: "PC", compatibleLid: "69#" } },
