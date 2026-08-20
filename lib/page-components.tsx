@@ -107,14 +107,14 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
   }
 
   if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
-    return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "closureType", "filterMembraneDiameter"];
+    return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter", "closureType"];
   }
 
   if (fields.length && fields.width) {
     return ["productCode", "capacity", "length", "width", "height", "material"];
   }
 
-  return ["productCode", "capacity", "openingDiameter", "bottomDiameter", "height", "material", "closureType", "compatibleLid"];
+  return ["productCode", "capacity", "openingDiameter", "bottomDiameter", "height", "material", "filterMembraneDiameter", "closureType", "compatibleLid"];
 }
 
 function getSpecFieldLabel({
