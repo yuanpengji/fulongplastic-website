@@ -35,6 +35,7 @@ export const text = {
       capacity: "容量",
       height: "高度",
       topDimensions: "顶部长×宽",
+      topDiameter: "顶部直径",
       bottomDimensions: "底部长×宽",
       bottomDiameter: "底部直径",
       openingDiameter: "口径",
@@ -79,6 +80,7 @@ export const text = {
       capacity: "Capacity",
       height: "Height",
       topDimensions: "Top Dimensions",
+      topDiameter: "Top Diameter",
       bottomDimensions: "Bottom Dimensions",
       bottomDiameter: "Bottom Diameter",
       openingDiameter: "Opening Diameter",
@@ -765,6 +767,7 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pp-culture-containers-9", image: "/products/pp-culture-boxes/110x88x95.JPG", imageFileName: "110x88x95.JPG", sourceName: "110×110×95mm", fields: { productCode: "PP-BOX-1108895-M03", capacity: "750mL", topDimensions: "110×110mm", bottomDimensions: "88×88mm", height: "95mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "3cm" } },
       { id: "pp-culture-containers-10", image: "/products/pp-culture-boxes/110x92x120.JPG", imageFileName: "110x92x120.JPG", sourceName: "110×110×120mm", fields: { productCode: "PP-BOX-11092120-M03", capacity: "1000mL", topDimensions: "110×110mm", bottomDimensions: "92×92mm", height: "120mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "3cm" } },
       { id: "pp-culture-containers-2", image: "/products/pp-containers/65x80x73.webp", imageFileName: "65x80x73.jpg", sourceName: "65×80×73mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-658073", capacity: "200mL", openingDiameter: "80mm", bottomDiameter: "73mm", height: "65mm", material: "PP", closureType: "旋拧式", compatibleLid: "/" } },
+      { id: "pp-culture-containers-11", image: "/products/pp-containers/76x90x70.JPG", imageFileName: "76x90x70.JPG", sourceName: "76×90×70mm", fields: { productCode: "PP-CON-769070", capacity: "330mL", topDiameter: "90mm", bottomDiameter: "70mm", height: "76mm", material: "PP", filterMembraneDiameter: "10mm", closureType: "旋拧式" } },
     ]
   },
   {

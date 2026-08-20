@@ -102,6 +102,10 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
     return ["productCode", "length", "width", "height", "material", "filterPatchInfo"];
   }
 
+  if (fields.topDiameter) {
+    return ["productCode", "capacity", "topDiameter", "bottomDiameter", "height", "material", "filterMembraneDiameter", "closureType"];
+  }
+
   if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
     return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "closureType", "filterMembraneDiameter"];
   }
