@@ -67,6 +67,8 @@ function formatSpecValue(value: string, locale: Locale) {
     透气盖: "Vented lid",
     透气款: "Vented Lid",
     密封款: "Solid Lid",
+    按压式: "Press-Fit Closure",
+    旋拧式: "Screw Closure",
     可配透气膜盖: "Compatible with vented membrane lid",
     透气盒盖: "Ventilated box lid"
   };
@@ -101,14 +103,14 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
   }
 
   if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
-    return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter"];
+    return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "closureType", "filterMembraneDiameter"];
   }
 
   if (fields.length && fields.width) {
     return ["productCode", "capacity", "length", "width", "height", "material"];
   }
 
-  return ["productCode", "capacity", "openingDiameter", "bottomDiameter", "height", "material", "compatibleLid"];
+  return ["productCode", "capacity", "openingDiameter", "bottomDiameter", "height", "material", "closureType", "compatibleLid"];
 }
 
 function getSpecFieldLabel({
