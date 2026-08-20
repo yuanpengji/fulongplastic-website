@@ -477,24 +477,55 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
   if (!product) notFound();
   const content = product[locale];
   const t = text[locale];
+  const category = getCategory(product.category);
   const related = product.related.map(getProduct).filter(Boolean) as typeof products;
   const specGroups = getSpecGroupsByCategory(product.category).filter((group) => group.slug === product.slug);
+  const currentUrl = `${siteUrl}${productPath(product, locale)}`;
+  const productsUrl = `${siteUrl}${localizePath("/products", locale)}`;
+  const categoryUrl = `${siteUrl}${localizePath(`/products/${product.category}`, locale)}`;
 
   return (
     <Shell locale={locale} path={product.category === "featured" ? `/products/featured/${product.slug}/` : `/products/${product.category}/${product.slug}/`}>
       <StructuredData
         data={{
           "@context": "https://schema.org",
-          "@type": "Product",
+          "@type": "WebPage",
           name: content.name,
           description: content.metaDescription,
-          image: `${siteUrl}${product.image}`,
-          brand: { "@type": "Brand", name: locale === "zh" ? "富龙塑业" : "Fulong Plastic" },
-          additionalProperty: Object.entries(product.specs).map(([name, value]) => ({
-            "@type": "PropertyValue",
-            name,
-            value
-          }))
+          url: currentUrl,
+          inLanguage: locale === "zh" ? "zh-CN" : "en-US"
+        }}
+      />
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: locale === "zh" ? "首页" : "Home",
+              item: `${siteUrl}${localizePath("/", locale)}`
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: t.nav.products,
+              item: productsUrl
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: category ? category[locale].title : product.category,
+              item: categoryUrl
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: content.name,
+              item: currentUrl
+            }
+          ]
         }}
       />
       <section className="section-tight">
