@@ -69,6 +69,7 @@ function formatSpecValue(value: string, locale: Locale) {
     密封款: "Solid Lid",
     按压式: "Press-Fit Closure",
     旋拧式: "Screw Closure",
+    不适用: "N/A",
     可配透气膜盖: "Compatible with vented membrane lid",
     透气盒盖: "Ventilated box lid"
   };
@@ -106,7 +107,7 @@ function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[nu
     return ["productCode", "capacity", "topDiameter", "bottomDiameter", "height", "material", "filterMembraneDiameter", "closureType"];
   }
 
-  if (fields.topDimensions || fields.bottomDimensions || fields.filterMembraneDiameter) {
+  if (fields.topDimensions || fields.bottomDimensions) {
     return ["productCode", "capacity", "topDimensions", "bottomDimensions", "height", "material", "filterMembraneDiameter", "closureType"];
   }
 
@@ -131,6 +132,14 @@ function getSpecFieldLabel({
   fallback: string;
 }) {
   const isRoundPpCultureBox = groupSlug === "pp-culture-boxes" && ["pp-culture-boxes-1", "pp-culture-boxes-2", "pp-culture-boxes-3"].includes(cardId);
+
+  if (groupSlug === "pp-culture-containers" && (field === "openingDiameter" || field === "topDiameter")) {
+    return locale === "zh" ? "口径" : "Top Diameter";
+  }
+
+  if (groupSlug === "pp-culture-containers" && field === "bottomDiameter") {
+    return locale === "zh" ? "底径" : "Bottom Diameter";
+  }
 
   if (isRoundPpCultureBox && field === "topDimensions") {
     return locale === "zh" ? "口径" : "Top Diameter";
