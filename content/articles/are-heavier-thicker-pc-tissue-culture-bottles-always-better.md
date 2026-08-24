@@ -34,7 +34,7 @@ enMetaDescription: Learn why PC tissue culture bottle quality cannot be judged o
 
 比较瓶身厚度，或者直接称重。
 
-假设两个相同容量、相近尺寸的PC组培瓶，一个重25克，一个重35克。35克的瓶子通常捏起来更加厚实、更硬，也更有“分量感”。
+假设两个相同容量、相近尺寸的PC组培瓶，一个重30克，一个重35克。35克的瓶子通常捏起来更加厚实、更硬，也更有“分量感”。
 
 于是很容易得出一个结论：
 
@@ -54,9 +54,9 @@ PC组培瓶越厚、越重，质量就越好。
 
 ## 一、把PC组培瓶做得更厚，并不困难
 
-继续以25克和35克两个相同规格的PC组培瓶为例。
+继续以30克和35克两个相同规格的PC组培瓶为例。
 
-如果担心25克的瓶子刚性不足，一个非常直接的解决方法就是增加材料。
+如果担心30克的瓶子刚性不足，一个非常直接的解决方法就是增加材料。
 
 瓶壁更厚，克重增加，瓶子通常也会感觉更硬。
 
@@ -257,7 +257,7 @@ Optimum Weight——合理克重
 
 因为客户购买的最终不是：
 
-25克或者35克PC原料。
+30克或者35克PC原料。
 
 客户真正需要的是：
 
@@ -301,7 +301,7 @@ When comparing polycarbonate (PC) tissue culture bottles, weight and wall thickn
 
 Imagine two PC culture bottles with the same capacity and similar dimensions:
 
-One weighs 25 g.
+One weighs 30 g.
 
 The other weighs 35 g.
 
@@ -323,9 +323,9 @@ That balance matters much more in commercial micropropagation.
 
 ## 1. Making a PC Bottle Heavier Is Relatively Simple
 
-Consider the same 25 g and 35 g bottles.
+Consider the same 30 g and 35 g bottles.
 
-If the 25 g bottle does not provide sufficient stiffness, one straightforward solution is to use more material.
+If the 30 g bottle does not provide sufficient stiffness, one straightforward solution is to use more material.
 
 More resin can produce thicker walls and a stiffer feel.
 
@@ -512,7 +512,7 @@ A more complete evaluation should consider:
 
 Because ultimately, a commercial tissue culture laboratory is not buying:
 
-25 grams or 35 grams of polycarbonate.
+30 grams or 35 grams of polycarbonate.
 
 It is buying:
 
