@@ -765,7 +765,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
   return (
     <Shell locale={locale} path="/contact/">
       <PageHero eyebrow={text[locale].nav.contact} title={locale === "zh" ? "联系我们" : "Contact Us"} description={locale === "zh" ? "通过询价表、Email或WhatsApp联系富龙塑业。" : "Contact Fulong Plastic by inquiry form, email, or WhatsApp."} />
-      <ContactBlock locale={locale} />
+      <ContactBlock locale={locale} showSocialLinks />
     </Shell>
   );
 }

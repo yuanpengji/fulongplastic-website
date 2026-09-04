@@ -1,7 +1,8 @@
 import { company, Locale, text } from "@/lib/content";
 import { QuoteForm } from "@/components/QuoteForm";
+import { SocialLinks } from "@/components/SocialLinks";
 
-export function ContactBlock({ locale, productName }: { locale: Locale; productName?: string }) {
+export function ContactBlock({ locale, productName, showSocialLinks = false }: { locale: Locale; productName?: string; showSocialLinks?: boolean }) {
   const t = text[locale];
 
   return (
@@ -22,6 +23,16 @@ export function ContactBlock({ locale, productName }: { locale: Locale; productN
             <p>Email: <a href={`mailto:${company.email}`}>{company.email}</a></p>
             <p>WhatsApp: <a href="https://wa.me/8618358715006">{company.whatsapp}</a></p>
           </div>
+          {showSocialLinks ? (
+            <div className="mt-6">
+              <h3 className="text-base font-semibold">
+                {locale === "zh" ? "社交联系方式" : "Connect with Fulong Plastic"}
+              </h3>
+              <div className="mt-3">
+                <SocialLinks locale={locale} showLabels />
+              </div>
+            </div>
+          ) : null}
         </div>
         <QuoteForm
           locale={locale}

@@ -132,6 +132,11 @@ export const company = {
   email: "sales.fulongplastic@gmail.com",
   whatsapp: "+86 18358715006",
   phone: "+86 18358715006",
+  social: {
+    linkedin: "https://www.linkedin.com/in/pengji-yuan-a6659441b/",
+    facebook: "https://www.facebook.com/profile.php?id=61591366291630",
+    whatsapp: "https://wa.me/8618358715006"
+  },
   zh: {
     positioning: "组织培养容器及相关配套产品源头生产厂家",
     about:
