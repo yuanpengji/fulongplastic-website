@@ -137,6 +137,9 @@ export const company = {
     facebook: "https://www.facebook.com/profile.php?id=61591366291630",
     whatsapp: "https://wa.me/8618358715006"
   },
+  marketplace: {
+    alibaba: "https://fulongplastic.m.en.alibaba.com/productlist.html?spm=a2700.shop_index.88.9.665e12acsMqdSW"
+  },
   zh: {
     positioning: "组织培养容器及相关配套产品源头生产厂家",
     about:

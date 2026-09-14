@@ -1,6 +1,6 @@
 import { company, Locale, text } from "@/lib/content";
 import { QuoteForm } from "@/components/QuoteForm";
-import { SocialLinks } from "@/components/SocialLinks";
+import { MarketplaceLink, SocialLinks } from "@/components/SocialLinks";
 
 export function ContactBlock({ locale, productName, showSocialLinks = false }: { locale: Locale; productName?: string; showSocialLinks?: boolean }) {
   const t = text[locale];
@@ -30,6 +30,9 @@ export function ContactBlock({ locale, productName, showSocialLinks = false }: {
               </h3>
               <div className="mt-3">
                 <SocialLinks locale={locale} showLabels />
+              </div>
+              <div className="mt-5">
+                <MarketplaceLink locale={locale} />
               </div>
             </div>
           ) : null}

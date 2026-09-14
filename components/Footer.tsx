@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SocialLinks } from "@/components/SocialLinks";
+import { MarketplaceLink, SocialLinks } from "@/components/SocialLinks";
 import { company, knowledgeCategories, Locale, localizePath, productCategories, text } from "@/lib/content";
 
 export function Footer({ locale }: { locale: Locale }) {
@@ -17,8 +17,16 @@ export function Footer({ locale }: { locale: Locale }) {
             <h2 className="text-lg font-bold">{t.brand}</h2>
           </div>
           <p className="mt-3 max-w-xl text-sm leading-6 text-steel">{company[locale].positioning}</p>
-          <div className="mt-4">
-            <SocialLinks locale={locale} />
+          <div className="mt-4 grid gap-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-steel">
+                {locale === "zh" ? "联系我们" : "Connect With Us"}
+              </p>
+              <div className="mt-2">
+                <SocialLinks locale={locale} />
+              </div>
+            </div>
+            <MarketplaceLink locale={locale} />
           </div>
           <div className="mt-4 text-sm text-slate-300">
             <p>{locale === "zh" ? "电话" : "Phone"}: {company.phone}</p>

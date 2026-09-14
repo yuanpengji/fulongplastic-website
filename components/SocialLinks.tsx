@@ -75,3 +75,23 @@ export function SocialLinks({ locale, showLabels = false }: { locale: Locale; sh
     </div>
   );
 }
+
+export function MarketplaceLink({ locale }: { locale: Locale }) {
+  return (
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-steel">
+        {locale === "zh" ? "B2B采购平台" : "B2B Marketplace"}
+      </p>
+      <a
+        href={company.marketplace.alibaba}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Fulong Plastic on Alibaba.com"
+        className="mt-2 inline-flex items-center text-sm font-semibold text-slate-200 transition hover:text-mint"
+      >
+        {locale === "zh" ? "Alibaba.com 店铺" : "Alibaba.com Store"}
+        <span aria-hidden="true" className="ml-1">→</span>
+      </a>
+    </div>
+  );
+}
