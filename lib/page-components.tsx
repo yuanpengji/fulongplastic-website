@@ -251,7 +251,7 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
                   return (
                     <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
                       <dt className="text-steel">
-                        {getSpecFieldLabel({
+                        {card.fieldLabels?.[field as keyof typeof card.fields]?.[locale] ?? getSpecFieldLabel({
                           groupSlug: group.slug,
                           cardId: card.id,
                           field,

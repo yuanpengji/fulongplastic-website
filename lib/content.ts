@@ -674,6 +674,7 @@ export type SpecCard = {
   sourceName?: string;
   remark?: string;
   hiddenFields?: FieldKey[];
+  fieldLabels?: Partial<Record<FieldKey, { zh: string; en: string }>>;
   fields: Partial<Record<FieldKey, string>>;
 };
 
@@ -771,6 +772,7 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pp-culture-containers-5", image: "/products/pp-containers/110x122x96.webp", imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-11012296", capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", filterMembraneDiameter: "3cm", closureType: "按压式", compatibleLid: "/" } },
       { id: "pp-culture-containers-6", image: "/products/pp-containers/124x130x105.webp", imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-124130105", capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", filterMembraneDiameter: "3cm", closureType: "按压式", compatibleLid: "/" } },
       { id: "pp-culture-containers-7", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "不适用", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "1cm" } },
+      { id: "pp-culture-containers-12", image: "/products/pp-containers/75x65x70-m02.webp", imageFileName: "75x65x70-m02.webp", sourceName: "75×75×70mm", fieldLabels: { topDimensions: { zh: "顶部尺寸", en: "Top Dimensions" }, bottomDimensions: { zh: "底部尺寸", en: "Bottom Dimensions" } }, fields: { productCode: "PP-BOX-756570-M02", capacity: "300mL", topDimensions: "75×75mm", bottomDimensions: "65×65mm", height: "70mm", material: "PP", filterMembraneDiameter: "2cm", closureType: "按压式" } },
       { id: "pp-culture-containers-8", image: "/products/pp-culture-boxes/95x80x85.JPG", imageFileName: "95x80x85.JPG", sourceName: "95×95×85mm", fields: { productCode: "PP-BOX-958085-M02", capacity: "500mL", topDimensions: "95×95mm", bottomDimensions: "80×80mm", height: "85mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "2cm" } },
       { id: "pp-culture-containers-9", image: "/products/pp-culture-boxes/110x88x95.JPG", imageFileName: "110x88x95.JPG", sourceName: "110×110×95mm", fields: { productCode: "PP-BOX-1108895-M03", capacity: "750mL", topDimensions: "110×110mm", bottomDimensions: "88×88mm", height: "95mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "3cm" } },
       { id: "pp-culture-containers-10", image: "/products/pp-culture-boxes/110x92x120.JPG", imageFileName: "110x92x120.JPG", sourceName: "110×110×120mm", fields: { productCode: "PP-BOX-11092120-M03", capacity: "1000mL", topDimensions: "110×110mm", bottomDimensions: "92×92mm", height: "120mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "3cm" } },
