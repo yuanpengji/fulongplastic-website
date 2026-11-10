@@ -323,6 +323,7 @@ export type Product = {
   slug: string;
   category: "pc-series" | "pp-series" | "accessories" | "featured";
   image: string;
+  cardMaterial?: string;
   specs: {
     capacity: string;
     height: string;
@@ -555,6 +556,7 @@ export const products: Product[] = [
     slug: "culture-lids",
     category: "accessories",
     image: "/products/culture-lids.webp",
+    cardMaterial: "PP",
     specs: {
       capacity: "不适用",
       height: "/",
@@ -611,6 +613,7 @@ export const products: Product[] = [
     slug: "culture-baskets",
     category: "accessories",
     image: "/products/culture-baskets.jpg",
+    cardMaterial: "PP",
     specs: {
       capacity: "按规格匹配",
       height: "70mm / 50mm / 60mm",

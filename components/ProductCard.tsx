@@ -15,13 +15,15 @@ export function ProductCard({ product, locale }: { product: Product; locale: Loc
       <div className="p-5">
         <h3 className="text-lg font-bold">{content.name}</h3>
         <dl className="mt-4 grid gap-2 text-sm text-steel">
-          <div className="flex justify-between gap-4">
-            <dt>{t.fields.capacity}</dt>
-            <dd className="text-right text-slate-200">{localizeSpecPlaceholder(product.specs.capacity.split("/").slice(0, 2).join("/"), locale)}</dd>
-          </div>
+          {!["culture-lids", "sealing-film"].includes(product.slug) ? (
+            <div className="flex justify-between gap-4">
+              <dt>{t.fields.capacity}</dt>
+              <dd className="text-right text-slate-200">{localizeSpecPlaceholder(product.specs.capacity.split("/").slice(0, 2).join("/"), locale)}</dd>
+            </div>
+          ) : null}
           <div className="flex justify-between gap-4">
             <dt>{t.fields.material}</dt>
-            <dd className="text-slate-200">{localizeSpecPlaceholder(product.specs.material, locale)}</dd>
+            <dd className="text-slate-200">{localizeSpecPlaceholder(product.cardMaterial ?? product.specs.material, locale)}</dd>
           </div>
         </dl>
         <span className="mt-5 inline-flex text-sm font-bold text-mint">{t.actions.viewDetails}</span>
