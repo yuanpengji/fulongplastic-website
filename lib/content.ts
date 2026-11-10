@@ -470,27 +470,27 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-boxes.webp",
     specs: {
-      capacity: "500mL / 600mL / 800mL / 不适用 / 不适用",
-      topDimensions: "120mm / 120mm / 120mm / 100mm / 120mm",
-      bottomDimensions: "80mm / 90mm / 90mm / 80mm / 88mm",
-      height: "80mm / 80mm / 100mm / 100mm / 60mm",
-      bottomDiameter: "80mm / 90mm / 90mm / 80mm / 88mm",
+      capacity: "500mL / 600mL / 800mL / 不适用",
+      topDimensions: "120mm / 120mm / 120mm / 120mm",
+      bottomDimensions: "80mm / 90mm / 90mm / 88mm",
+      height: "80mm / 80mm / 100mm / 60mm",
+      bottomDiameter: "80mm / 90mm / 90mm / 88mm",
       material: "PP",
       compatibleLid: "不适用",
-      filterMembraneDiameter: "不适用 / 不适用 / 不适用 / 不适用 / 不适用"
+      filterMembraneDiameter: "不适用 / 不适用 / 不适用 / 不适用"
     },
-    variants: ["120×80×80mm", "120×90×80mm", "120×90×100mm", "100×80×100mm", "120×88×60mm"],
+    variants: ["120×80×80mm", "120×90×80mm", "120×90×100mm", "120×88×60mm"],
     related: ["pp-culture-containers", "heat-seal-culture-bags", "culture-baskets"],
     zh: {
       name: "一次性PP培养盒",
-      description: "本系列产品主要用于一次性植物组织培养，无需清洗，可减少不同批次之间的交叉污染风险，适用于商业化组培、高周转生产及批量培养。其中，PP-BOX-10080100 属于热封培养盒，需要搭配封口膜及热封设备完成封口；其它规格按照实际产品配置用于相应培养流程。",
+      description: "本系列产品主要用于一次性植物组织培养，无需清洗，可减少不同批次之间的交叉污染风险，适用于商业化组培、高周转生产及批量培养。各规格按照实际产品配置用于相应培养流程。",
       features: ["一次性植物组织培养", "无需清洗", "减少交叉污染风险", "适用于高周转批量培养"],
       seoTitle: "一次性PP培养盒 | 富龙塑业",
       metaDescription: "富龙塑业一次性PP培养盒无需清洗，可减少交叉污染风险，适用于商业化组培、高周转生产及批量培养。"
     },
     en: {
       name: "Disposable PP Culture Boxes",
-      description: "Disposable PP Culture Boxes are intended for single-use tissue culture workflows where no cleaning is required and reducing the risk of cross-contamination between batches is important. They are suitable for high-throughput tissue culture production, commercial micropropagation, and batch cultivation. PP-BOX-10080100 is a heat-seal culture box used with sealing film and a heat sealer; other models should be selected according to their actual product configuration.",
+      description: "Disposable PP Culture Boxes are intended for single-use tissue culture workflows where no cleaning is required and reducing the risk of cross-contamination between batches is important. They are suitable for high-throughput tissue culture production, commercial micropropagation, and batch cultivation. Models should be selected according to their actual product configuration.",
       features: ["Disposable PP Culture Boxes", "Single-use workflow", "No cleaning required", "Reduce the risk of cross-contamination"],
       seoTitle: "Disposable PP Culture Boxes | Fulong Plastic",
       metaDescription: "Fulong Disposable PP Culture Boxes are single-use tissue culture containers for commercial micropropagation, high-throughput production, and reduced cross-contamination risk."
@@ -550,6 +550,27 @@ export const products: Product[] = [
       features: ["Self-seal stand-up structure", "Lightweight and cost-efficient", "Sealed or vented options", "For sterile culture applications"],
       seoTitle: "Self-Seal Stand-Up Tissue Culture Bags | Fulong Plastic",
       metaDescription: "Self-standing culture bags combine convenient sealing with stable placement and are available with sealed, single-vent, or dual-vent configurations."
+    }
+  },
+  {
+    slug: "gamma-sterilized-heat-seal-culture-cups",
+    category: "pp-series",
+    image: "",
+    specs: { capacity: "", height: "", bottomDiameter: "", material: "", compatibleLid: "" },
+    related: [],
+    zh: {
+      name: "无菌热封杯",
+      description: "无菌热封杯系列面向自动化植物组织培养生产线，适用于自动灌装与热封工艺。该系列计划采用伽玛辐照灭菌后交付的方式，便于客户在符合自身无菌操作要求的条件下直接投入使用。产品涵盖不同高度的培养杯、透气及密封卷膜，并配套自动封口设备。具体灭菌交付条件需在供货前确认。",
+      features: [],
+      seoTitle: "无菌热封杯 | 富龙塑业",
+      metaDescription: "面向自动灌装与热封工艺的组培培养杯、热封卷膜及自动封口设备。系列计划采用伽玛辐照灭菌后交付，具体交付条件需在供货前确认。"
+    },
+    en: {
+      name: "Gamma-Sterilized Heat-Seal Culture Cups",
+      description: "Our heat-seal culture cup range is designed for automated plant tissue culture production, including filling and heat-sealing workflows. The range is intended for gamma-sterilized supply, allowing use in suitable aseptic production environments. It includes culture cups in different heights, breathable and non-breathable sealing film rolls, and compatible automatic sealing equipment. Sterilization and supply conditions must be confirmed before delivery.",
+      features: [],
+      seoTitle: "Gamma-Sterilized Heat-Seal Culture Cups | Fulong Plastic",
+      metaDescription: "Culture cups, sealing film rolls and automatic sealing equipment for automated tissue culture workflows. Gamma-sterilized supply conditions are to be confirmed."
     }
   },
   {
@@ -672,7 +693,8 @@ type FieldKey = keyof (typeof text)["zh"]["fields"];
 
 export type SpecCard = {
   id: string;
-  image: string;
+  image?: string;
+  name?: { zh: string; en: string };
   imageFileName?: string;
   sourceName?: string;
   remark?: string;
@@ -793,7 +815,6 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
       { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
       { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "2cm" } },
-      { id: "pp-culture-boxes-4", image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fields: { productCode: "PP-BOX-10080100", capacity: "不适用", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
       { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.webp", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { productCode: "PP-BOX-1208860", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "88mm", height: "60mm", material: "PP", filterMembraneDiameter: "2cm" } },
     ]
   },
@@ -817,6 +838,21 @@ export const productSpecGroups: ProductSpecGroup[] = [
     cards: [
       { id: "self-seal-stand-up-culture-bags-1", image: "/products/culture-bags/12x14-standup.webp", imageFileName: "bag-12x14-standup.jpg", sourceName: "12×14cm 自立袋", fields: { productCode: "PP-BAG-ZIP-1214", length: "/", width: "12cm", height: "14cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
       { id: "self-seal-stand-up-culture-bags-2", image: "/products/culture-bags/16x18.5-standup.webp", imageFileName: "bag-16x18.5-standup.jpg", sourceName: "16×18.5cm 自立袋", fields: { productCode: "PP-BAG-ZIP-16185", length: "/", width: "16cm", height: "18.5cm", material: "PP", filterPatchInfo: "密封 / 单孔 / 双孔可选" } },
+    ]
+  },
+  {
+    category: "pp-series",
+    slug: "gamma-sterilized-heat-seal-culture-cups",
+    image: "",
+    zh: { name: "无菌热封杯" },
+    en: { name: "Gamma-Sterilized Heat-Seal Culture Cups" },
+    cards: [
+      { id: "heat-seal-culture-cup-60", name: { zh: "热封培养杯 60mm", en: "Heat-Seal Culture Cup - 60mm Height" }, fields: {} },
+      { id: "heat-seal-culture-cup-80", name: { zh: "热封培养杯 80mm", en: "Heat-Seal Culture Cup - 80mm Height" }, fields: {} },
+      { id: "pp-culture-boxes-4", name: { zh: "热封培养杯 100mm", en: "Heat-Seal Culture Cup - 100mm Height" }, image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", hiddenFields: ["capacity", "filterMembraneDiameter"], fields: { productCode: "PP-BOX-10080100", capacity: "不适用", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
+      { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, fields: {} },
+      { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, fields: {} },
+      { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, fields: {} }
     ]
   },
   {

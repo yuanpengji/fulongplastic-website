@@ -5,6 +5,7 @@ import { ContactBlock } from "@/components/ContactBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductImagePlaceholder } from "@/components/ProductImagePlaceholder";
 import { SpecTable } from "@/components/SpecTable";
 import { StructuredData } from "@/components/StructuredData";
 import { localizeSpecPlaceholder } from "@/lib/spec-value-i18n";
@@ -236,12 +237,16 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
         <h2 className="text-3xl font-bold">{group[locale].name}</h2>
         {group[locale].description ? <p className="max-w-3xl text-sm leading-6 text-steel">{group[locale].description}</p> : null}
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+      <div className={group.cards.some((card) => card.name) ? "grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"}>
         {group.cards.map((card) => (
           <article key={card.id} className="overflow-hidden rounded-lg border border-line bg-panel">
             <div className="aspect-square overflow-hidden">
-              <Image src={card.image} alt={group[locale].name} width={600} height={600} className="h-full w-full object-cover" />
+              {card.image ? (
+                <Image src={card.image} alt={card.name?.[locale] ?? group[locale].name} width={600} height={600} className="h-full w-full object-cover" />
+              ) : <ProductImagePlaceholder locale={locale} />}
             </div>
+            {card.name ? <h3 className="px-4 pt-4 text-lg font-bold">{card.name[locale]}</h3> : null}
+            {Object.keys(card.fields).length ? (
             <dl className="grid gap-2 p-4 text-sm">
               {getSpecFieldOrder(card.fields)
                 .filter((field) => card.fields[field as keyof typeof card.fields])
@@ -265,6 +270,7 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
                   );
                 })}
             </dl>
+            ) : null}
           </article>
         ))}
       </div>
@@ -547,7 +553,9 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
       <section className="section-tight">
         <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-lg bg-black">
-            <Image src={product.image} alt={content.name} width={900} height={720} priority className="aspect-[4/3] h-full w-full object-contain p-6" />
+            {product.image ? (
+              <Image src={product.image} alt={content.name} width={900} height={720} priority className="aspect-[4/3] h-full w-full object-contain p-6" />
+            ) : <ProductImagePlaceholder locale={locale} className="aspect-[4/3] h-full rounded-lg" />}
           </div>
           <div>
             <p className="text-sm text-steel">
@@ -572,6 +580,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
           </div>
         </section>
       ) : null}
+      {Object.values(product.specs).some(Boolean) ? (
       <section className="section-tight border-y border-line bg-[#0b0d10]">
         <div className="container">
           <h2 className="text-3xl font-bold">{locale === "zh" ? "规格表" : "Specification Table"}</h2>
@@ -580,6 +589,8 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
           </div>
         </div>
       </section>
+      ) : null}
+      {content.features.length ? (
       <section className="section-tight">
         <div className="container">
           <h2 className="text-3xl font-bold">{locale === "zh" ? "产品特点" : "Product Features"}</h2>
@@ -592,6 +603,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
           </div>
         </div>
       </section>
+      ) : null}
       {related.length ? (
         <section className="section-tight border-y border-line bg-[#0b0d10]">
           <div className="container">

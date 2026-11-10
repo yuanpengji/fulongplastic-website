@@ -30,7 +30,7 @@ export function buildMetadata({ locale, path, title, description, image = "/prod
       siteName: locale === "zh" ? "富龙塑业" : "Fulong Plastic",
       locale: locale === "zh" ? "zh_CN" : "en_US",
       type: "website",
-      images: [{ url: image }]
+      images: image ? [{ url: image }] : []
     }
   };
 }
