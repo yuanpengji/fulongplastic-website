@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { ProductCard } from "@/components/ProductCard";
 import { SpecTable } from "@/components/SpecTable";
 import { StructuredData } from "@/components/StructuredData";
+import { localizeSpecPlaceholder } from "@/lib/spec-value-i18n";
 import {
   applicationGallery,
   articles,
@@ -55,8 +56,9 @@ function formatSpecValue(value: string, locale: Locale) {
     return value;
   }
 
+  value = localizeSpecPlaceholder(value, locale);
+
   const replacements: Record<string, string> = {
-    按规格匹配: "By size",
     按袋型: "By bag style",
     按型号匹配: "By model",
     按型号: "By model",
@@ -69,7 +71,6 @@ function formatSpecValue(value: string, locale: Locale) {
     密封款: "Solid Lid",
     按压式: "Press-Fit Closure",
     旋拧式: "Screw Closure",
-    不适用: "N/A",
     可配透气膜盖: "Compatible with vented membrane lid",
     透气盒盖: "Ventilated box lid"
   };

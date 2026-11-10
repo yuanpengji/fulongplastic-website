@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Locale, Product, productPath, text } from "@/lib/content";
+import { localizeSpecPlaceholder } from "@/lib/spec-value-i18n";
 
 export function ProductCard({ product, locale }: { product: Product; locale: Locale }) {
   const content = product[locale];
@@ -16,11 +17,11 @@ export function ProductCard({ product, locale }: { product: Product; locale: Loc
         <dl className="mt-4 grid gap-2 text-sm text-steel">
           <div className="flex justify-between gap-4">
             <dt>{t.fields.capacity}</dt>
-            <dd className="text-right text-slate-200">{product.specs.capacity.split("/").slice(0, 2).join("/")}</dd>
+            <dd className="text-right text-slate-200">{localizeSpecPlaceholder(product.specs.capacity.split("/").slice(0, 2).join("/"), locale)}</dd>
           </div>
           <div className="flex justify-between gap-4">
             <dt>{t.fields.material}</dt>
-            <dd className="text-slate-200">{product.specs.material}</dd>
+            <dd className="text-slate-200">{localizeSpecPlaceholder(product.specs.material, locale)}</dd>
           </div>
         </dl>
         <span className="mt-5 inline-flex text-sm font-bold text-mint">{t.actions.viewDetails}</span>

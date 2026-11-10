@@ -1,17 +1,18 @@
 import { Locale, Product, text } from "@/lib/content";
+import { localizeSpecPlaceholder } from "@/lib/spec-value-i18n";
 
 function formatTableValue(value: string, locale: Locale) {
   if (locale === "zh") {
     return value;
   }
 
+  value = localizeSpecPlaceholder(value, locale);
+
   const fullValueTranslations: Record<string, string> = {
     透气款: "Vented Lid",
     密封款: "Solid Lid",
     透气盒盖: "Vented Lid",
     按容器型号匹配: "Matched To Container Size",
-    按规格匹配: "Depends On Model",
-    不适用: "Not Applicable",
     密封: "Sealed",
     单孔: "Single Vent Hole",
     双孔: "Double Vent Hole",
