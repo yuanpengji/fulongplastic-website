@@ -253,32 +253,36 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
                 <Image src={card.image} alt={card.name?.[locale] ?? group[locale].name} width={600} height={600} className="h-full w-full object-cover" />
               ) : <ProductImagePlaceholder locale={locale} />}
             </div>
-            {card.name ? <h3 className="px-4 pt-4 text-lg font-bold">{card.name[locale]}</h3> : null}
-            {Object.keys(card.fields).length ? (
-            <dl className="grid gap-2 p-4 text-sm">
-              {getSpecFieldOrder(card.fields)
-                .filter((field) => card.fields[field as keyof typeof card.fields])
-                .filter((field) => !card.hiddenFields?.includes(field as keyof typeof text.zh.fields))
-                .map((field) => {
-                  const key = field as keyof typeof card.fields;
-                  const value = (locale === "en" ? card.englishFields?.[key] : undefined) ?? card.fields[key];
+            {card.name || Object.keys(card.fields).length ? (
+              <div className="grid gap-2 p-4 text-sm">
+                {card.name ? <h3 className="font-semibold text-slate-100">{card.name[locale]}</h3> : null}
+                {Object.keys(card.fields).length ? (
+                  <dl className="grid gap-2">
+                    {getSpecFieldOrder(card.fields)
+                      .filter((field) => card.fields[field as keyof typeof card.fields])
+                      .filter((field) => !card.hiddenFields?.includes(field as keyof typeof text.zh.fields))
+                      .map((field) => {
+                        const key = field as keyof typeof card.fields;
+                        const value = (locale === "en" ? card.englishFields?.[key] : undefined) ?? card.fields[key];
 
-                  return (
-                    <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
-                      <dt className="text-steel">
-                        {card.fieldLabels?.[field as keyof typeof card.fields]?.[locale] ?? getSpecFieldLabel({
-                          groupSlug: group.slug,
-                          cardId: card.id,
-                          field,
-                          locale,
-                          fallback: t.fields[field as keyof typeof t.fields]
-                        })}
-                      </dt>
-                      <dd className="text-right font-semibold text-slate-100">{formatSpecValue(String(value), locale)}</dd>
-                    </div>
-                  );
-                })}
-            </dl>
+                        return (
+                          <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
+                            <dt className="text-steel">
+                              {card.fieldLabels?.[key]?.[locale] ?? getSpecFieldLabel({
+                                groupSlug: group.slug,
+                                cardId: card.id,
+                                field,
+                                locale,
+                                fallback: t.fields[key]
+                              })}
+                            </dt>
+                            <dd className="text-right font-semibold text-slate-100">{formatSpecValue(String(value), locale)}</dd>
+                          </div>
+                        );
+                      })}
+                  </dl>
+                ) : null}
+              </div>
             ) : null}
           </article>
         ))}
