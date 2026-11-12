@@ -352,6 +352,18 @@ export type Product = {
   };
 };
 
+const ventFilterPatchesImage = "/products/tissue-culture-vent-filter-patches/type-2.webp";
+const ventFilterPatchesCopy = {
+  zh: {
+    name: "组培透气膜贴片",
+    description: "用于植物组织培养容器透气孔的膜片产品，可根据容器结构及加工工艺进行匹配，适用于组培容器的透气膜贴附加工。"
+  },
+  en: {
+    name: "Tissue Culture Vent Filter Patches",
+    description: "Vent filter patches for ventilation openings in plant tissue culture containers. Available for matching with different container designs and membrane application processes."
+  }
+};
+
 export const products: Product[] = [
   {
     slug: "pc-tissue-culture-bottles",
@@ -660,6 +672,25 @@ export const products: Product[] = [
     }
   },
   {
+    slug: "tissue-culture-vent-filter-patches",
+    category: "accessories",
+    image: ventFilterPatchesImage,
+    specs: { capacity: "", height: "", bottomDiameter: "", material: "", compatibleLid: "" },
+    related: [],
+    zh: {
+      ...ventFilterPatchesCopy.zh,
+      features: [],
+      seoTitle: "组培透气膜贴片 | 富龙塑业",
+      metaDescription: ventFilterPatchesCopy.zh.description
+    },
+    en: {
+      ...ventFilterPatchesCopy.en,
+      features: [],
+      seoTitle: "Tissue Culture Vent Filter Patches | Fulong Plastic",
+      metaDescription: ventFilterPatchesCopy.en.description
+    }
+  },
+  {
     slug: "sugar-free-ventilated-culture-box",
     category: "featured",
     image: "/products/sugar-free-ventilated-culture-box.webp",
@@ -921,6 +952,29 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "basket-grid-b", image: "/products/culture-baskets/600x440x60-grid-b.JPG", imageFileName: "basket-600x440x60-b.jpg", sourceName: "600×440×60mm（网格B）", fields: { productCode: "BASKET-60044060-B", length: "600mm", width: "440mm", height: "60mm", weight: "500g" } },
       { id: "culture-baskets-8", image: "/products/culture-baskets/620x520x60.JPG", imageFileName: "basket-620x520x60.jpg", sourceName: "620×520×60mm", fields: { productCode: "BASKET-62052060", length: "620mm", width: "520mm", height: "60mm", weight: "700g" } },
       { id: "culture-baskets-9", image: "/products/culture-baskets/670x450x60.webp", imageFileName: "basket-670x450x60.jpg", sourceName: "670×450×60mm", fields: { productCode: "BASKET-67045060", length: "670mm", width: "450mm", height: "60mm", weight: "700g" } },
+    ]
+  },
+  {
+    category: "accessories",
+    slug: "tissue-culture-vent-filter-patches",
+    image: ventFilterPatchesImage,
+    zh: { name: ventFilterPatchesCopy.zh.name },
+    en: { name: ventFilterPatchesCopy.en.name },
+    cards: [
+      {
+        id: "vent-filter-patches-type-1",
+        name: { zh: "组培透气膜贴片 — 规格一", en: "Vent Filter Patches — Type 1" },
+        image: "/products/tissue-culture-vent-filter-patches/type-1.webp",
+        imageFileName: "6.jpg",
+        fields: {}
+      },
+      {
+        id: "vent-filter-patches-type-2",
+        name: { zh: "组培透气膜贴片 — 规格二", en: "Vent Filter Patches — Type 2" },
+        image: ventFilterPatchesImage,
+        imageFileName: "5.jpg",
+        fields: {}
+      }
     ]
   },
   {

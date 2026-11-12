@@ -230,6 +230,7 @@ function renderArticleBody(body: string) {
 
 function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroupsByCategory>[number]; locale: Locale }) {
   const t = text[locale];
+  const isNamedPpGrid = group.category === "pp-series" && group.cards.some((card) => card.name);
 
   return (
     <section className="space-y-5">
@@ -237,7 +238,7 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
         <h2 className="text-3xl font-bold">{group[locale].name}</h2>
         {group[locale].description ? <p className="max-w-3xl text-sm leading-6 text-steel">{group[locale].description}</p> : null}
       </div>
-      <div className={group.cards.some((card) => card.name) ? "grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"}>
+      <div className={isNamedPpGrid ? "grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5"}>
         {group.cards.map((card) => (
           <article key={card.id} className="overflow-hidden rounded-lg border border-line bg-panel">
             <div className="aspect-square overflow-hidden">
