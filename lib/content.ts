@@ -49,6 +49,7 @@ export const text = {
       filterMembraneDiameter: "透气膜直径",
       material: "材质",
       quantity: "数量",
+      piecesPerRoll: "每卷数量",
       closureType: "闭合方式",
       compatibleLid: "适配盖",
       name: "姓名",
@@ -95,6 +96,7 @@ export const text = {
       filterMembraneDiameter: "Filter Membrane Diameter",
       material: "Material",
       quantity: "Quantity",
+      piecesPerRoll: "Pieces per Roll",
       closureType: "Closure Type",
       compatibleLid: "Compatible Lid",
       name: "Name",
@@ -574,14 +576,14 @@ export const products: Product[] = [
     related: [],
     zh: {
       name: "无菌热封杯",
-      description: "无菌热封杯系列面向自动化植物组织培养生产线，适用于自动灌装与热封工艺。该系列计划采用伽玛辐照灭菌后交付的方式，便于客户在符合自身无菌操作要求的条件下直接投入使用。产品涵盖不同高度的培养杯、透气及密封卷膜，并配套自动封口设备。具体灭菌交付条件需在供货前确认。",
+      description: "无菌热封杯系列采用PP材质，出厂前经过伽玛辐照灭菌处理，适用于植物组织培养的无菌灌装与热封包装。该系列支持超净工作台内的手工操作及配套封口设备封口，也可根据生产需求适配自动灌装、自动热封流水线。\n\n产品配有不同高度的培养杯、透气热封卷膜、密封热封卷膜及封口设备。自动化生产可根据设备配置选用一出四、一出八等膜材排列方式。由于培养杯、卷膜和封口设备需要相互匹配，建议客户在规划自动化流水线前联系我们确认适配方案。\n\n本系列为预灭菌产品，不适用于高压蒸汽灭菌或压力锅灭菌。具体灭菌交付条件及使用要求请在采购前确认。",
       features: [],
       seoTitle: "无菌热封杯 | 富龙塑业",
       metaDescription: "面向自动灌装与热封工艺的组培培养杯、热封卷膜及自动封口设备。系列计划采用伽玛辐照灭菌后交付，具体交付条件需在供货前确认。"
     },
     en: {
       name: "Gamma-Sterilized Heat-Seal Culture Cups",
-      description: "Our heat-seal culture cup range is designed for automated plant tissue culture production, including filling and heat-sealing workflows. The range is intended for gamma-sterilized supply, allowing use in suitable aseptic production environments. It includes culture cups in different heights, breathable and non-breathable sealing film rolls, and compatible automatic sealing equipment. Sterilization and supply conditions must be confirmed before delivery.",
+      description: "Our Gamma-Sterilized Heat-Seal Culture Cup Series is made from polypropylene (PP) and undergoes gamma irradiation sterilization before shipment. Designed for aseptic plant tissue culture operations, the system supports both manual filling and heat sealing in a laminar flow cabinet, as well as automated filling and sealing production lines.\n\nThe range includes culture cups in different heights, breathable and non-breathable heat-seal film rolls, and compatible sealing equipment. Film configurations such as 4-up and 8-up layouts can be supplied for automated production, subject to equipment compatibility. As the cups, films, and sealing equipment must work together, customers planning an automated production line are encouraged to contact us for compatibility assessment.\n\nThese products are supplied pre-sterilized and are not suitable for autoclaving or pressure-steam sterilization. Sterilization and delivery specifications should be confirmed before ordering.",
       features: [],
       seoTitle: "Gamma-Sterilized Heat-Seal Culture Cups | Fulong Plastic",
       metaDescription: "Culture cups, sealing film rolls and automatic sealing equipment for automated tissue culture workflows. Gamma-sterilized supply conditions are to be confirmed."
@@ -763,6 +765,11 @@ const filmImage = "/products/vent-filter-patches.webp";
 const basketImage = "/products/culture-baskets.jpg";
 const sugarFreeImage = "/products/sugar-free-ventilated-culture-box.webp";
 
+const heatSealCupFieldLabels = {
+  topDimensions: { zh: "顶部尺寸", en: "Top Dimensions" },
+  bottomDimensions: { zh: "底部尺寸", en: "Bottom Dimensions" }
+};
+
 const ventFilterPatchSpecs: Pick<SpecCard, "fields" | "fieldLabels" | "englishFields"> = {
   fields: { material: "PTFE", filterMembraneDiameter: "1.8cm / 2cm", quantity: "40枚/张" },
   fieldLabels: { filterMembraneDiameter: { zh: "膜片直径", en: "Membrane Diameter" } },
@@ -887,11 +894,11 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "无菌热封杯" },
     en: { name: "Gamma-Sterilized Heat-Seal Culture Cups" },
     cards: [
-      { id: "heat-seal-culture-cup-60", name: { zh: "热封培养杯 60mm", en: "Heat-Seal Culture Cup - 60mm Height" }, fields: {} },
-      { id: "heat-seal-culture-cup-80", name: { zh: "热封培养杯 80mm", en: "Heat-Seal Culture Cup - 80mm Height" }, fields: {} },
-      { id: "pp-culture-boxes-4", name: { zh: "热封培养杯 100mm", en: "Heat-Seal Culture Cup - 100mm Height" }, image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", hiddenFields: ["capacity", "filterMembraneDiameter"], fields: { productCode: "PP-BOX-10080100", capacity: "不适用", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP", filterMembraneDiameter: "不适用" } },
-      { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, fields: {} },
-      { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, fields: {} },
+      { id: "heat-seal-culture-cup-60", name: { zh: "无菌热封培养杯 60mm", en: "Heat-Seal Culture Cup – 60mm Height" }, fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008060", topDimensions: "100mm", bottomDimensions: "80mm", height: "60mm", material: "PP" } },
+      { id: "heat-seal-culture-cup-80", name: { zh: "无菌热封培养杯 80mm", en: "Heat-Seal Culture Cup – 80mm Height" }, fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008080", topDimensions: "100mm", bottomDimensions: "80mm", height: "80mm", material: "PP" } },
+      { id: "pp-culture-boxes-4", name: { zh: "无菌热封培养杯 100mm", en: "Heat-Seal Culture Cup – 100mm Height" }, image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-10080100", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP" } },
+      { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, fields: { productCode: "PP-HSF-V", material: "PP", piecesPerRoll: "1000片/卷" }, englishFields: { piecesPerRoll: "1000 Pieces/Roll" } },
+      { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, fields: { productCode: "PP-HSF-S", material: "PP", piecesPerRoll: "1500–1700片/卷" }, englishFields: { piecesPerRoll: "1500–1700 Pieces/Roll" } },
       { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, fields: {} }
     ]
   },

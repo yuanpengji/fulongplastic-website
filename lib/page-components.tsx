@@ -89,6 +89,10 @@ function formatSpecValue(value: string, locale: Locale) {
 }
 
 function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[number]["cards"][number]["fields"]) {
+  if (fields.piecesPerRoll) {
+    return ["productCode", "material", "piecesPerRoll"];
+  }
+
   if (fields.quantity) {
     return ["material", "filterMembraneDiameter", "quantity"];
   }
