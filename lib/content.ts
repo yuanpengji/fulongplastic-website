@@ -461,7 +461,7 @@ export const products: Product[] = [
     category: "pp-series",
     image: "/products/pp-culture-containers.webp",
     specs: {
-      capacity: "160mL / 200mL / 300mL / 500mL / 750mL / 1000mL / 不适用 / 500mL / 750mL / 1000mL",
+      capacity: "160mL / 200mL / 300mL / 500mL / 750mL / 1000mL / 145–150mL / 500mL / 750mL / 1000mL",
       height: "68mm / 65mm / 73mm / 90mm / 110mm / 124mm / 45mm / 85mm / 95mm / 120mm",
       bottomDiameter: "55mm / 73mm / 77mm / 92mm / 96mm / 105mm / 不适用 / 80×80mm / 88×88mm / 92×92mm",
       material: "PP",
@@ -847,7 +847,7 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pp-culture-containers-4", image: "/products/pp-containers/90x120x92.webp", imageFileName: "90x120x92.jpg", sourceName: "90×120×92mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-9012092", capacity: "500mL", openingDiameter: "120mm", bottomDiameter: "92mm", height: "90mm", material: "PP", filterMembraneDiameter: "3cm", closureType: "按压式", compatibleLid: "/" } },
       { id: "pp-culture-containers-5", image: "/products/pp-containers/110x122x96.webp", imageFileName: "110x122x96.jpg", sourceName: "110×122×96mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-11012296", capacity: "750mL", openingDiameter: "122mm", bottomDiameter: "96mm", height: "110mm", material: "PP", filterMembraneDiameter: "3cm", closureType: "按压式", compatibleLid: "/" } },
       { id: "pp-culture-containers-6", image: "/products/pp-containers/124x130x105.webp", imageFileName: "124x130x105.jpg", sourceName: "124×130×105mm", hiddenFields: ["compatibleLid"], fields: { productCode: "PP-CON-124130105", capacity: "1000mL", openingDiameter: "130mm", bottomDiameter: "105mm", height: "124mm", material: "PP", filterMembraneDiameter: "3cm", closureType: "按压式", compatibleLid: "/" } },
-      { id: "pp-culture-containers-7", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "不适用", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "1cm" } },
+      { id: "pp-culture-containers-7", image: "/products/pp-culture-boxes/87x60x45.webp", imageFileName: "87x60x45.JPG", sourceName: "87×60×45mm", fields: { productCode: "PP-BOX-876045", capacity: "145–150mL", topDimensions: "87×60mm", bottomDimensions: "不适用", height: "45mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "1cm" } },
       { id: "pp-culture-containers-12", image: "/products/pp-containers/75x65x70-m02.webp", imageFileName: "75x65x70-m02.webp", sourceName: "75×75×70mm", fieldLabels: { topDimensions: { zh: "顶部尺寸", en: "Top Dimensions" }, bottomDimensions: { zh: "底部尺寸", en: "Bottom Dimensions" } }, fields: { productCode: "PP-BOX-756570-M02", capacity: "300mL", topDimensions: "75×75mm", bottomDimensions: "65×65mm", height: "70mm", material: "PP", filterMembraneDiameter: "2cm", closureType: "按压式" } },
       { id: "pp-culture-containers-8", image: "/products/pp-culture-boxes/95x80x85.JPG", imageFileName: "95x80x85.JPG", sourceName: "95×95×85mm", fields: { productCode: "PP-BOX-958085-M02", capacity: "500mL", topDimensions: "95×95mm", bottomDimensions: "80×80mm", height: "85mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "2cm" } },
       { id: "pp-culture-containers-9", image: "/products/pp-culture-boxes/110x88x95.JPG", imageFileName: "110x88x95.JPG", sourceName: "110×110×95mm", fields: { productCode: "PP-BOX-1108895-M03", capacity: "750mL", topDimensions: "110×110mm", bottomDimensions: "88×88mm", height: "95mm", material: "PP", closureType: "按压式", filterMembraneDiameter: "3cm" } },
@@ -863,10 +863,10 @@ export const productSpecGroups: ProductSpecGroup[] = [
     zh: { name: "一次性PP培养盒", description: "一次性PP培养盒主要用于一次性植物组织培养，无需清洗，适用于商业化组培、高周转生产及批量培养。" },
     en: { name: "Disposable PP Culture Boxes", description: "Disposable PP Culture Boxes for single-use tissue culture workflows, high-throughput production, and commercial micropropagation." },
     cards: [
-      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-BOX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
-      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-BOX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
-      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-BOX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "2cm" } },
-      { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.webp", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { productCode: "PP-BOX-1208860", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "88mm", height: "60mm", material: "PP", filterMembraneDiameter: "2cm" } },
+      { id: "pp-culture-boxes-1", image: "/products/pp-culture-boxes/120x80x80.webp", imageFileName: "120x80x80.JPG", sourceName: "120×80×80mm", fields: { productCode: "PP-DBX-1208080", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "80mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
+      { id: "pp-culture-boxes-2", image: "/products/pp-culture-boxes/120x90x80.webp", imageFileName: "120x90x80.JPG", sourceName: "120×90×80mm", fields: { productCode: "PP-DBX-1209080", capacity: "600mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "80mm", material: "PP", filterMembraneDiameter: "2cm" } },
+      { id: "pp-culture-boxes-3", image: "/products/pp-culture-boxes/120x90x100.webp", imageFileName: "120x90x100.JPG", sourceName: "120×90×100mm", fields: { productCode: "PP-DBX-12090100", capacity: "800mL", topDimensions: "120mm", bottomDimensions: "90mm", height: "100mm", material: "PP", filterMembraneDiameter: "2cm" } },
+      { id: "pp-culture-boxes-5", image: "/products/pp-culture-boxes/120x88x60.webp", imageFileName: "120x88x60.JPG", sourceName: "120×88×60mm", fields: { productCode: "PP-DBX-1208860", capacity: "500mL", topDimensions: "120mm", bottomDimensions: "88mm", height: "60mm", material: "PP", filterMembraneDiameter: "2cm" } },
     ]
   },
   {
@@ -903,7 +903,7 @@ export const productSpecGroups: ProductSpecGroup[] = [
       { id: "pp-culture-boxes-4", name: { zh: "无菌热封培养杯 100mm", en: "Heat-Seal Culture Cup – 100mm Height" }, image: `${gammaHeatSealImagePath}/heat-seal-cup-100mm.webp`, imageFileName: "10cm.png", sourceName: "100×80×100mm", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-10080100", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP" } },
       { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, image: `${gammaHeatSealImagePath}/breathable-heat-seal-film-roll.webp`, imageFileName: "透气.jpg", fields: { productCode: "PP-HSF-V", material: "PP", piecesPerRoll: "1000片/卷" }, englishFields: { piecesPerRoll: "1000 Pieces/Roll" } },
       { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, image: `${gammaHeatSealImagePath}/non-breathable-heat-seal-film-roll.webp`, imageFileName: "不透气.png", fields: { productCode: "PP-HSF-S", material: "PP", piecesPerRoll: "1500–1700片/卷" }, englishFields: { piecesPerRoll: "1500–1700 Pieces/Roll" } },
-      { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, image: `${gammaHeatSealImagePath}/automatic-heat-sealing-machine.webp`, imageFileName: "机器.png", fields: {} }
+      { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, image: `${gammaHeatSealImagePath}/automatic-heat-sealing-machine.webp`, imageFileName: "机器.png", fields: { productCode: "EQ-HSM-01" } }
     ]
   },
   {
