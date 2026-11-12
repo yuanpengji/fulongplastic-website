@@ -327,6 +327,7 @@ export type Product = {
   slug: string;
   category: "pc-series" | "pp-series" | "accessories" | "featured";
   image: string;
+  displayImage?: string;
   cardMaterial?: string;
   specs: {
     capacity: string;
@@ -356,6 +357,8 @@ export type Product = {
   };
 };
 
+const gammaHeatSealImagePath = "/products/gamma-sterilized-heat-seal-culture-cups";
+const gammaHeatSealCoverImage = `${gammaHeatSealImagePath}/gamma-sterilized-heat-seal-series.webp`;
 const ventFilterPatchesImage = "/products/tissue-culture-vent-filter-patches/type-2.webp";
 const ventFilterPatchesCopy = {
   zh: {
@@ -572,6 +575,7 @@ export const products: Product[] = [
     slug: "gamma-sterilized-heat-seal-culture-cups",
     category: "pp-series",
     image: "",
+    displayImage: gammaHeatSealCoverImage,
     specs: { capacity: "", height: "", bottomDiameter: "", material: "", compatibleLid: "" },
     related: [],
     zh: {
@@ -890,16 +894,16 @@ export const productSpecGroups: ProductSpecGroup[] = [
   {
     category: "pp-series",
     slug: "gamma-sterilized-heat-seal-culture-cups",
-    image: "",
+    image: gammaHeatSealCoverImage,
     zh: { name: "无菌热封杯" },
     en: { name: "Gamma-Sterilized Heat-Seal Culture Cups" },
     cards: [
-      { id: "heat-seal-culture-cup-60", name: { zh: "无菌热封培养杯 60mm", en: "Heat-Seal Culture Cup – 60mm Height" }, fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008060", topDimensions: "100mm", bottomDimensions: "80mm", height: "60mm", material: "PP" } },
-      { id: "heat-seal-culture-cup-80", name: { zh: "无菌热封培养杯 80mm", en: "Heat-Seal Culture Cup – 80mm Height" }, fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008080", topDimensions: "100mm", bottomDimensions: "80mm", height: "80mm", material: "PP" } },
-      { id: "pp-culture-boxes-4", name: { zh: "无菌热封培养杯 100mm", en: "Heat-Seal Culture Cup – 100mm Height" }, image: "/products/pp-culture-boxes/100x80x100.JPG", imageFileName: "100x80x100.JPG", sourceName: "100×80×100mm", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-10080100", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP" } },
-      { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, fields: { productCode: "PP-HSF-V", material: "PP", piecesPerRoll: "1000片/卷" }, englishFields: { piecesPerRoll: "1000 Pieces/Roll" } },
-      { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, fields: { productCode: "PP-HSF-S", material: "PP", piecesPerRoll: "1500–1700片/卷" }, englishFields: { piecesPerRoll: "1500–1700 Pieces/Roll" } },
-      { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, fields: {} }
+      { id: "heat-seal-culture-cup-60", name: { zh: "无菌热封培养杯 60mm", en: "Heat-Seal Culture Cup – 60mm Height" }, image: `${gammaHeatSealImagePath}/heat-seal-cup-60mm.webp`, imageFileName: "6cm.png", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008060", topDimensions: "100mm", bottomDimensions: "80mm", height: "60mm", material: "PP" } },
+      { id: "heat-seal-culture-cup-80", name: { zh: "无菌热封培养杯 80mm", en: "Heat-Seal Culture Cup – 80mm Height" }, image: `${gammaHeatSealImagePath}/heat-seal-cup-80mm.webp`, imageFileName: "8cm.png", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-1008080", topDimensions: "100mm", bottomDimensions: "80mm", height: "80mm", material: "PP" } },
+      { id: "pp-culture-boxes-4", name: { zh: "无菌热封培养杯 100mm", en: "Heat-Seal Culture Cup – 100mm Height" }, image: `${gammaHeatSealImagePath}/heat-seal-cup-100mm.webp`, imageFileName: "10cm.png", sourceName: "100×80×100mm", fieldLabels: heatSealCupFieldLabels, fields: { productCode: "PP-HSC-10080100", topDimensions: "100mm", bottomDimensions: "80mm", height: "100mm", material: "PP" } },
+      { id: "breathable-heat-seal-film-roll", name: { zh: "透气热封卷膜", en: "Breathable Heat-Seal Film Roll" }, image: `${gammaHeatSealImagePath}/breathable-heat-seal-film-roll.webp`, imageFileName: "透气.jpg", fields: { productCode: "PP-HSF-V", material: "PP", piecesPerRoll: "1000片/卷" }, englishFields: { piecesPerRoll: "1000 Pieces/Roll" } },
+      { id: "non-breathable-heat-seal-film-roll", name: { zh: "密封热封卷膜", en: "Non-Breathable Heat-Seal Film Roll" }, image: `${gammaHeatSealImagePath}/non-breathable-heat-seal-film-roll.webp`, imageFileName: "不透气.png", fields: { productCode: "PP-HSF-S", material: "PP", piecesPerRoll: "1500–1700片/卷" }, englishFields: { piecesPerRoll: "1500–1700 Pieces/Roll" } },
+      { id: "automatic-heat-sealing-machine", name: { zh: "自动封口机", en: "Automatic Heat-Sealing Machine" }, image: `${gammaHeatSealImagePath}/automatic-heat-sealing-machine.webp`, imageFileName: "机器.png", fields: {} }
     ]
   },
   {

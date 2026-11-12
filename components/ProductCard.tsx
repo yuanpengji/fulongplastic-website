@@ -7,12 +7,13 @@ import { ProductImagePlaceholder } from "@/components/ProductImagePlaceholder";
 export function ProductCard({ product, locale }: { product: Product; locale: Locale }) {
   const content = product[locale];
   const t = text[locale];
+  const image = product.displayImage ?? product.image;
 
   return (
     <Link href={productPath(product, locale)} className="panel group overflow-hidden">
       <div className="aspect-square overflow-hidden">
-        {product.image ? (
-          <Image src={product.image} alt={content.name} width={720} height={720} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" />
+        {image ? (
+          <Image src={image} alt={content.name} width={720} height={720} className="h-full w-full object-cover transition duration-200 group-hover:scale-[1.02]" />
         ) : <ProductImagePlaceholder locale={locale} />}
       </div>
       <div className="p-5">

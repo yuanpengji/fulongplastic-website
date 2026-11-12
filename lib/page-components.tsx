@@ -507,6 +507,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
   const product = getProduct(productSlug);
   if (!product) notFound();
   const content = product[locale];
+  const image = product.displayImage ?? product.image;
   const t = text[locale];
   const category = getCategory(product.category);
   const related = product.related.map(getProduct).filter(Boolean) as typeof products;
@@ -562,8 +563,8 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
       <section className="section-tight">
         <div className="container grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-lg bg-black">
-            {product.image ? (
-              <Image src={product.image} alt={content.name} width={900} height={720} priority className="aspect-[4/3] h-full w-full object-contain p-6" />
+            {image ? (
+              <Image src={image} alt={content.name} width={900} height={720} priority className="aspect-[4/3] h-full w-full object-contain p-6" />
             ) : <ProductImagePlaceholder locale={locale} className="aspect-[4/3] h-full rounded-lg" />}
           </div>
           <div>
