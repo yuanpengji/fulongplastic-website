@@ -48,6 +48,7 @@ export const text = {
       filterPatchInfo: "透气膜选项",
       filterMembraneDiameter: "透气膜直径",
       material: "材质",
+      quantity: "数量",
       closureType: "闭合方式",
       compatibleLid: "适配盖",
       name: "姓名",
@@ -93,6 +94,7 @@ export const text = {
       filterPatchInfo: "Breathable Membrane Option",
       filterMembraneDiameter: "Filter Membrane Diameter",
       material: "Material",
+      quantity: "Quantity",
       closureType: "Closure Type",
       compatibleLid: "Compatible Lid",
       name: "Name",
@@ -356,11 +358,11 @@ const ventFilterPatchesImage = "/products/tissue-culture-vent-filter-patches/typ
 const ventFilterPatchesCopy = {
   zh: {
     name: "组培透气膜贴片",
-    description: "用于植物组织培养容器透气孔的膜片产品，可根据容器结构及加工工艺进行匹配，适用于组培容器的透气膜贴附加工。"
+    description: "组培透气膜贴片采用 PTFE 透气膜材料，具有防水透气特性，并配有自粘背胶，可贴附于塑料组织培养容器及培养盖的透气孔位置。膜片在允许气体交换的同时，有助于减少外部水分及污染物进入培养容器的风险，适用于植物组织培养容器的透气孔贴膜加工。\n\n提供 1.8cm 和 2cm 两种膜片直径，每张包含 40 枚圆形贴片。使用时应确保贴附表面完全平整、清洁且干燥，以保证贴合效果。"
   },
   en: {
     name: "Tissue Culture Vent Filter Patches",
-    description: "Vent filter patches for ventilation openings in plant tissue culture containers. Available for matching with different container designs and membrane application processes."
+    description: "Our self-adhesive PTFE vent filter patches are designed for ventilation openings in plastic plant tissue culture containers and lids. The water-resistant, breathable membrane allows gas exchange while helping reduce the risk of external moisture and contaminants entering the culture vessel.\n\nAvailable in 18mm and 20mm membrane diameters, with 40 circular patches per sheet. For proper adhesion, apply to a completely flat, clean, and dry surface."
   }
 };
 
@@ -681,13 +683,13 @@ export const products: Product[] = [
       ...ventFilterPatchesCopy.zh,
       features: [],
       seoTitle: "组培透气膜贴片 | 富龙塑业",
-      metaDescription: ventFilterPatchesCopy.zh.description
+      metaDescription: "用于植物组织培养容器透气孔的膜片产品，可根据容器结构及加工工艺进行匹配，适用于组培容器的透气膜贴附加工。"
     },
     en: {
       ...ventFilterPatchesCopy.en,
       features: [],
       seoTitle: "Tissue Culture Vent Filter Patches | Fulong Plastic",
-      metaDescription: ventFilterPatchesCopy.en.description
+      metaDescription: "Vent filter patches for ventilation openings in plant tissue culture containers. Available for matching with different container designs and membrane application processes."
     }
   },
   {
@@ -731,6 +733,7 @@ export type SpecCard = {
   remark?: string;
   hiddenFields?: FieldKey[];
   fieldLabels?: Partial<Record<FieldKey, { zh: string; en: string }>>;
+  englishFields?: Partial<Record<FieldKey, string>>;
   fields: Partial<Record<FieldKey, string>>;
 };
 
@@ -759,6 +762,12 @@ const lidImage = "/products/culture-lids.webp";
 const filmImage = "/products/vent-filter-patches.webp";
 const basketImage = "/products/culture-baskets.jpg";
 const sugarFreeImage = "/products/sugar-free-ventilated-culture-box.webp";
+
+const ventFilterPatchSpecs: Pick<SpecCard, "fields" | "fieldLabels" | "englishFields"> = {
+  fields: { material: "PTFE", filterMembraneDiameter: "1.8cm / 2cm", quantity: "40枚/张" },
+  fieldLabels: { filterMembraneDiameter: { zh: "膜片直径", en: "Membrane Diameter" } },
+  englishFields: { filterMembraneDiameter: "18mm / 20mm", quantity: "40 Patches/Sheet" }
+};
 
 export const productSpecGroups: ProductSpecGroup[] = [
   {
@@ -963,17 +972,17 @@ export const productSpecGroups: ProductSpecGroup[] = [
     cards: [
       {
         id: "vent-filter-patches-type-1",
-        name: { zh: "组培透气膜贴片 — 规格一", en: "Vent Filter Patches — Type 1" },
+        name: { zh: "组培透气膜贴片（蓝色底纸）", en: "PTFE Vent Filter Patches – Blue Backing" },
         image: "/products/tissue-culture-vent-filter-patches/type-1.webp",
         imageFileName: "6.jpg",
-        fields: {}
+        ...ventFilterPatchSpecs
       },
       {
         id: "vent-filter-patches-type-2",
-        name: { zh: "组培透气膜贴片 — 规格二", en: "Vent Filter Patches — Type 2" },
-        image: ventFilterPatchesImage,
-        imageFileName: "5.jpg",
-        fields: {}
+        name: { zh: "组培透气膜贴片（白色底纸）", en: "PTFE Vent Filter Patches – White Backing" },
+        image: "/products/tissue-culture-vent-filter-patches/white-backing.webp",
+        imageFileName: "19a655933793e825a75df1f9b6ce25c7.jpg",
+        ...ventFilterPatchSpecs
       }
     ]
   },

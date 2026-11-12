@@ -89,6 +89,10 @@ function formatSpecValue(value: string, locale: Locale) {
 }
 
 function getSpecFieldOrder(fields: ReturnType<typeof getSpecGroupsByCategory>[number]["cards"][number]["fields"]) {
+  if (fields.quantity) {
+    return ["material", "filterMembraneDiameter", "quantity"];
+  }
+
   if (fields.modelNumber) {
     return ["productCode", "modelNumber"];
   }
@@ -253,7 +257,8 @@ function SpecCardGrid({ group, locale }: { group: ReturnType<typeof getSpecGroup
                 .filter((field) => card.fields[field as keyof typeof card.fields])
                 .filter((field) => !card.hiddenFields?.includes(field as keyof typeof text.zh.fields))
                 .map((field) => {
-                  const value = card.fields[field as keyof typeof card.fields];
+                  const key = field as keyof typeof card.fields;
+                  const value = (locale === "en" ? card.englishFields?.[key] : undefined) ?? card.fields[key];
 
                   return (
                     <div key={field} className="flex justify-between gap-3 border-b border-line/70 pb-2 last:border-0 last:pb-0">
@@ -563,7 +568,7 @@ export function ProductPage({ locale, productSlug }: { locale: Locale; productSl
               <Link href={localizePath("/products/", locale)}>{t.nav.products}</Link> / {content.name}
             </p>
             <h1 className="mt-4 text-4xl font-bold md:text-5xl">{content.name}</h1>
-            <p className="mt-5 text-lg leading-8 text-steel">{content.description}</p>
+            <p className={"mt-5 text-lg leading-8 text-steel" + (content.description.includes("\n") ? " whitespace-pre-line" : "")}>{content.description}</p>
             <div className="mt-8">
               <Link href={localizePath("/contact/", locale)} className="btn btn-primary">
                 {t.actions.requestQuote}
